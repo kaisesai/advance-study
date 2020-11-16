@@ -1,4 +1,4 @@
-package com.liukai.tuling.concurrence;
+package com.liukai.advance.concurrence;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

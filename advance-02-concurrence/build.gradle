@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.liukai.tuling'
+group 'com.liukai.advance'
 version '1.0-SNAPSHOT'
 
 

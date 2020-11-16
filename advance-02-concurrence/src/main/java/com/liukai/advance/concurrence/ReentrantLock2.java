@@ -1,4 +1,4 @@
-package com.liukai.tuling.concurrence;
+package com.liukai.advance.concurrence;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,3 +1,3 @@
-rootProject.name = 'tuling-study'
-include 'tuling-02-concurrence'
+rootProject.name = 'advance-study'
+include 'advance-02-concurrence'
 
