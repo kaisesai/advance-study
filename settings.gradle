@@ -1,3 +1,4 @@
 rootProject.name = 'advance-study'
 include 'advance-02-concurrence'
+include 'advance-03-jvm'
 

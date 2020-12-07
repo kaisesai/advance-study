@@ -1,4 +1,45 @@
 group 'com.liukai.advance'
 version '1.0-SNAPSHOT'
 
+subprojects {
 
+    apply plugin: 'java'
+
+    group 'com.liukai.advance'
+    version '1.0-SNAPSHOT'
+    sourceCompatibility = '1.8'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+//        all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
+//        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+//        all*.exclude module: 'spring-boot-starter-logback'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'junit:junit:4.13'
+
+        compile 'org.projectlombok:lombok:1.18.16'
+        annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+
+//        testCompile 'junit:junit:4.12'
+
+        compile 'org.apache.logging.log4j:log4j-api:2.14.0'
+        compile 'org.apache.logging.log4j:log4j-core:2.14.0'
+
+        compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.0'
+
+    }
+
+//    test {
+//        useJUnitPlatform()
+//    }
+
+}
