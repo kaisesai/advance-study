@@ -1,4 +1,6 @@
 rootProject.name = 'advance-study'
 include 'advance-02-concurrence'
 include 'advance-03-jvm'
+include 'advance-04-distribution'
+include 'advance-04-distribution-zookeeper-web'
 

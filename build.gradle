@@ -27,19 +27,20 @@ subprojects {
 
         compile 'org.projectlombok:lombok:1.18.16'
         annotationProcessor 'org.projectlombok:lombok:1.18.16'
-
-
-//        testCompile 'junit:junit:4.12'
+        // testCompile 'junit:junit:4.12'
 
         compile 'org.apache.logging.log4j:log4j-api:2.14.0'
         compile 'org.apache.logging.log4j:log4j-core:2.14.0'
 
         compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.0'
 
+        // jackson
+        // implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
+
     }
 
-//    test {
-//        useJUnitPlatform()
-//    }
+    // test {
+    // useJUnitPlatform()
+    // }
 
 }

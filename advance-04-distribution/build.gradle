@@ -1,0 +1,14 @@
+version '1.0-SNAPSHOT'
+
+dependencies {
+    // apache curator
+//    implementation 'org.apache.curator:apache-curator:5.1.1-SNAPSHOT'
+//    implementation 'org.apache.curator:curator-framework:5.1.0'
+
+    implementation 'org.apache.curator:curator-recipes:5.1.0'
+
+    // zkclient
+    implementation 'com.github.adyliu:zkclient:2.2.0'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.0'
+}

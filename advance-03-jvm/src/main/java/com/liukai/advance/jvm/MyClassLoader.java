@@ -33,7 +33,7 @@ public class MyClassLoader extends ClassLoader {
     log.info("systemClassLoader = " + systemClassLoader);
     
     // 使用自定义类加载器加载指定的类
-    String classPath = "/Users/liukai";
+    String classPath = "/Users/kaisai";
     MyClassLoader myClassLoader = new MyClassLoader(classPath);
     // try {
     //   Class<?> userClass = myClassLoader.loadClass("com.liukai.advance.jvm.User");
