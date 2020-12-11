@@ -5,6 +5,7 @@ import com.github.zkclient.ZkClient;
 import lombok.Data;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -79,7 +80,9 @@ public class ZkLock {
   
   public void releaseLock(Lock lock) {
     // 删除锁临时节点
-    zkClient.delete(lock.path);
+    if (lock.isActive) {
+      zkClient.delete(lock.path);
+    }
     System.out.println(Thread.currentThread().getName() + " 释放了 lock = " + lock);
   }
   
@@ -92,7 +95,7 @@ public class ZkLock {
    * @return
    */
   private Lock createLock(String lockId, LockType lockType, String businessPath) {
-    // 创建锁节点
+    // 创建锁节点，锁数据为 READ/WRITE
     String lockPath = zkClient.createEphemeralSequential(businessPath + "/" + lockId,
                                                          lockType.name()
                                                            .getBytes(StandardCharsets.UTF_8));
@@ -104,7 +107,6 @@ public class ZkLock {
   /**
    * 尝试激活锁
    *
-   * @param businessPath
    * @param lock
    */
   private boolean tryActiveLock(Lock lock) {
@@ -112,15 +114,28 @@ public class ZkLock {
     // 获取全部的锁业务节点，按照升序排序
     List<String> allLockPaths = zkClient.getChildren(lock.businessPath).stream().sorted()
       .map(p -> lock.getBusinessPath() + "/" + p).collect(Collectors.toList());
-    
+  
     // 获取第一个锁节点
     String firstLockPath = allLockPaths.get(0);
+  
+    // 第一个节点是自己，无论写锁或者读锁都表示激活成功
     if (lock.getPath().equals(firstLockPath)) {
-      // 第一个节点就是自己，则表示激活成功
       // 设置激活状态
       lock.setActive(true);
       return true;
     } else {
+      if (lock.getLockType().equals(LockType.READ)) {
+        // 读锁，判断最小节点数据是否为读锁，则获取成功
+        if (Arrays.equals(zkClient.readData(firstLockPath),
+                          LockType.READ.name().getBytes(StandardCharsets.UTF_8))) {
+          //
+          lock.setActive(true);
+          return true;
+        }
+      }
+      // 写锁，判断最小节点是不是自己，这一步操作已经在上面执行过了
+      // 不管是读锁还是写锁，都获取失败，则监听它的前一个节点变更事件
+    
       // 否则，获取它的上一个节点，监听变化
       String prewLockPath = allLockPaths.get(allLockPaths.indexOf(lock.getPath()) - 1);
       // 对上一个节点添加监听器，监听节点变化
@@ -129,7 +144,7 @@ public class ZkLock {
         public void handleDataChange(String dataPath, byte[] data) throws Exception {
           // do no thing
         }
-        
+      
         @Override
         public void handleDataDeleted(String dataPath) throws Exception {
           // 节点被删除，则尝试再次激活
@@ -141,8 +156,10 @@ public class ZkLock {
             }
           }
           System.out.println(
-            Thread.currentThread().getName() + " 监听到上一个锁节点被删除，执行激活锁，deletedDataPath：" + dataPath
-              + ", 锁信息：" + lock);
+            Thread.currentThread().getName() + " 监听锁节点被删除，执行激活锁，deletedDataPath：" + dataPath
+              + ", lock：" + lock);
+          // 取消监听这个节点
+          zkClient.unsubscribeDataChanges(prewLockPath, this);
         }
       });
       return false;

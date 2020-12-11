@@ -18,7 +18,8 @@ public class ZkTest {
         ZkLock zkLock = ZkLock.getZkLockInstance();
         ZkLock.Lock lock = null;
         try {
-          lock = zkLock.lock("order", finalI + "-lock-", 100000, ZkLock.LockType.READ);
+          lock = zkLock.lock("order", finalI + "-lock", 100000,
+                             finalI % 2 == 0 ? ZkLock.LockType.READ : ZkLock.LockType.WRITE);
           System.out.println("执行任务...");
           Thread.sleep(RandomUtils.nextInt(10) * 1000L);
         } catch (InterruptedException e) {
