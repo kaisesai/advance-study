@@ -1,6 +1,17 @@
 group 'com.liukai.advance'
 version '1.0-SNAPSHOT'
 
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
 subprojects {
 
     apply plugin: 'java'
@@ -16,10 +27,6 @@ subprojects {
 //        all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
 //        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 //        all*.exclude module: 'spring-boot-starter-logback'
-    }
-
-    repositories {
-        mavenCentral()
     }
 
     dependencies {

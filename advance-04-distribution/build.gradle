@@ -11,4 +11,9 @@ dependencies {
     implementation 'com.github.adyliu:zkclient:2.2.0'
 
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.0'
+    // jedis
+    implementation 'redis.clients:jedis:3.3.0' // type = jar (type is not supported)
+    // redission
+    compile 'org.redisson:redisson:3.14.0'
+    // compile
 }
