@@ -2,30 +2,49 @@ package com.liukai.advance.redis;
 
 import org.apache.commons.lang.math.RandomUtils;
 import org.redisson.Redisson;
+import org.redisson.api.RBitSet;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
 import java.util.concurrent.CountDownLatch;
 
-public class RessionTest {
+public class RedissonTest {
   
-  private static final CountDownLatch countDownLatch = new CountDownLatch(101);
+  private static CountDownLatch countDownLatch;
   
   public static void main(String[] args) throws InterruptedException {
     // 默认连接地址 127.0.0.1:6379
     // RedissonClient redisson = Redisson.create();
+    RedissonClient redisson = getRedissonClient();
+    
+    // 测试 bitmap
+    // testBitMap(redisson);
+    
+    // 测试分布式锁
+    // testLock(redisson);
+    
+    redisson.shutdown();
+  }
+  
+  private static void testLock(RedissonClient redisson) throws InterruptedException {
+    countDownLatch = new CountDownLatch(101);
+    String orderId = "10086";
+    lock(redisson, orderId);
+    tryLock(redisson, orderId);
+    countDownLatch.await();
+  }
+  
+  private static void testBitMap(RedissonClient redisson) {
+    RBitSet bitSet = redisson.getBitSet("bit");
+    bitSet.set(1000, true);
+  }
+  
+  public static RedissonClient getRedissonClient() {
     Config config = new Config();
     config.useSingleServer().setAddress("redis://127.0.0.1:6379");
     RedissonClient redisson = Redisson.create(config);
-    
-    String orderId = "10086";
-    lock(redisson, orderId);
-    
-    tryLock(redisson, orderId);
-    
-    countDownLatch.await();
-    redisson.shutdown();
+    return redisson;
   }
   
   private static void tryLock(RedissonClient redisson, String orderId) {
