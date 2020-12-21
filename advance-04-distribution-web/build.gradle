@@ -31,6 +31,8 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
+    // spring boot kafka
+    implementation 'org.springframework.kafka:spring-kafka'
 
     // developmentOnly 'org.springframework.boot:spring-boot-devtools'
     // testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -1,4 +1,4 @@
-package com.liukai.advance.zkweb;
+package com.liukai.advance.distribution.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

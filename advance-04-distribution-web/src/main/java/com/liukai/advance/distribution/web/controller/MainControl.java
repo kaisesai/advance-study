@@ -1,4 +1,4 @@
-package com.liukai.advance.zkweb.controller;
+package com.liukai.advance.distribution.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.zkclient.IZkDataListener;
@@ -38,7 +38,6 @@ public class MainControl implements InitializingBean {
     return zkClient.getChildren(rootPath).stream().map(p -> rootPath + "/" + p)
       .map(p -> convert(new String(zkClient.readData(p), StandardCharsets.UTF_8)))
       .collect(Collectors.toList());
-    // return Collections.emptyList();
   }
   
   private OsBean convert(String json) {

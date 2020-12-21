@@ -1,0 +1,81 @@
+# 服务端口
+
+spring:
+  # Redis 配置
+  redis:
+    # 集群模式
+    cluster:
+      # 集群节点
+      nodes:
+        - 127.0.0.1:8001
+        - 127.0.0.1:8002
+        - 127.0.0.1:8003
+    # 连接池配置
+    lettuce:
+      pool:
+        # 最大连接数
+        max-active: 20
+        # 最大闲置连接数
+        max-idle: 10
+        # 最小闲置连接数
+        min-idle: 5
+  # kafka 配置
+  kafka:
+    bootstrap-servers:
+      - 127.0.0.1:9092
+      - 127.0.0.1:9093
+      - 127.0.0.1:9094
+    # 生产者
+    producer:
+      # 设置大于 0 的值，则客户端会将发送失败的记录重新发送
+      retries: 3
+      acks: 1
+      # key 序列化
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # value 序列化
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # 批量消息大小
+      batch-size: 16384
+      # 缓存大小
+      buffer-memory: 33554432
+    # 消费者
+    consumer:
+      # 消费组
+      group-id: default-group
+      # 是否自动提交
+      enable-auto-commit: false
+      # 消费 offset 策略
+      auto-offset-reset: earliest
+      # key 反序列化
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # value 反序列化
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 心跳时间
+      heartbeat-interval: 1000
+      client-id: kaiser-kafka
+      fetch-min-size: 100
+      fetch-max-wait: 10000
+      # 最大拉取的消息数目
+      max-poll-records: 500
+
+    # 监听器
+    listener:
+      # ack 模式
+      # RECORD 当每一条记录被消费者监听器（listenerConsumer）处理之后提交
+      # BATCH 当每一批 poll() 的数据被消费者监听器（ListenerConsumer）处理之后提交
+      # TIME 当每一批 poll() 的数据被消费者监听器（ListenerConsumer）处理之后，距离上次提交时间大于 TIME 时提交
+      # COUNT 当每一批 poll() 的数据被消费者监听器（ListenerConsumer）处理之后，被处理 record 数量大于等于 COUNT 时提交
+      # COUNT_TIME TIME | COUNT 有一个条件满足时提交
+      # MANUAL 当每一批 poll() 的数据被消费者监听器（ListenerConsumer）处理之后, 手动调用 Acknowledgment.acknowledge() 后提交
+      # MANUAL_IMMEDIATE 手动调用 Acknowledgment.acknowledge() 后立即提交，一般使用这种
+      ack-mode: manual_immediate
+
+# 哨兵模式
+#    sentinel:
+#      master: mymaster
+#      nodes:
+#        - 127.0.0.1:26379
+#        - 127.0.0.1:26380
+#        - 127.0.0.1:26381
+server:
+  port: 8081
