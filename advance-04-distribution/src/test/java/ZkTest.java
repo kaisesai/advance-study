@@ -1,5 +1,5 @@
-import com.liukai.advance.zookeeper.MasterResolve;
-import com.liukai.advance.zookeeper.ZkLock;
+import com.kaige.advance.zookeeper.MasterResolve;
+import com.kaige.advance.zookeeper.ZkLock;
 import org.apache.commons.lang.math.RandomUtils;
 import org.junit.Test;
 

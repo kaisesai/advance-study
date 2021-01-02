@@ -1,4 +1,4 @@
-group 'com.liukai.advance'
+group 'com.kaige.advance'
 version '1.0-SNAPSHOT'
 
 
@@ -16,7 +16,7 @@ subprojects {
 
     apply plugin: 'java'
 
-    group 'com.liukai.advance'
+    group 'com.kaige.advance'
     version '1.0-SNAPSHOT'
     sourceCompatibility = '1.8'
 
