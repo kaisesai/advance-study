@@ -16,5 +16,12 @@ dependencies {
     implementation 'org.redisson:redisson:3.14.0'
     // kafka
     implementation 'org.apache.kafka:kafka-clients:2.5.0'
+    // rabbitmq
+    implementation 'com.rabbitmq:amqp-client:5.10.0'
 
+    // netty
+    implementation 'io.netty:netty-all:4.1.54.Final'
+
+    // mysql 驱动包
+    implementation 'mysql:mysql-connector-java:8.0.17'
 }

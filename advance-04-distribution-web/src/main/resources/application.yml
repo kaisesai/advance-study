@@ -69,6 +69,33 @@ spring:
       # MANUAL 当每一批 poll() 的数据被消费者监听器（ListenerConsumer）处理之后, 手动调用 Acknowledgment.acknowledge() 后提交
       # MANUAL_IMMEDIATE 手动调用 Acknowledgment.acknowledge() 后立即提交，一般使用这种
       ack-mode: manual_immediate
+  datasource:
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      idle-timeout: 60000
+      connection-timeout: 30000
+      pool-name: hikai-pool
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://www.kaige.com:3306/eshop
+    type: com.zaxxer.hikari.HikariDataSource
+    username: eshop
+    password: eshop2020
+    name: mysql
+
+  #  data:
+  #    elasticsearch:
+  #      cluster-name: my-cluster
+  #      cluster-nodes: 127.0.0.1:9201,127.0.0.1:9202
+  #      repositories:
+  #        enabled: true
+
+  elasticsearch:
+    rest:
+      uris: "http://127.0.0.1:9201,http://127.0.0.1:9202"
+      read-timeout: "10s"
+#      username: "user"
+#      password: "secret"
 
 # 哨兵模式
 #    sentinel:
@@ -79,3 +106,7 @@ spring:
 #        - 127.0.0.1:26381
 server:
   port: 8081
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'org.springframework.boot' version '2.4.1'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
 }
@@ -31,9 +31,19 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
     // spring boot kafka
     implementation 'org.springframework.kafka:spring-kafka'
 
+    implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.1'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
+    // mysql 驱动包
+    implementation 'mysql:mysql-connector-java:8.0.17'
+
+    // implementation 'mysql:mysql-connector-java:8.0.17'
     // developmentOnly 'org.springframework.boot:spring-boot-devtools'
     // testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // testImplementation 'io.projectreactor:reactor-test'

@@ -12,4 +12,8 @@ dependencies {
     implementation 'org.apache.tomcat:tomcat-catalina:9.0.40'
     // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-coyote
     implementation 'org.apache.tomcat:tomcat-coyote:9.0.40'
+
+
+    // mysql 驱动包
+    implementation 'mysql:mysql-connector-java:8.0.17'
 }
