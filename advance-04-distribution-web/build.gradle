@@ -40,7 +40,9 @@ dependencies {
     // mysql 驱动包
     implementation 'mysql:mysql-connector-java:8.0.17'
 
-    // implementation 'mysql:mysql-connector-java:8.0.17'
+    // canal MySQL binlog 增量获取和解析工具，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费
+    implementation 'com.alibaba.otter:canal.client:1.1.4'
+
     // developmentOnly 'org.springframework.boot:spring-boot-devtools'
     // testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // testImplementation 'io.projectreactor:reactor-test'

@@ -4,12 +4,12 @@ spring:
   # Redis 配置
   redis:
     # 集群模式
-    cluster:
-      # 集群节点
-      nodes:
-        - 127.0.0.1:8001
-        - 127.0.0.1:8002
-        - 127.0.0.1:8003
+    #    cluster:
+    # 集群节点
+    #      nodes:
+    #        - 127.0.0.1:8001
+    #        - 127.0.0.1:8002
+    #        - 127.0.0.1:8003
     # 连接池配置
     lettuce:
       pool:
@@ -19,6 +19,9 @@ spring:
         max-idle: 10
         # 最小闲置连接数
         min-idle: 5
+    password: redis_ecs02
+    host: www.kaige.com
+    port: 6379
   # kafka 配置
   kafka:
     bootstrap-servers:
@@ -107,6 +110,7 @@ spring:
 server:
   port: 8081
 
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# mybatis SQL 日志
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
