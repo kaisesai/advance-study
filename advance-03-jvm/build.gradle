@@ -16,4 +16,9 @@ dependencies {
 
     // mysql 驱动包
     implementation 'mysql:mysql-connector-java:8.0.17'
+
+    // 纤程包
+    // https://mvnrepository.com/artifact/co.paralleluniverse/quasar-core
+    implementation 'co.paralleluniverse:quasar-core:0.8.0'
+
 }

@@ -4,7 +4,6 @@ package com.kaige.advance.jvm;
 
 
 import com.mysql.cj.jdbc.Driver;
-import com.sun.crypto.provider.DESKeyFactory;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileInputStream;
@@ -27,15 +26,15 @@ public class MyClassLoader extends ClassLoader {
     ClassLoader bootStrapClassLoader = String.class.getClassLoader();
     log.info("bootStrapClassLoader = " + bootStrapClassLoader);
     // 2. 扩展类加载器
-    ClassLoader extClassLoader = DESKeyFactory.class.getClassLoader();
-    log.info("extClassLoader = " + extClassLoader);
+    // ClassLoader extClassLoader = DESKeyFactory.class.getClassLoader();
+    // log.info("extClassLoader = " + extClassLoader);
     // 3. 应用程序类加载器：sun.misc.Launcher$AppClassLoader
     ClassLoader appClassLoader = MyClassLoader.class.getClassLoader();
     log.info("appClassLoader = " + appClassLoader);
     // 4. 系统类加载器：sun.misc.Launcher$AppClassLoader
     ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
     log.info("systemClassLoader = " + systemClassLoader);
-    
+  
     // Thread.currentThread().setContextClassLoader(extClassLoader);
     // mysql jdbc 驱动实现时通过 SPI，线程上的类加载器加载的
     log.info("Mysql Driver.class.getClassLoader() = " + Driver.class.getClassLoader());

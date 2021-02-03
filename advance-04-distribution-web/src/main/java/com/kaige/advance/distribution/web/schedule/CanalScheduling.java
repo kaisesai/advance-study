@@ -12,7 +12,6 @@ import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.IndexQuery;
 import org.springframework.data.elasticsearch.core.query.IndexQueryBuilder;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,7 +21,7 @@ import java.util.Map;
 /**
  * 定时查询 canal 数据
  */
-@Component
+// @Component
 @Slf4j
 public class CanalScheduling {
   

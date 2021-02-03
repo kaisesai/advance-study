@@ -3,13 +3,11 @@ package com.kaige.advance.distribution.web.config;
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.client.CanalConnectors;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.net.InetSocketAddress;
 
-@EnableScheduling
-@Configuration
+// @EnableScheduling
+// @Configuration
 public class CanalConfig {
   
   @Bean(value = "canalBookConnector", destroyMethod = "disconnect")
