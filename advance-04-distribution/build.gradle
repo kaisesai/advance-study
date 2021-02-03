@@ -24,4 +24,7 @@ dependencies {
 
     // mysql 驱动包
     implementation 'mysql:mysql-connector-java:8.0.17'
+
+    // jetty
+    implementation 'org.eclipse.jetty:jetty-webapp:9.4.36.v20210114'
 }
