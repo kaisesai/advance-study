@@ -3,7 +3,11 @@ package com.kaige.advance.netty.herostory;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Message;
 import com.kaige.advance.netty.herostory.msg.GameMsgProtocol;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -13,6 +17,7 @@ import java.util.Objects;
  *
  * @author liukai 2021年02月03日
  */
+@Slf4j
 public class GameMsgRecognizer {
   
   /**
@@ -23,7 +28,7 @@ public class GameMsgRecognizer {
   /**
    * 消息对象 --> 消息编号字典
    */
-  private static final Map<Class<?>, Integer> MSGOBJ_AND_MSGCODE_MAP = new HashMap<>();
+  private static final Map<Class<?>, Integer> MSGCLASS_AND_MSGCODE_MAP = new HashMap<>();
   
   static {
     init();
@@ -36,21 +41,58 @@ public class GameMsgRecognizer {
    * 初始化消息识别器
    */
   public static void init() {
-    MSGCODE_AND_MSGOBJ_MAP.put(GameMsgProtocol.MsgCode.USER_ENTRY_CMD_VALUE,
-                               GameMsgProtocol.UserEntryCmd.getDefaultInstance());
-    MSGCODE_AND_MSGOBJ_MAP.put(GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_CMD_VALUE,
-                               GameMsgProtocol.WhoElseIsHereCmd.getDefaultInstance());
-    MSGCODE_AND_MSGOBJ_MAP.put(GameMsgProtocol.MsgCode.USER_MOVE_TO_CMD_VALUE,
-                               GameMsgProtocol.UserMoveToCmd.getDefaultInstance());
+    log.info("初始化消息识别器");
+    // 通过反射来获取类型信息
+    // 获取类中声明的类，这些类包括静态与非静态类
+    Class<?>[] innerClassArr = GameMsgProtocol.class.getDeclaredClasses();
     
-    MSGOBJ_AND_MSGCODE_MAP
-      .put(GameMsgProtocol.UserEntryResult.class, GameMsgProtocol.MsgCode.USER_ENTRY_RESULT_VALUE);
-    MSGOBJ_AND_MSGCODE_MAP.put(GameMsgProtocol.WhoElseIsHereResult.class,
-                               GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_RESULT_VALUE);
-    MSGOBJ_AND_MSGCODE_MAP.put(GameMsgProtocol.UserMoveToResult.class,
-                               GameMsgProtocol.MsgCode.USER_MOVE_TO_RESULT_VALUE);
-    MSGOBJ_AND_MSGCODE_MAP
-      .put(GameMsgProtocol.UserQuitResult.class, GameMsgProtocol.MsgCode.USER_QUIT_RESULT_VALUE);
+    // 遍历声明的类型
+    for (Class<?> innerClass : innerClassArr) {
+      // 过滤无效的类型
+      if (Objects.isNull(innerClass) || !GeneratedMessageV3.class.isAssignableFrom(innerClass)) {
+        continue;
+      }
+      
+      // 获取类名称并且转化为小写
+      String lowerCaseClazzName = StringUtils.lowerCase(innerClass.getSimpleName());
+      
+      // 遍历消息类型枚举，获取每个枚举的名称，去除下划线且转化为小写
+      for (GameMsgProtocol.MsgCode msgCode : GameMsgProtocol.MsgCode.values()) {
+        String msgCodeName = msgCode.name();
+        // 转化小写
+        msgCodeName = StringUtils.lowerCase(msgCodeName);
+        // 去除下划线
+        msgCodeName = StringUtils.replace(msgCodeName, "_", StringUtils.EMPTY);
+        
+        // 比较类名与枚举名是否一致
+        if (StringUtils.equals(lowerCaseClazzName, msgCodeName)) {
+          log.info("{} <==> {}", msgCode.name(), innerClass.getSimpleName());
+          
+          // 调用类的 getDefaultInstance() 静态方法获取默认实例
+          try {
+            Method method = innerClass.getDeclaredMethod("getDefaultInstance");
+            // 执行方法
+            Object defaultInstance = method.invoke(null);
+            // 添加消息编号和消息实例添加到 map
+            MSGCODE_AND_MSGOBJ_MAP.put(msgCode.getNumber(), (GeneratedMessageV3) defaultInstance);
+            
+            // 添加到消息类型与消息编号的 map 中
+            MSGCLASS_AND_MSGCODE_MAP.put(innerClass, msgCode.getNumber());
+          } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            log.error(e.getMessage(), e);
+          }
+          break;
+        }
+      }
+      
+    }
+    
+    log.info("消息编号与实例 map ：{}", MSGCODE_AND_MSGOBJ_MAP);
+    log.info("消息类型与消息编号 map ：{}", MSGCLASS_AND_MSGCODE_MAP);
+    
+  }
+  
+  public static void main(String[] args) {
   }
   
   /**
@@ -63,7 +105,7 @@ public class GameMsgRecognizer {
     if (Objects.isNull(clazz)) {
       return -1;
     }
-    return MSGOBJ_AND_MSGCODE_MAP.getOrDefault(clazz, -1);
+    return MSGCLASS_AND_MSGCODE_MAP.getOrDefault(clazz, -1);
   }
   
   /**
