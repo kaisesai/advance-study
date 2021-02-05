@@ -3,6 +3,7 @@ package com.kaige.advance.netty.herostory;
 import com.google.protobuf.GeneratedMessageV3;
 import com.kaige.advance.netty.herostory.cmdhandler.CmdHandlerFactory;
 import com.kaige.advance.netty.herostory.cmdhandler.ICmdHandler;
+import com.kaige.advance.netty.herostory.model.UserManager;
 import com.kaige.advance.netty.herostory.msg.GameMsgProtocol;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -37,18 +38,18 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     if (Objects.isNull(ctx)) {
       return;
     }
-    
+  
+    // 移除全局信道
+    Broadcaster.removeChannel(ctx.channel());
+  
     // 移除用户信息
     Integer userId = UserManager.getUserIdFromCtx(ctx);
     if (Objects.isNull(userId)) {
       return;
     }
-    
+  
     // 移除用户
     UserManager.removeUser(userId);
-    
-    // 移除全局信道
-    Broadcaster.removeChannel(ctx.channel());
     
     // 用户下线消息
     GameMsgProtocol.UserQuitResult userQuitResult = GameMsgProtocol.UserQuitResult.newBuilder()
@@ -73,7 +74,6 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     log.info("收到客户端的消息，msgClass = {}，msgBody = {}", msg.getClass().getSimpleName(), msg.toString());
     
     try {
-      
       ICmdHandler<? extends GeneratedMessageV3> cmdHandler = CmdHandlerFactory
         .getCmdHandler(msg.getClass());
       
@@ -82,7 +82,6 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
       }
       
       cmdHandler.handle(ctx, convertMsg(msg));
-      
     } catch (Exception e) {
       log.error(e.getMessage(), e);
     }

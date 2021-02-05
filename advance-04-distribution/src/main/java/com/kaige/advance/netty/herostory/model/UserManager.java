@@ -1,4 +1,4 @@
-package com.kaige.advance.netty.herostory;
+package com.kaige.advance.netty.herostory.model;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
@@ -55,6 +55,30 @@ public class UserManager {
       return null;
     }
     return (Integer) value;
+  }
+  
+  /**
+   * 设置用户 ID 到 channel 中
+   *
+   * @param userId
+   * @param ctx
+   */
+  public static void setUserIdToChannel(Integer userId, ChannelHandlerContext ctx) {
+    ctx.channel().attr(AttributeKey.valueOf("userId")).set(userId);
+  }
+  
+  /**
+   * 获取用户信息
+   *
+   * @param userId
+   * @return
+   */
+  public static User getUserById(Integer userId) {
+    if (Objects.isNull(userId)) {
+      return null;
+    }
+    return USER_MAP.get(userId);
+    
   }
   
 }

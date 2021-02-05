@@ -1,4 +1,4 @@
-package com.kaige.advance.netty.herostory;
+package com.kaige.advance.netty.herostory.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,5 +15,11 @@ public class User {
   
   // 英雄形象
   private String heroAvatar;
+  
+  // 用户状态
+  private MoveState moveState;
+  
+  // 用户血量
+  private int currentHp;
   
 }
