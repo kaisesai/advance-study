@@ -22,4 +22,7 @@ public class User {
   // 用户血量
   private int currentHp;
   
+  // 用户账号
+  private String userName;
+  
 }

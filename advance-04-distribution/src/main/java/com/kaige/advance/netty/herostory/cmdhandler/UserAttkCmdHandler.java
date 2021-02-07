@@ -15,8 +15,6 @@ import java.util.Objects;
 @Slf4j
 public class UserAttkCmdHandler implements ICmdHandler<GameMsgProtocol.UserAttkCmd> {
   
-  // private static Executor executor = Executors.newFixedThreadPool(1);
-  
   @Override
   public void handle(ChannelHandlerContext ctx, GameMsgProtocol.UserAttkCmd cmd) {
     Integer userId = UserManager.getUserIdFromCtx(ctx);
@@ -33,18 +31,18 @@ public class UserAttkCmdHandler implements ICmdHandler<GameMsgProtocol.UserAttkC
     if (Objects.isNull(targetUser)) {
       return;
     }
-    
-    log.info(Thread.currentThread().getName() + " handle ");
-    
+  
     // 用户减血
     int dmgPoint = 10;
-    
+  
     int currentHp = targetUser.getCurrentHp() - dmgPoint;
     targetUser.setCurrentHp(currentHp);
-    
+  
+    log.info(Thread.currentThread().getName() + " handle 当前用户 HP : {}", currentHp);
+  
     // 广播减血消息结果
     broadcastSubtractHpResult(targetUserId, dmgPoint);
-    
+  
     // 广播用户死亡结果
     if (currentHp <= 0) {
       // 广播用户死亡消息结果

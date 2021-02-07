@@ -78,7 +78,21 @@ public class UserManager {
       return null;
     }
     return USER_MAP.get(userId);
-    
+  
+  }
+  
+  /**
+   * 获取用户信息
+   *
+   * @param ctx
+   * @return
+   */
+  public static User getUserFromCtx(ChannelHandlerContext ctx) {
+    Integer userId = (Integer) ctx.channel().attr(AttributeKey.valueOf("userId")).get();
+    if (Objects.isNull(userId)) {
+      return null;
+    }
+    return getUserById(userId);
   }
   
 }

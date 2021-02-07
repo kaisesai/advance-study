@@ -1,5 +1,6 @@
 package com.kaige.advance.netty.herostory;
 
+import com.kaige.advance.netty.herostory.config.SqlSessionFactoryConfig;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -25,6 +26,8 @@ public class ServerMain {
     // 初始化命令处理工厂
     // CmdHandlerFactory.init();
     // GameMsgRecognizer.init();
+    // 初始化 SqlSessionFactory
+    SqlSessionFactoryConfig.init();
   
     NioEventLoopGroup boss = new NioEventLoopGroup(1);
     NioEventLoopGroup worker = new NioEventLoopGroup();

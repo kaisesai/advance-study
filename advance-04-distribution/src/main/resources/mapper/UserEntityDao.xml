@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaige.advance.netty.herostory.dao.UserEntityDao">
+
+    <resultMap type="com.kaige.advance.netty.herostory.entity.UserEntity" id="UserEntityMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="heroAvatar" column="hero_avatar" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--根据用户名查询用户信息-->
+    <select id="queryByUserName" resultMap="UserEntityMap">
+        select id,
+               name,
+               password,
+               hero_avatar
+        from hero_story.user_entity
+        where name = #{name}
+    </select>
+
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="UserEntityMap">
+        select id,
+               name,
+               password,
+               hero_avatar
+        from hero_story.user_entity
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="UserEntityMap">
+        select id,
+               name,
+               password,
+               hero_avatar
+        from hero_story.user_entity
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="UserEntityMap">
+        select
+        id, name, password, hero_avatar
+        from hero_story.user_entity
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="password != null and password != ''">
+                and password = #{password}
+            </if>
+            <if test="heroAvatar != null and heroAvatar != ''">
+                and hero_avatar = #{heroAvatar}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into hero_story.user_entity(name, password, hero_avatar)
+        values (#{name}, #{password}, #{heroAvatar})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into hero_story.user_entity(name, password, hero_avatar)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.password}, #{entity.heroAvatar})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into hero_story.user_entity(id, name, password, hero_avatar)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id}, #{entity.name}, #{entity.password}, #{entity.heroAvatar})
+        </foreach>
+        on duplicate key update
+        id = values(id) , name = values(name) , password = values(password) , hero_avatar = values(hero_avatar)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update hero_story.user_entity
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="heroAvatar != null and heroAvatar != ''">
+                hero_avatar = #{heroAvatar},
+            </if>
+        </set>
+        where = #{}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from hero_story.user_entity
+        where id = #{id}
+    </delete>
+
+</mapper>
+
