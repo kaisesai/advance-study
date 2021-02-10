@@ -11,12 +11,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 消息处理器
+ * 主线程消息处理器
  *
  * @author liukai 2021年02月06日
  */
 @Slf4j
-public class GameMsgProcessor {
+public class MainThreadProcessor {
   
   /**
    * 单一线程的线程池，利用一个线程 + 一个队列的方式，顺序处理任务
@@ -24,9 +24,9 @@ public class GameMsgProcessor {
   private static final ExecutorService SINGLE_THREAD_EXECUTOR = Executors
     .newSingleThreadExecutor(r -> new Thread(r, "GameMsgProcessorThread"));
   
-  private static volatile GameMsgProcessor gameMsgProcessorInstance;
+  private static volatile MainThreadProcessor mainThreadProcessorInstance;
   
-  private GameMsgProcessor() {
+  private MainThreadProcessor() {
   }
   
   /**
@@ -34,15 +34,15 @@ public class GameMsgProcessor {
    *
    * @return
    */
-  public static GameMsgProcessor getInstance() {
-    if (gameMsgProcessorInstance == null) {
-      synchronized (GameMsgProcessor.class) {
-        if (gameMsgProcessorInstance == null) {
-          gameMsgProcessorInstance = new GameMsgProcessor();
+  public static MainThreadProcessor getInstance() {
+    if (mainThreadProcessorInstance == null) {
+      synchronized (MainThreadProcessor.class) {
+        if (mainThreadProcessorInstance == null) {
+          mainThreadProcessorInstance = new MainThreadProcessor();
         }
       }
     }
-    return gameMsgProcessorInstance;
+    return mainThreadProcessorInstance;
   }
   
   /**
@@ -78,6 +78,15 @@ public class GameMsgProcessor {
   @SuppressWarnings(value = "unchecked")
   private <T extends GeneratedMessageV3> T convertMsg(Object msg) {
     return (T) msg;
+  }
+  
+  /**
+   * 处理任务
+   *
+   * @param r 任务
+   */
+  public void process(Runnable r) {
+    SINGLE_THREAD_EXECUTOR.execute(r);
   }
   
 }

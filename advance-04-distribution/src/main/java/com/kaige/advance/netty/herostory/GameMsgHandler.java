@@ -65,7 +65,7 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     }
     log.info("收到客户端的消息，msgClass = {}，msgBody = {}", msg.getClass().getSimpleName(), msg.toString());
     // 处理消息
-    GameMsgProcessor.getInstance().process(ctx, msg);
+    MainThreadProcessor.getInstance().process(ctx, msg);
   }
   
 }
