@@ -4,6 +4,7 @@ import com.kaige.advance.netty.herostory.MainThreadProcessor;
 import com.kaige.advance.netty.herostory.config.SqlSessionFactoryConfig;
 import com.kaige.advance.netty.herostory.dao.UserEntityDao;
 import com.kaige.advance.netty.herostory.entity.UserEntity;
+import com.kaige.advance.netty.herostory.service.UserEntityService;
 import com.sun.istack.internal.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -53,12 +54,14 @@ public class UserEntityAsyncOperation implements IAsyncOperation {
         userEntity.setHeroAvatar("Hero_Shaman");
         // 保存用户信息
         mapper.insert(userEntity);
-        
       } else if (!StringUtils.equals(userEntity.getPassword(), password)) {
         // 密码不正确
         throw new IllegalStateException("密码不正确，userName: " + userName + ", password: " + password);
       }
-      
+  
+      // 保存到 redis 中
+      UserEntityService.getInstance().updateUserBasicInfoToRedis(userEntity);
+  
       // 密码正确
       this.userEntity = userEntity;
     }

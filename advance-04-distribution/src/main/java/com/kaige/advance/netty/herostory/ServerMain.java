@@ -1,6 +1,9 @@
 package com.kaige.advance.netty.herostory;
 
 import com.kaige.advance.netty.herostory.config.SqlSessionFactoryConfig;
+import com.kaige.advance.netty.herostory.mq.MyConsumer;
+import com.kaige.advance.netty.herostory.mq.MyProducer;
+import com.kaige.advance.netty.herostory.util.RedisUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -28,6 +31,11 @@ public class ServerMain {
     // GameMsgRecognizer.init();
     // 初始化 SqlSessionFactory
     SqlSessionFactoryConfig.init();
+    // 初始化 JedisPool
+    RedisUtil.init();
+    // 初始化生产者
+    MyProducer.init();
+    MyConsumer.init();
   
     NioEventLoopGroup boss = new NioEventLoopGroup(1);
     NioEventLoopGroup worker = new NioEventLoopGroup();

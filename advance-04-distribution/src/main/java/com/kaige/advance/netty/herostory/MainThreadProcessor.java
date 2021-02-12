@@ -22,7 +22,7 @@ public class MainThreadProcessor {
    * 单一线程的线程池，利用一个线程 + 一个队列的方式，顺序处理任务
    */
   private static final ExecutorService SINGLE_THREAD_EXECUTOR = Executors
-    .newSingleThreadExecutor(r -> new Thread(r, "GameMsgProcessorThread"));
+    .newSingleThreadExecutor(r -> new Thread(r, "MainThreadProcessor"));
   
   private static volatile MainThreadProcessor mainThreadProcessorInstance;
   

@@ -119,6 +119,24 @@ public final class GameMsgProtocol {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
     internal_static_msg_SelectHeroResult_fieldAccessorTable;
   
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_msg_GetRankCmd_descriptor;
+  
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_msg_GetRankCmd_fieldAccessorTable;
+  
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_msg_GetRankResult_descriptor;
+  
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_msg_GetRankResult_fieldAccessorTable;
+  
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_msg_GetRankResult_RankItem_descriptor;
+  
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_msg_GetRankResult_RankItem_fieldAccessorTable;
+  
   private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
   
   static {
@@ -153,18 +171,23 @@ public final class GameMsgProtocol {
         + "G\n\017UserLoginResult\022\016\n\006userId\030\001 \001(\r\022\020\n\010us"
         + "erName\030\002 \001(\t\022\022\n\nheroAvatar\030\003 \001(\t\"#\n\rSele"
         + "ctHeroCmd\022\022\n\nheroAvatar\030\001 \001(\t\"&\n\020SelectH"
-        + "eroResult\022\022\n\nheroAvatar\030\001 \001(\t*\214\003\n\007MsgCod"
-        + "e\022\022\n\016USER_ENTRY_CMD\020\000\022\025\n\021USER_ENTRY_RESU"
-        + "LT\020\001\022\030\n\024WHO_ELSE_IS_HERE_CMD\020\002\022\033\n\027WHO_EL"
-        + "SE_IS_HERE_RESULT\020\003\022\024\n\020USER_MOVE_TO_CMD\020"
-        + "\004\022\027\n\023USER_MOVE_TO_RESULT\020\005\022\024\n\020USER_QUIT_"
-        + "RESULT\020\006\022\021\n\rUSER_STOP_CMD\020\007\022\024\n\020USER_STOP"
-        + "_RESULT\020\010\022\021\n\rUSER_ATTK_CMD\020\t\022\024\n\020USER_ATT"
-        + "K_RESULT\020\n\022\033\n\027USER_SUBTRACT_HP_RESULT\020\013\022"
-        + "\023\n\017USER_DIE_RESULT\020\014\022\022\n\016USER_LOGIN_CMD\020\r"
-        + "\022\025\n\021USER_LOGIN_RESULT\020\016\022\023\n\017SELECT_HERO_C"
-        + "MD\020\017\022\026\n\022SELECT_HERO_RESULT\020\020B'\n%com.kaig"
-        + "e.advance.netty.herostory.msgb\006proto3"};
+        + "eroResult\022\022\n\nheroAvatar\030\001 \001(\t\"\014\n\nGetRank"
+        + "Cmd\"\235\001\n\rGetRankResult\022-\n\010rankItem\030\001 \003(\0132"
+        + "\033.msg.GetRankResult.RankItem\032]\n\010RankItem"
+        + "\022\016\n\006rankId\030\001 \001(\r\022\016\n\006userId\030\002 \001(\r\022\020\n\010user"
+        + "Name\030\003 \001(\t\022\022\n\nheroAvatar\030\004 \001(\t\022\013\n\003win\030\005 "
+        + "\001(\r*\263\003\n\007MsgCode\022\022\n\016USER_ENTRY_CMD\020\000\022\025\n\021U"
+        + "SER_ENTRY_RESULT\020\001\022\030\n\024WHO_ELSE_IS_HERE_C"
+        + "MD\020\002\022\033\n\027WHO_ELSE_IS_HERE_RESULT\020\003\022\024\n\020USE"
+        + "R_MOVE_TO_CMD\020\004\022\027\n\023USER_MOVE_TO_RESULT\020\005"
+        + "\022\024\n\020USER_QUIT_RESULT\020\006\022\021\n\rUSER_STOP_CMD\020"
+        + "\007\022\024\n\020USER_STOP_RESULT\020\010\022\021\n\rUSER_ATTK_CMD"
+        + "\020\t\022\024\n\020USER_ATTK_RESULT\020\n\022\033\n\027USER_SUBTRAC"
+        + "T_HP_RESULT\020\013\022\023\n\017USER_DIE_RESULT\020\014\022\022\n\016US"
+        + "ER_LOGIN_CMD\020\r\022\025\n\021USER_LOGIN_RESULT\020\016\022\023\n"
+        + "\017SELECT_HERO_CMD\020\017\022\026\n\022SELECT_HERO_RESULT"
+        + "\020\020\022\020\n\014GET_RANK_CMD\020\021\022\023\n\017GET_RANK_RESULT\020"
+        + "\022B'\n%com.kaige.advance.netty.herostory.m" + "sgb\006proto3"};
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner
       = new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
       public com.google.protobuf.ExtensionRegistry assignDescriptors(
@@ -265,6 +288,20 @@ public final class GameMsgProtocol {
     internal_static_msg_SelectHeroResult_fieldAccessorTable
       = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
       internal_static_msg_SelectHeroResult_descriptor, new java.lang.String[] {"HeroAvatar",});
+    internal_static_msg_GetRankCmd_descriptor = getDescriptor().getMessageTypes().get(17);
+    internal_static_msg_GetRankCmd_fieldAccessorTable
+      = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      internal_static_msg_GetRankCmd_descriptor, new java.lang.String[] {});
+    internal_static_msg_GetRankResult_descriptor = getDescriptor().getMessageTypes().get(18);
+    internal_static_msg_GetRankResult_fieldAccessorTable
+      = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      internal_static_msg_GetRankResult_descriptor, new java.lang.String[] {"RankItem",});
+    internal_static_msg_GetRankResult_RankItem_descriptor
+      = internal_static_msg_GetRankResult_descriptor.getNestedTypes().get(0);
+    internal_static_msg_GetRankResult_RankItem_fieldAccessorTable
+      = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      internal_static_msg_GetRankResult_RankItem_descriptor,
+      new java.lang.String[] {"RankId", "UserId", "UserName", "HeroAvatar", "Win",});
   }
   
   private GameMsgProtocol() {
@@ -356,7 +393,15 @@ public final class GameMsgProtocol {
     /**
      * <code>SELECT_HERO_RESULT = 16;</code>
      */
-    SELECT_HERO_RESULT(16), UNRECOGNIZED(-1),
+    SELECT_HERO_RESULT(16),
+    /**
+     * <code>GET_RANK_CMD = 17;</code>
+     */
+    GET_RANK_CMD(17),
+    /**
+     * <code>GET_RANK_RESULT = 18;</code>
+     */
+    GET_RANK_RESULT(18), UNRECOGNIZED(-1),
     ;
     
     /**
@@ -404,22 +449,18 @@ public final class GameMsgProtocol {
      * <code>USER_ATTK_RESULT = 10;</code>
      */
     public static final int USER_ATTK_RESULT_VALUE = 10;
-    
     /**
      * <code>USER_SUBTRACT_HP_RESULT = 11;</code>
      */
     public static final int USER_SUBTRACT_HP_RESULT_VALUE = 11;
-    
     /**
      * <code>USER_DIE_RESULT = 12;</code>
      */
     public static final int USER_DIE_RESULT_VALUE = 12;
-    
     /**
      * <code>USER_LOGIN_CMD = 13;</code>
      */
     public static final int USER_LOGIN_CMD_VALUE = 13;
-    
     /**
      * <code>USER_LOGIN_RESULT = 14;</code>
      */
@@ -434,6 +475,16 @@ public final class GameMsgProtocol {
      * <code>SELECT_HERO_RESULT = 16;</code>
      */
     public static final int SELECT_HERO_RESULT_VALUE = 16;
+    
+    /**
+     * <code>GET_RANK_CMD = 17;</code>
+     */
+    public static final int GET_RANK_CMD_VALUE = 17;
+    
+    /**
+     * <code>GET_RANK_RESULT = 18;</code>
+     */
+    public static final int GET_RANK_RESULT_VALUE = 18;
     
     private static final com.google.protobuf.Internal.EnumLiteMap<MsgCode> internalValueMap
       = new com.google.protobuf.Internal.EnumLiteMap<MsgCode>() {
@@ -493,6 +544,10 @@ public final class GameMsgProtocol {
           return SELECT_HERO_CMD;
         case 16:
           return SELECT_HERO_RESULT;
+        case 17:
+          return GET_RANK_CMD;
+        case 18:
+          return GET_RANK_RESULT;
         default:
           return null;
       }
@@ -554,7 +609,7 @@ public final class GameMsgProtocol {
      * <code>uint32 userId = 1;</code>
      */
     int getUserId();
-    
+
     /**
      * <pre>
      * 用户名称
@@ -943,7 +998,7 @@ public final class GameMsgProtocol {
      * <code>uint32 userId = 1;</code>
      */
     int getUserId();
-    
+
     /**
      * <pre>
      * 用户名称
@@ -1029,6 +1084,65 @@ public final class GameMsgProtocol {
      * <code>string heroAvatar = 1;</code>
      */
     com.google.protobuf.ByteString getHeroAvatarBytes();
+    
+  }
+  
+  public interface GetRankCmdOrBuilder extends
+                                       // @@protoc_insertion_point(interface_extends:msg.GetRankCmd)
+                                         com.google.protobuf.MessageOrBuilder {
+    
+  }
+  
+  public interface GetRankResultOrBuilder extends
+                                          // @@protoc_insertion_point(interface_extends:msg.GetRankResult)
+                                            com.google.protobuf.MessageOrBuilder {
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem> getRankItemList();
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem getRankItem(
+      int index);
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    int getRankItemCount();
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    java.util.List<? extends com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder> getRankItemOrBuilderList();
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder getRankItemOrBuilder(
+      int index);
     
   }
   
@@ -1257,7 +1371,7 @@ public final class GameMsgProtocol {
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
-    
+
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
@@ -1468,6 +1582,12 @@ public final class GameMsgProtocol {
       super(builder);
     }
     
+    private UserEntryResult() {
+      userId_ = 0;
+      userName_ = "";
+      heroAvatar_ = "";
+    }
+    
     public static final int USERNAME_FIELD_NUMBER = 2;
     
     public static final int HEROAVATAR_FIELD_NUMBER = 3;
@@ -1492,6 +1612,17 @@ public final class GameMsgProtocol {
         = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult();
     }
     
+    /**
+     * <pre>
+     * 用户 Id
+     * </pre>
+     *
+     * <code>uint32 userId = 1;</code>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+    
     private int userId_;
     
     private volatile java.lang.Object userName_;
@@ -1499,12 +1630,6 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
-    
-    private UserEntryResult() {
-      userId_ = 0;
-      userName_ = "";
-      heroAvatar_ = "";
-    }
     
     private UserEntryResult(com.google.protobuf.CodedInputStream input,
                             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1531,19 +1656,19 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-              
+
               userId_ = input.readUInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+
               userName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+
               heroAvatar_ = s;
               break;
             }
@@ -1601,6 +1726,24 @@ public final class GameMsgProtocol {
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult parseFrom(
       java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult parseFrom(
@@ -1665,17 +1808,6 @@ public final class GameMsgProtocol {
     
     /**
      * <pre>
-     * 用户 Id
-     * </pre>
-     *
-     * <code>uint32 userId = 1;</code>
-     */
-    public int getUserId() {
-      return userId_;
-    }
-    
-    /**
-     * <pre>
      * 用户名称
      * </pre>
      *
@@ -1711,7 +1843,7 @@ public final class GameMsgProtocol {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     /**
      * <pre>
      * 英雄形象
@@ -1816,24 +1948,6 @@ public final class GameMsgProtocol {
       return result;
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
-      hash = (53 * hash) + getHeroAvatar().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -1917,6 +2031,10 @@ public final class GameMsgProtocol {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserEntryResult_descriptor;
       }
       
+      public Builder clone() {
+        return super.clone();
+      }
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult
           .getDefaultInstance();
@@ -1939,10 +2057,6 @@ public final class GameMsgProtocol {
         result.heroAvatar_ = heroAvatar_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -1999,6 +2113,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 用户 Id
@@ -2009,6 +2124,11 @@ public final class GameMsgProtocol {
       public int getUserId() {
         return userId_;
       }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
       /**
        * <pre>
        * 用户 Id
@@ -2016,15 +2136,11 @@ public final class GameMsgProtocol {
        *
        * <code>uint32 userId = 1;</code>
        */
-      public Builder setUserId(int value) {
-  
-        userId_ = value;
+      public Builder clearUserId() {
+        
+        userId_ = 0;
         onChanged();
         return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
@@ -2052,13 +2168,13 @@ public final class GameMsgProtocol {
        *
        * <code>uint32 userId = 1;</code>
        */
-      public Builder clearUserId() {
+      public Builder setUserId(int value) {
         
-        userId_ = 0;
+        userId_ = value;
         onChanged();
         return this;
       }
-      
+
       /**
        * <pre>
        * 用户名称
@@ -2102,6 +2218,20 @@ public final class GameMsgProtocol {
        *
        * <code>string userName = 2;</code>
        */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 2;</code>
+       */
       public com.google.protobuf.ByteString getUserNameBytes() {
         java.lang.Object ref = userName_;
         if (ref instanceof String) {
@@ -2131,21 +2261,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
-      /**
-       * <pre>
-       * 用户名称
-       * </pre>
-       *
-       * <code>string userName = 2;</code>
-       */
-      public Builder clearUserName() {
-        
-        userName_ = getDefaultInstance().getUserName();
-        onChanged();
-        return this;
-      }
-      
+
       /**
        * <pre>
        * 英雄形象
@@ -2208,13 +2324,9 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+      public Builder clearHeroAvatar() {
         
-        heroAvatar_ = value;
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
         onChanged();
         return this;
       }
@@ -2226,9 +2338,13 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder clearHeroAvatar() {
+      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         
-        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        heroAvatar_ = value;
         onChanged();
         return this;
       }
@@ -3032,7 +3148,7 @@ public final class GameMsgProtocol {
        * <code>uint32 userId = 1;</code>
        */
       int getUserId();
-      
+
       /**
        * <pre>
        * 用户名称
@@ -3077,7 +3193,6 @@ public final class GameMsgProtocol {
        * <code>.msg.WhoElseIsHereResult.UserInfo.MoveState moveState = 4;</code>
        */
       boolean hasMoveState();
-      
       /**
        * <pre>
        * 移动状态
@@ -3086,7 +3201,6 @@ public final class GameMsgProtocol {
        * <code>.msg.WhoElseIsHereResult.UserInfo.MoveState moveState = 4;</code>
        */
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState getMoveState();
-      
       /**
        * <pre>
        * 移动状态
@@ -3114,6 +3228,12 @@ public final class GameMsgProtocol {
       // Use UserInfo.newBuilder() to construct.
       private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
+      }
+      
+      private UserInfo() {
+        userId_ = 0;
+        userName_ = "";
+        heroAvatar_ = "";
       }
       
       public static final int USERNAME_FIELD_NUMBER = 2;
@@ -3153,12 +3273,6 @@ public final class GameMsgProtocol {
       
       private byte memoizedIsInitialized = -1;
       
-      private UserInfo() {
-        userId_ = 0;
-        userName_ = "";
-        heroAvatar_ = "";
-      }
-      
       private UserInfo(com.google.protobuf.CodedInputStream input,
                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3184,31 +3298,29 @@ public final class GameMsgProtocol {
                 break;
               }
               case 8: {
-                
+
                 userId_ = input.readUInt32();
                 break;
               }
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
-                
+
                 userName_ = s;
                 break;
               }
               case 26: {
                 java.lang.String s = input.readStringRequireUtf8();
-                
+
                 heroAvatar_ = s;
                 break;
               }
               case 34: {
-                com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.Builder
-                  subBuilder = null;
+                com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.Builder subBuilder = null;
                 if (moveState_ != null) {
                   subBuilder = moveState_.toBuilder();
                 }
                 moveState_ = input.readMessage(
-                  com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
-                    .parser(), extensionRegistry);
+                  com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(moveState_);
                   moveState_ = subBuilder.buildPartial();
@@ -3343,7 +3455,7 @@ public final class GameMsgProtocol {
       public int getUserId() {
         return userId_;
       }
-      
+
       /**
        * <pre>
        * 用户名称
@@ -3381,7 +3493,7 @@ public final class GameMsgProtocol {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      
+
       /**
        * <pre>
        * 英雄形象
@@ -3419,7 +3531,7 @@ public final class GameMsgProtocol {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      
+
       /**
        * <pre>
        * 移动状态
@@ -3430,7 +3542,7 @@ public final class GameMsgProtocol {
       public boolean hasMoveState() {
         return moveState_ != null;
       }
-      
+
       /**
        * <pre>
        * 移动状态
@@ -3440,10 +3552,9 @@ public final class GameMsgProtocol {
        */
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState getMoveState() {
         return moveState_ == null ?
-               com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.getDefaultInstance() :
-               moveState_;
+               com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
       }
-      
+
       /**
        * <pre>
        * 移动状态
@@ -3668,17 +3779,6 @@ public final class GameMsgProtocol {
         private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
           DEFAULT_INSTANCE;
         
-        /**
-         * <pre>
-         * 起始位置 X
-         * </pre>
-         *
-         * <code>float fromPosX = 1;</code>
-         */
-        public float getFromPosX() {
-          return fromPosX_;
-        }
-        
         private static final com.google.protobuf.Parser<MoveState> PARSER
           = new com.google.protobuf.AbstractParser<MoveState>() {
           public MoveState parsePartialFrom(com.google.protobuf.CodedInputStream input,
@@ -3693,61 +3793,17 @@ public final class GameMsgProtocol {
             = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState();
         }
         
-        /**
-         * <pre>
-         * 起始位置 Y
-         * </pre>
-         *
-         * <code>float fromPosY = 2;</code>
-         */
-        public float getFromPosY() {
-          return fromPosY_;
-        }
-        
         private float fromPosX_;
         
         private float fromPosY_;
-        
-        /**
-         * <pre>
-         * 移动到位置 X
-         * </pre>
-         *
-         * <code>float toPosX = 3;</code>
-         */
-        public float getToPosX() {
-          return toPosX_;
-        }
         
         private float toPosX_;
         
         private float toPosY_;
         
-        /**
-         * <pre>
-         * 移动到位置 Y
-         * </pre>
-         *
-         * <code>float toPosY = 4;</code>
-         */
-        public float getToPosY() {
-          return toPosY_;
-        }
-        
         private long startTime_;
         
         private byte memoizedIsInitialized = -1;
-        
-        /**
-         * <pre>
-         * 启程时间戳
-         * </pre>
-         *
-         * <code>uint64 startTime = 5;</code>
-         */
-        public long getStartTime() {
-          return startTime_;
-        }
         
         private MoveState(com.google.protobuf.CodedInputStream input,
                           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3914,6 +3970,61 @@ public final class GameMsgProtocol {
             .ensureFieldAccessorsInitialized(
               com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.class,
               com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.Builder.class);
+        }
+        
+        /**
+         * <pre>
+         * 起始位置 X
+         * </pre>
+         *
+         * <code>float fromPosX = 1;</code>
+         */
+        public float getFromPosX() {
+          return fromPosX_;
+        }
+        
+        /**
+         * <pre>
+         * 起始位置 Y
+         * </pre>
+         *
+         * <code>float fromPosY = 2;</code>
+         */
+        public float getFromPosY() {
+          return fromPosY_;
+        }
+        
+        /**
+         * <pre>
+         * 移动到位置 X
+         * </pre>
+         *
+         * <code>float toPosX = 3;</code>
+         */
+        public float getToPosX() {
+          return toPosX_;
+        }
+        
+        /**
+         * <pre>
+         * 移动到位置 Y
+         * </pre>
+         *
+         * <code>float toPosY = 4;</code>
+         */
+        public float getToPosY() {
+          return toPosY_;
+        }
+        
+        /**
+         * <pre>
+         * 启程时间戳
+         * </pre>
+         *
+         * <code>uint64 startTime = 5;</code>
+         */
+        public long getStartTime() {
+          return startTime_;
         }
         
         public final boolean isInitialized() {
@@ -4095,23 +4206,19 @@ public final class GameMsgProtocol {
             if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             }
           }
-          
-          public Builder clone() {
-            return super.clone();
-          }
-          
+
           public Builder clear() {
             super.clear();
             fromPosX_ = 0F;
-            
+  
             fromPosY_ = 0F;
-            
+  
             toPosX_ = 0F;
-            
+  
             toPosY_ = 0F;
-            
+  
             startTime_ = 0L;
-            
+  
             return this;
           }
           
@@ -4147,6 +4254,10 @@ public final class GameMsgProtocol {
             return result;
           }
           
+          public Builder clone() {
+            return super.clone();
+          }
+          
           public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                   java.lang.Object value) {
             return super.setField(field, value);
@@ -4156,10 +4267,6 @@ public final class GameMsgProtocol {
             return super.clearField(field);
           }
           
-          public final boolean isInitialized() {
-            return true;
-          }
-          
           public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return super.clearOneof(oneof);
           }
@@ -4167,6 +4274,11 @@ public final class GameMsgProtocol {
           public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                           int index, java.lang.Object value) {
             return super.setRepeatedField(field, index, value);
+          }
+          
+          public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                          java.lang.Object value) {
+            return super.addRepeatedField(field, value);
           }
           
           /**
@@ -4207,9 +4319,14 @@ public final class GameMsgProtocol {
             return this;
           }
           
-          public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
-                                          java.lang.Object value) {
-            return super.addRepeatedField(field, value);
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState) {
+              return mergeFrom(
+                (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
           }
           
           /**
@@ -4250,14 +4367,31 @@ public final class GameMsgProtocol {
             return this;
           }
           
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState) {
-              return mergeFrom(
-                (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState) other);
-            } else {
-              super.mergeFrom(other);
+          public Builder mergeFrom(
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState other) {
+            if (other
+              == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
+              .getDefaultInstance()) {
               return this;
             }
+            if (other.getFromPosX() != 0F) {
+              setFromPosX(other.getFromPosX());
+            }
+            if (other.getFromPosY() != 0F) {
+              setFromPosY(other.getFromPosY());
+            }
+            if (other.getToPosX() != 0F) {
+              setToPosX(other.getToPosX());
+            }
+            if (other.getToPosY() != 0F) {
+              setToPosY(other.getToPosY());
+            }
+            if (other.getStartTime() != 0L) {
+              setStartTime(other.getStartTime());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
           }
           
           /**
@@ -4298,31 +4432,8 @@ public final class GameMsgProtocol {
             return this;
           }
           
-          public Builder mergeFrom(
-            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState other) {
-            if (other
-              == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
-              .getDefaultInstance()) {
-              return this;
-            }
-            if (other.getFromPosX() != 0F) {
-              setFromPosX(other.getFromPosX());
-            }
-            if (other.getFromPosY() != 0F) {
-              setFromPosY(other.getFromPosY());
-            }
-            if (other.getToPosX() != 0F) {
-              setToPosX(other.getToPosX());
-            }
-            if (other.getToPosY() != 0F) {
-              setToPosY(other.getToPosY());
-            }
-            if (other.getStartTime() != 0L) {
-              setStartTime(other.getStartTime());
-            }
-            this.mergeUnknownFields(other.unknownFields);
-            onChanged();
-            return this;
+          public final boolean isInitialized() {
+            return true;
           }
           
           /**
@@ -4382,7 +4493,6 @@ public final class GameMsgProtocol {
             }
             return this;
           }
-          
           /**
            * <pre>
            * 启程时间戳
@@ -4486,6 +4596,10 @@ public final class GameMsgProtocol {
           }
         }
         
+        public Builder clone() {
+          return super.clone();
+        }
+        
         public Builder clear() {
           super.clear();
           userId_ = 0;
@@ -4537,10 +4651,6 @@ public final class GameMsgProtocol {
           return result;
         }
         
-        public Builder clone() {
-          return super.clone();
-        }
-        
         public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                 java.lang.Object value) {
           return super.setField(field, value);
@@ -4548,6 +4658,10 @@ public final class GameMsgProtocol {
         
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return super.clearField(field);
+        }
+        
+        public final boolean isInitialized() {
+          return true;
         }
         
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
@@ -4562,43 +4676,6 @@ public final class GameMsgProtocol {
         public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                         java.lang.Object value) {
           return super.addRepeatedField(field, value);
-        }
-        
-        /**
-         * <pre>
-         * 用户 Id
-         * </pre>
-         *
-         * <code>uint32 userId = 1;</code>
-         */
-        public int getUserId() {
-          return userId_;
-        }
-        /**
-         * <pre>
-         * 用户 Id
-         * </pre>
-         *
-         * <code>uint32 userId = 1;</code>
-         */
-        public Builder setUserId(int value) {
-          
-          userId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * 用户 Id
-         * </pre>
-         *
-         * <code>uint32 userId = 1;</code>
-         */
-        public Builder clearUserId() {
-          
-          userId_ = 0;
-          onChanged();
-          return this;
         }
         
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4637,10 +4714,6 @@ public final class GameMsgProtocol {
           return this;
         }
         
-        public final boolean isInitialized() {
-          return true;
-        }
-        
         public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
                                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -4658,6 +4731,59 @@ public final class GameMsgProtocol {
               mergeFrom(parsedMessage);
             }
           }
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 1;</code>
+         */
+        public int getUserId() {
+          return userId_;
+        }
+        
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 1;</code>
+         */
+        public Builder setUserId(int value) {
+          
+          userId_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 1;</code>
+         */
+        public Builder clearUserId() {
+          
+          userId_ = 0;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 2;</code>
+         */
+        public Builder clearUserName() {
+          
+          userName_ = getDefaultInstance().getUserName();
+          onChanged();
           return this;
         }
         
@@ -4733,21 +4859,7 @@ public final class GameMsgProtocol {
           onChanged();
           return this;
         }
-        
-        /**
-         * <pre>
-         * 用户名称
-         * </pre>
-         *
-         * <code>string userName = 2;</code>
-         */
-        public Builder clearUserName() {
-          
-          userName_ = getDefaultInstance().getUserName();
-          onChanged();
-          return this;
-        }
-        
+
         /**
          * <pre>
          * 英雄形象
@@ -4765,6 +4877,20 @@ public final class GameMsgProtocol {
           } else {
             return (java.lang.String) ref;
           }
+        }
+        
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 3;</code>
+         */
+        public Builder clearHeroAvatar() {
+          
+          heroAvatar_ = getDefaultInstance().getHeroAvatar();
+          onChanged();
+          return this;
         }
         
         /**
@@ -4820,21 +4946,6 @@ public final class GameMsgProtocol {
           onChanged();
           return this;
         }
-        
-        /**
-         * <pre>
-         * 英雄形象
-         * </pre>
-         *
-         * <code>string heroAvatar = 3;</code>
-         */
-        public Builder clearHeroAvatar() {
-          
-          heroAvatar_ = getDefaultInstance().getHeroAvatar();
-          onChanged();
-          return this;
-        }
-        
         /**
          * <pre>
          * 移动状态
@@ -4845,7 +4956,7 @@ public final class GameMsgProtocol {
         public boolean hasMoveState() {
           return moveStateBuilder_ != null || moveState_ != null;
         }
-        
+
         /**
          * <pre>
          * 移动状态
@@ -4925,10 +5036,9 @@ public final class GameMsgProtocol {
           } else {
             moveStateBuilder_.mergeFrom(value);
           }
-          
+
           return this;
         }
-        
         /**
          * <pre>
          * 移动状态
@@ -4944,10 +5054,9 @@ public final class GameMsgProtocol {
             moveState_ = null;
             moveStateBuilder_ = null;
           }
-  
+
           return this;
         }
-        
         /**
          * <pre>
          * 移动状态
@@ -4960,7 +5069,6 @@ public final class GameMsgProtocol {
           onChanged();
           return getMoveStateFieldBuilder().getBuilder();
         }
-        
         /**
          * <pre>
          * 移动状态
@@ -5073,6 +5181,10 @@ public final class GameMsgProtocol {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereResult_descriptor;
       }
       
+      public Builder clone() {
+        return super.clone();
+      }
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult
           .getDefaultInstance();
@@ -5104,10 +5216,6 @@ public final class GameMsgProtocol {
         return result;
       }
       
-      public Builder clone() {
-        return super.clone();
-      }
-      
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
                               java.lang.Object value) {
         return super.setField(field, value);
@@ -5124,6 +5232,10 @@ public final class GameMsgProtocol {
       public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
+      }
+      
+      public final boolean isInitialized() {
+        return true;
       }
       
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -5175,10 +5287,6 @@ public final class GameMsgProtocol {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
@@ -5586,6 +5694,19 @@ public final class GameMsgProtocol {
       }
     };
     
+    /**
+     * <pre>
+     * XXX 注意: 用户移动指令中没有用户 Id,
+     * 这是为什么?
+     * 起始位置 X
+     * </pre>
+     *
+     * <code>float moveFromPosX = 1;</code>
+     */
+    public float getMoveFromPosX() {
+      return moveFromPosX_;
+    }
+    
     static {
       DEFAULT_INSTANCE = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd();
     }
@@ -5594,31 +5715,9 @@ public final class GameMsgProtocol {
     
     private float moveFromPosY_;
     
-    /**
-     * <pre>
-     * 起始位置 Y
-     * </pre>
-     *
-     * <code>float moveFromPosY = 2;</code>
-     */
-    public float getMoveFromPosY() {
-      return moveFromPosY_;
-    }
-    
     private float moveToPosX_;
     
     private float moveToPosY_;
-    
-    /**
-     * <pre>
-     * 移动到位置 X
-     * </pre>
-     *
-     * <code>float moveToPosX = 3;</code>
-     */
-    public float getMoveToPosX() {
-      return moveToPosX_;
-    }
     
     private byte memoizedIsInitialized = -1;
     
@@ -5676,17 +5775,6 @@ public final class GameMsgProtocol {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
-    }
-    
-    /**
-     * <pre>
-     * 移动到位置 Y
-     * </pre>
-     *
-     * <code>float moveToPosY = 4;</code>
-     */
-    public float getMoveToPosY() {
-      return moveToPosY_;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5795,15 +5883,35 @@ public final class GameMsgProtocol {
     
     /**
      * <pre>
-     * XXX 注意: 用户移动指令中没有用户 Id,
-     * 这是为什么?
-     * 起始位置 X
+     * 起始位置 Y
      * </pre>
      *
-     * <code>float moveFromPosX = 1;</code>
+     * <code>float moveFromPosY = 2;</code>
      */
-    public float getMoveFromPosX() {
-      return moveFromPosX_;
+    public float getMoveFromPosY() {
+      return moveFromPosY_;
+    }
+    
+    /**
+     * <pre>
+     * 移动到位置 X
+     * </pre>
+     *
+     * <code>float moveToPosX = 3;</code>
+     */
+    public float getMoveToPosX() {
+      return moveToPosX_;
+    }
+    
+    /**
+     * <pre>
+     * 移动到位置 Y
+     * </pre>
+     *
+     * <code>float moveToPosY = 4;</code>
+     */
+    public float getMoveToPosY() {
+      return moveToPosY_;
     }
     
     public final boolean isInitialized() {
@@ -5973,9 +6081,21 @@ public final class GameMsgProtocol {
             com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd.Builder.class);
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         }
+      }
+      
+      public Builder clone() {
+        return super.clone();
       }
       
       public Builder clear() {
@@ -6000,14 +6120,6 @@ public final class GameMsgProtocol {
           .getDefaultInstance();
       }
       
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd buildPartial() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd result
           = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd(this);
@@ -6017,10 +6129,6 @@ public final class GameMsgProtocol {
         result.moveToPosY_ = moveToPosY_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -6036,6 +6144,10 @@ public final class GameMsgProtocol {
         return super.clearOneof(oneof);
       }
       
+      public final boolean isInitialized() {
+        return true;
+      }
+      
       public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -6044,6 +6156,19 @@ public final class GameMsgProtocol {
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       java.lang.Object value) {
         return super.addRepeatedField(field, value);
+      }
+      
+      /**
+       * <pre>
+       * XXX 注意: 用户移动指令中没有用户 Id,
+       * 这是为什么?
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 1;</code>
+       */
+      public float getMoveFromPosX() {
+        return moveFromPosX_;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6079,10 +6204,6 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public final boolean isInitialized() {
-        return true;
-      }
-      
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6110,19 +6231,13 @@ public final class GameMsgProtocol {
        *
        * <code>float moveFromPosX = 1;</code>
        */
-      public float getMoveFromPosX() {
-        return moveFromPosX_;
+      public Builder setMoveFromPosX(float value) {
+        
+        moveFromPosX_ = value;
+        onChanged();
+        return this;
       }
-      /**
-       * <pre>
-       * 起始位置 Y
-       * </pre>
-       *
-       * <code>float moveFromPosY = 2;</code>
-       */
-      public float getMoveFromPosY() {
-        return moveFromPosY_;
-      }
+      
       /**
        * <pre>
        * 起始位置 Y
@@ -6136,7 +6251,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 起始位置 Y
@@ -6160,9 +6274,9 @@ public final class GameMsgProtocol {
        *
        * <code>float moveFromPosX = 1;</code>
        */
-      public Builder setMoveFromPosX(float value) {
+      public Builder clearMoveFromPosX() {
         
-        moveFromPosX_ = value;
+        moveFromPosX_ = 0F;
         onChanged();
         return this;
       }
@@ -6190,7 +6304,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 移动到位置 X
@@ -6207,18 +6320,13 @@ public final class GameMsgProtocol {
       
       /**
        * <pre>
-       * XXX 注意: 用户移动指令中没有用户 Id,
-       * 这是为什么?
-       * 起始位置 X
+       * 起始位置 Y
        * </pre>
        *
-       * <code>float moveFromPosX = 1;</code>
+       * <code>float moveFromPosY = 2;</code>
        */
-      public Builder clearMoveFromPosX() {
-        
-        moveFromPosX_ = 0F;
-        onChanged();
-        return this;
+      public float getMoveFromPosY() {
+        return moveFromPosY_;
       }
       
       /**
@@ -6288,20 +6396,6 @@ public final class GameMsgProtocol {
     
     public static final int MOVEUSERID_FIELD_NUMBER = 1;
     
-    // Use UserMoveToResult.newBuilder() to construct.
-    private UserMoveToResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserMoveToResult() {
-      moveUserId_ = 0;
-      moveFromPosX_ = 0F;
-      moveFromPosY_ = 0F;
-      moveToPosX_ = 0F;
-      moveToPosY_ = 0F;
-      moveStartTime_ = 0L;
-    }
-    
     public static final int MOVEFROMPOSX_FIELD_NUMBER = 2;
     
     public static final int MOVEFROMPOSY_FIELD_NUMBER = 3;
@@ -6327,68 +6421,49 @@ public final class GameMsgProtocol {
       }
     };
     
+    /**
+     * <pre>
+     * 移动用户 Id
+     * </pre>
+     *
+     * <code>uint32 moveUserId = 1;</code>
+     */
+    public int getMoveUserId() {
+      return moveUserId_;
+    }
+    
     static {
       DEFAULT_INSTANCE
         = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult();
-    }
-    
-    /**
-     * <pre>
-     * 起始位置 X
-     * </pre>
-     *
-     * <code>float moveFromPosX = 2;</code>
-     */
-    public float getMoveFromPosX() {
-      return moveFromPosX_;
     }
     
     private int moveUserId_;
     
     private float moveFromPosX_;
     
-    /**
-     * <pre>
-     * 起始位置 Y
-     * </pre>
-     *
-     * <code>float moveFromPosY = 3;</code>
-     */
-    public float getMoveFromPosY() {
-      return moveFromPosY_;
-    }
-    
     private float moveFromPosY_;
     
     private float moveToPosX_;
-    
-    /**
-     * <pre>
-     * 移动到位置 X
-     * </pre>
-     *
-     * <code>float moveToPosX = 4;</code>
-     */
-    public float getMoveToPosX() {
-      return moveToPosX_;
-    }
     
     private float moveToPosY_;
     
     private long moveStartTime_;
     
-    /**
-     * <pre>
-     * 移动到位置 Y
-     * </pre>
-     *
-     * <code>float moveToPosY = 5;</code>
-     */
-    public float getMoveToPosY() {
-      return moveToPosY_;
+    private byte memoizedIsInitialized = -1;
+    
+    // Use UserMoveToResult.newBuilder() to construct.
+    private UserMoveToResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
     
-    private byte memoizedIsInitialized = -1;
+    private UserMoveToResult() {
+      moveUserId_ = 0;
+      moveFromPosX_ = 0F;
+      moveFromPosY_ = 0F;
+      moveToPosX_ = 0F;
+      moveToPosY_ = 0F;
+      moveStartTime_ = 0L;
+    }
     
     private UserMoveToResult(com.google.protobuf.CodedInputStream input,
                              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6454,17 +6529,6 @@ public final class GameMsgProtocol {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
-    }
-    
-    /**
-     * <pre>
-     * 启程时间戳
-     * </pre>
-     *
-     * <code>uint64 moveStartTime = 6;</code>
-     */
-    public long getMoveStartTime() {
-      return moveStartTime_;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6573,13 +6637,57 @@ public final class GameMsgProtocol {
     
     /**
      * <pre>
-     * 移动用户 Id
+     * 起始位置 X
      * </pre>
      *
-     * <code>uint32 moveUserId = 1;</code>
+     * <code>float moveFromPosX = 2;</code>
      */
-    public int getMoveUserId() {
-      return moveUserId_;
+    public float getMoveFromPosX() {
+      return moveFromPosX_;
+    }
+    
+    /**
+     * <pre>
+     * 起始位置 Y
+     * </pre>
+     *
+     * <code>float moveFromPosY = 3;</code>
+     */
+    public float getMoveFromPosY() {
+      return moveFromPosY_;
+    }
+    
+    /**
+     * <pre>
+     * 移动到位置 X
+     * </pre>
+     *
+     * <code>float moveToPosX = 4;</code>
+     */
+    public float getMoveToPosX() {
+      return moveToPosX_;
+    }
+    
+    /**
+     * <pre>
+     * 移动到位置 Y
+     * </pre>
+     *
+     * <code>float moveToPosY = 5;</code>
+     */
+    public float getMoveToPosY() {
+      return moveToPosY_;
+    }
+    
+    /**
+     * <pre>
+     * 启程时间戳
+     * </pre>
+     *
+     * <code>uint64 moveStartTime = 6;</code>
+     */
+    public long getMoveStartTime() {
+      return moveStartTime_;
     }
     
     public final boolean isInitialized() {
@@ -6749,6 +6857,11 @@ public final class GameMsgProtocol {
       
       private float moveFromPosY_;
       
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        }
+      }
+      
       private float moveToPosX_;
       
       private float moveToPosY_;
@@ -6760,17 +6873,12 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult result
-          = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserMoveToResult_descriptor;
+      }
+      
+      public Builder clone() {
+        return super.clone();
       }
       
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
@@ -6780,26 +6888,20 @@ public final class GameMsgProtocol {
             com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult.Builder.class);
       }
       
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-
       public Builder clear() {
         super.clear();
         moveUserId_ = 0;
-  
+        
         moveFromPosX_ = 0F;
-  
+        
         moveFromPosY_ = 0F;
-  
+        
         moveToPosX_ = 0F;
-  
+        
         moveToPosY_ = 0F;
-  
+        
         moveStartTime_ = 0L;
-  
+        
         return this;
       }
       
@@ -6810,6 +6912,15 @@ public final class GameMsgProtocol {
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult
           .getDefaultInstance();
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult result
+          = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult buildPartial() {
@@ -6825,13 +6936,13 @@ public final class GameMsgProtocol {
         return result;
       }
       
-      public Builder clone() {
-        return super.clone();
-      }
-      
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
                               java.lang.Object value) {
         return super.setField(field, value);
+      }
+      
+      public final boolean isInitialized() {
+        return true;
       }
       
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
@@ -6890,11 +7001,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
       /**
        * <pre>
        * 起始位置 X
@@ -6950,7 +7056,6 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-      
       /**
        * <pre>
        * 起始位置 Y
@@ -6974,7 +7079,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 起始位置 Y
@@ -6988,7 +7092,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
+
       /**
        * <pre>
        * 移动用户 Id
@@ -6999,7 +7103,6 @@ public final class GameMsgProtocol {
       public int getMoveUserId() {
         return moveUserId_;
       }
-      
       /**
        * <pre>
        * 移动到位置 X
@@ -7010,20 +7113,7 @@ public final class GameMsgProtocol {
       public float getMoveToPosX() {
         return moveToPosX_;
       }
-      /**
-       * <pre>
-       * 移动到位置 X
-       * </pre>
-       *
-       * <code>float moveToPosX = 4;</code>
-       */
-      public Builder setMoveToPosX(float value) {
-  
-        moveToPosX_ = value;
-        onChanged();
-        return this;
-      }
-      
+
       /**
        * <pre>
        * 移动用户 Id
@@ -7054,6 +7144,20 @@ public final class GameMsgProtocol {
       
       /**
        * <pre>
+       * 移动到位置 X
+       * </pre>
+       *
+       * <code>float moveToPosX = 4;</code>
+       */
+      public Builder setMoveToPosX(float value) {
+        
+        moveToPosX_ = value;
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
        * 移动到位置 Y
        * </pre>
        *
@@ -7075,7 +7179,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 移动到位置 Y
@@ -7089,7 +7192,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
+
       /**
        * <pre>
        * 移动到位置 X
@@ -7103,7 +7206,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 启程时间戳
@@ -7274,20 +7376,6 @@ public final class GameMsgProtocol {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + QUITUSERID_FIELD_NUMBER;
-      hash = (53 * hash) + getQuitUserId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -7360,10 +7448,6 @@ public final class GameMsgProtocol {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult.Builder.class);
     }
     
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    
     /**
      * <pre>
      * 退出用户 Id
@@ -7373,6 +7457,10 @@ public final class GameMsgProtocol {
      */
     public int getQuitUserId() {
       return quitUserId_;
+    }
+    
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -7427,6 +7515,20 @@ public final class GameMsgProtocol {
       return result;
     }
     
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUITUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuitUserId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -7468,13 +7570,13 @@ public final class GameMsgProtocol {
       
       private int quitUserId_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult.newBuilder()
-      private Builder() {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
         maybeForceBuilderInitialization();
       }
       
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult.newBuilder()
+      private Builder() {
         maybeForceBuilderInitialization();
       }
       
@@ -7505,17 +7607,22 @@ public final class GameMsgProtocol {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserQuitResult_descriptor;
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult result
+          = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult
           .getDefaultInstance();
       }
       
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
+      public Builder clone() {
+        return super.clone();
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult buildPartial() {
@@ -7524,10 +7631,6 @@ public final class GameMsgProtocol {
         result.quitUserId_ = quitUserId_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -7563,6 +7666,10 @@ public final class GameMsgProtocol {
         }
       }
       
+      public final boolean isInitialized() {
+        return true;
+      }
+      
       public Builder mergeFrom(
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult other) {
         if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult
@@ -7575,10 +7682,6 @@ public final class GameMsgProtocol {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
@@ -7608,6 +7711,7 @@ public final class GameMsgProtocol {
       public int getQuitUserId() {
         return quitUserId_;
       }
+
       /**
        * <pre>
        * 退出用户 Id
@@ -7616,7 +7720,7 @@ public final class GameMsgProtocol {
        * <code>uint32 quitUserId = 1;</code>
        */
       public Builder setQuitUserId(int value) {
-  
+        
         quitUserId_ = value;
         onChanged();
         return this;
@@ -7636,8 +7740,7 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
@@ -8079,6 +8182,17 @@ public final class GameMsgProtocol {
     
     public static final int STOPUSERID_FIELD_NUMBER = 1;
     
+    // Use UserStopResult.newBuilder() to construct.
+    private UserStopResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserStopResult() {
+      stopUserId_ = 0;
+      stopAtPosX_ = 0F;
+      stopAtPosY_ = 0F;
+    }
+    
     public static final int STOPATPOSX_FIELD_NUMBER = 2;
     
     public static final int STOPATPOSY_FIELD_NUMBER = 3;
@@ -8102,23 +8216,45 @@ public final class GameMsgProtocol {
       DEFAULT_INSTANCE = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult();
     }
     
+    /**
+     * <pre>
+     * 停驻用户 Id
+     * </pre>
+     *
+     * <code>uint32 stopUserId = 1;</code>
+     */
+    public int getStopUserId() {
+      return stopUserId_;
+    }
+    
     private int stopUserId_;
     
     private float stopAtPosX_;
+    
+    /**
+     * <pre>
+     * 停驻在位置 X
+     * </pre>
+     *
+     * <code>float stopAtPosX = 2;</code>
+     */
+    public float getStopAtPosX() {
+      return stopAtPosX_;
+    }
     
     private float stopAtPosY_;
     
     private byte memoizedIsInitialized = -1;
     
-    // Use UserStopResult.newBuilder() to construct.
-    private UserStopResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserStopResult() {
-      stopUserId_ = 0;
-      stopAtPosX_ = 0F;
-      stopAtPosY_ = 0F;
+    /**
+     * <pre>
+     * 停驻在位置 Y
+     * </pre>
+     *
+     * <code>float stopAtPosY = 3;</code>
+     */
+    public float getStopAtPosY() {
+      return stopAtPosY_;
     }
     
     private UserStopResult(com.google.protobuf.CodedInputStream input,
@@ -8276,39 +8412,6 @@ public final class GameMsgProtocol {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult.Builder.class);
     }
     
-    /**
-     * <pre>
-     * 停驻用户 Id
-     * </pre>
-     *
-     * <code>uint32 stopUserId = 1;</code>
-     */
-    public int getStopUserId() {
-      return stopUserId_;
-    }
-    
-    /**
-     * <pre>
-     * 停驻在位置 X
-     * </pre>
-     *
-     * <code>float stopAtPosX = 2;</code>
-     */
-    public float getStopAtPosX() {
-      return stopAtPosX_;
-    }
-    
-    /**
-     * <pre>
-     * 停驻在位置 Y
-     * </pre>
-     *
-     * <code>float stopAtPosY = 3;</code>
-     */
-    public float getStopAtPosY() {
-      return stopAtPosY_;
-    }
-    
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) {
@@ -8464,6 +8567,15 @@ public final class GameMsgProtocol {
         }
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult result
+          = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
       public Builder clear() {
         super.clear();
         stopUserId_ = 0;
@@ -8475,6 +8587,10 @@ public final class GameMsgProtocol {
         return this;
       }
       
+      public Builder clone() {
+        return super.clone();
+      }
+      
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserStopResult_descriptor;
       }
@@ -8482,14 +8598,6 @@ public final class GameMsgProtocol {
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult
           .getDefaultInstance();
-      }
-      
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult buildPartial() {
@@ -8502,10 +8610,6 @@ public final class GameMsgProtocol {
         return result;
       }
       
-      public Builder clone() {
-        return super.clone();
-      }
-      
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
                               java.lang.Object value) {
         return super.setField(field, value);
@@ -8513,16 +8617,6 @@ public final class GameMsgProtocol {
       
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult) {
-          return mergeFrom(
-            (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
       }
       
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
@@ -8537,6 +8631,16 @@ public final class GameMsgProtocol {
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       java.lang.Object value) {
         return super.addRepeatedField(field, value);
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult) {
+          return mergeFrom(
+            (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
       }
       
       public Builder mergeFrom(
@@ -8558,7 +8662,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 停驻用户 Id
@@ -8582,7 +8685,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 停驻用户 Id
@@ -8596,11 +8698,10 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
       /**
        * <pre>
        * 停驻在位置 X
@@ -8679,7 +8780,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 停驻在位置 Y
@@ -8688,7 +8788,7 @@ public final class GameMsgProtocol {
        * <code>float stopAtPosY = 3;</code>
        */
       public Builder clearStopAtPosY() {
-        
+  
         stopAtPosY_ = 0F;
         onChanged();
         return this;
@@ -8699,8 +8799,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -8825,20 +8924,6 @@ public final class GameMsgProtocol {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUserId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -8911,10 +8996,6 @@ public final class GameMsgProtocol {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd.Builder.class);
     }
     
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    
     /**
      * <pre>
      * 目标用户 Id
@@ -8924,6 +9005,10 @@ public final class GameMsgProtocol {
      */
     public int getTargetUserId() {
       return targetUserId_;
+    }
+    
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -8976,6 +9061,20 @@ public final class GameMsgProtocol {
       result = result && (getTargetUserId() == other.getTargetUserId());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUserId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     public Builder newBuilderForType() {
@@ -9067,16 +9166,16 @@ public final class GameMsgProtocol {
           .getDefaultInstance();
       }
       
+      public Builder clone() {
+        return super.clone();
+      }
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd buildPartial() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd result
           = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd(this);
         result.targetUserId_ = targetUserId_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -9112,6 +9211,10 @@ public final class GameMsgProtocol {
         }
       }
       
+      public final boolean isInitialized() {
+        return true;
+      }
+      
       public Builder mergeFrom(
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd other) {
         if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd
@@ -9124,10 +9227,6 @@ public final class GameMsgProtocol {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
@@ -9170,7 +9269,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 目标用户 Id
@@ -9179,7 +9277,7 @@ public final class GameMsgProtocol {
        * <code>uint32 targetUserId = 1;</code>
        */
       public Builder clearTargetUserId() {
-        
+  
         targetUserId_ = 0;
         onChanged();
         return this;
@@ -9190,8 +9288,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -9246,9 +9343,31 @@ public final class GameMsgProtocol {
     
     private int attkUserId_;
     
+    /**
+     * <pre>
+     * 发动攻击的用户 Id
+     * </pre>
+     *
+     * <code>uint32 attkUserId = 1;</code>
+     */
+    public int getAttkUserId() {
+      return attkUserId_;
+    }
+    
     private int targetUserId_;
     
     private byte memoizedIsInitialized = -1;
+    
+    /**
+     * <pre>
+     * 目标用户 Id
+     * </pre>
+     *
+     * <code>uint32 targetUserId = 2;</code>
+     */
+    public int getTargetUserId() {
+      return targetUserId_;
+    }
     
     private UserAttkResult(com.google.protobuf.CodedInputStream input,
                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9329,22 +9448,6 @@ public final class GameMsgProtocol {
       return PARSER.parseFrom(data);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ATTKUSERID_FIELD_NUMBER;
-      hash = (53 * hash) + getAttkUserId();
-      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUserId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9387,6 +9490,10 @@ public final class GameMsgProtocol {
         .parseWithIOException(PARSER, input, extensionRegistry);
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     public static Builder newBuilder(
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -9410,32 +9517,6 @@ public final class GameMsgProtocol {
         .ensureFieldAccessorsInitialized(
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult.Builder.class);
-    }
-    
-    /**
-     * <pre>
-     * 发动攻击的用户 Id
-     * </pre>
-     *
-     * <code>uint32 attkUserId = 1;</code>
-     */
-    public int getAttkUserId() {
-      return attkUserId_;
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    
-    /**
-     * <pre>
-     * 目标用户 Id
-     * </pre>
-     *
-     * <code>uint32 targetUserId = 2;</code>
-     */
-    public int getTargetUserId() {
-      return targetUserId_;
     }
     
     public final boolean isInitialized() {
@@ -9496,6 +9577,22 @@ public final class GameMsgProtocol {
       result = result && (getTargetUserId() == other.getTargetUserId());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ATTKUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getAttkUserId();
+      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUserId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     public Builder newBuilderForType() {
@@ -9559,7 +9656,8 @@ public final class GameMsgProtocol {
       }
       
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       
@@ -9572,21 +9670,26 @@ public final class GameMsgProtocol {
         return this;
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult result
+          = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserAttkResult_descriptor;
+      }
+      
+      public Builder clone() {
+        return super.clone();
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult
           .getDefaultInstance();
-      }
-      
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult buildPartial() {
@@ -9596,10 +9699,6 @@ public final class GameMsgProtocol {
         result.targetUserId_ = targetUserId_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -9623,6 +9722,10 @@ public final class GameMsgProtocol {
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       java.lang.Object value) {
         return super.addRepeatedField(field, value);
+      }
+      
+      public final boolean isInitialized() {
+        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -9651,11 +9754,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
       /**
        * <pre>
        * 发动攻击的用户 Id
@@ -9734,7 +9832,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 目标用户 Id
@@ -9743,7 +9840,7 @@ public final class GameMsgProtocol {
        * <code>uint32 targetUserId = 2;</code>
        */
       public Builder clearTargetUserId() {
-        
+  
         targetUserId_ = 0;
         onChanged();
         return this;
@@ -9754,8 +9851,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -9812,9 +9908,31 @@ public final class GameMsgProtocol {
     
     private int targetUserId_;
     
+    /**
+     * <pre>
+     * 目标用户 Id
+     * </pre>
+     *
+     * <code>uint32 targetUserId = 1;</code>
+     */
+    public int getTargetUserId() {
+      return targetUserId_;
+    }
+    
     private int subtractHp_;
     
     private byte memoizedIsInitialized = -1;
+    
+    /**
+     * <pre>
+     * 减血量
+     * </pre>
+     *
+     * <code>uint32 subtractHp = 2;</code>
+     */
+    public int getSubtractHp() {
+      return subtractHp_;
+    }
     
     private UserSubtractHpResult(com.google.protobuf.CodedInputStream input,
                                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9895,22 +10013,6 @@ public final class GameMsgProtocol {
       return PARSER.parseFrom(data);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUserId();
-      hash = (37 * hash) + SUBTRACTHP_FIELD_NUMBER;
-      hash = (53 * hash) + getSubtractHp();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9953,6 +10055,10 @@ public final class GameMsgProtocol {
         .parseWithIOException(PARSER, input, extensionRegistry);
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     public static Builder newBuilder(
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -9976,32 +10082,6 @@ public final class GameMsgProtocol {
         .ensureFieldAccessorsInitialized(
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult.Builder.class);
-    }
-    
-    /**
-     * <pre>
-     * 目标用户 Id
-     * </pre>
-     *
-     * <code>uint32 targetUserId = 1;</code>
-     */
-    public int getTargetUserId() {
-      return targetUserId_;
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    
-    /**
-     * <pre>
-     * 减血量
-     * </pre>
-     *
-     * <code>uint32 subtractHp = 2;</code>
-     */
-    public int getSubtractHp() {
-      return subtractHp_;
     }
     
     public final boolean isInitialized() {
@@ -10062,6 +10142,22 @@ public final class GameMsgProtocol {
       result = result && (getSubtractHp() == other.getSubtractHp());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUserId();
+      hash = (37 * hash) + SUBTRACTHP_FIELD_NUMBER;
+      hash = (53 * hash) + getSubtractHp();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     public Builder newBuilderForType() {
@@ -10125,7 +10221,8 @@ public final class GameMsgProtocol {
       }
       
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       
@@ -10138,21 +10235,26 @@ public final class GameMsgProtocol {
         return this;
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult result
+          = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserSubtractHpResult_descriptor;
+      }
+      
+      public Builder clone() {
+        return super.clone();
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult
           .getDefaultInstance();
-      }
-      
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult buildPartial() {
@@ -10162,10 +10264,6 @@ public final class GameMsgProtocol {
         result.subtractHp_ = subtractHp_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -10189,6 +10287,10 @@ public final class GameMsgProtocol {
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       java.lang.Object value) {
         return super.addRepeatedField(field, value);
+      }
+      
+      public final boolean isInitialized() {
+        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10218,21 +10320,6 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      /**
-       * <pre>
-       * 目标用户 Id
-       * </pre>
-       *
-       * <code>uint32 targetUserId = 1;</code>
-       */
-      public int getTargetUserId() {
-        return targetUserId_;
-      }
-      
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10260,11 +10347,8 @@ public final class GameMsgProtocol {
        *
        * <code>uint32 targetUserId = 1;</code>
        */
-      public Builder clearTargetUserId() {
-        
-        targetUserId_ = 0;
-        onChanged();
-        return this;
+      public int getTargetUserId() {
+        return targetUserId_;
       }
       
       /**
@@ -10280,6 +10364,21 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
+      /**
+       * <pre>
+       * 目标用户 Id
+       * </pre>
+       *
+       * <code>uint32 targetUserId = 1;</code>
+       */
+      public Builder clearTargetUserId() {
+        
+        targetUserId_ = 0;
+        onChanged();
+        return this;
+      }
+      
       /**
        * <pre>
        * 减血量
@@ -10303,7 +10402,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 减血量
@@ -10312,7 +10410,7 @@ public final class GameMsgProtocol {
        * <code>uint32 subtractHp = 2;</code>
        */
       public Builder clearSubtractHp() {
-        
+  
         subtractHp_ = 0;
         onChanged();
         return this;
@@ -10323,8 +10421,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -10447,20 +10544,6 @@ public final class GameMsgProtocol {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUserId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -10513,6 +10596,14 @@ public final class GameMsgProtocol {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+    
+    public static com.google.protobuf.Parser<UserDieResult> parser() {
+      return PARSER;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -10536,6 +10627,10 @@ public final class GameMsgProtocol {
       return targetUserId_;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) {
@@ -10547,10 +10642,6 @@ public final class GameMsgProtocol {
       
       memoizedIsInitialized = 1;
       return true;
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
@@ -10592,6 +10683,20 @@ public final class GameMsgProtocol {
       return result;
     }
     
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TARGETUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUserId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -10601,25 +10706,16 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    
-    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-    
+
     @java.lang.Override
     public com.google.protobuf.Parser<UserDieResult> getParserForType() {
       return PARSER;
     }
-    
-    public static com.google.protobuf.Parser<UserDieResult> parser() {
-      return PARSER;
-    }
-    
+
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10638,13 +10734,13 @@ public final class GameMsgProtocol {
       
       private int targetUserId_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult.newBuilder()
-      private Builder() {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
         maybeForceBuilderInitialization();
       }
       
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult.newBuilder()
+      private Builder() {
         maybeForceBuilderInitialization();
       }
       
@@ -10675,11 +10771,6 @@ public final class GameMsgProtocol {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserDieResult_descriptor;
       }
       
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult getDefaultInstanceForType() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult
-          .getDefaultInstance();
-      }
-      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult build() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -10688,16 +10779,21 @@ public final class GameMsgProtocol {
         return result;
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult getDefaultInstanceForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult
+          .getDefaultInstance();
+      }
+      
+      public Builder clone() {
+        return super.clone();
+      }
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult buildPartial() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult result
           = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult(this);
         result.targetUserId_ = targetUserId_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -10733,6 +10829,10 @@ public final class GameMsgProtocol {
         }
       }
       
+      public final boolean isInitialized() {
+        return true;
+      }
+      
       public Builder mergeFrom(
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult other) {
         if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult
@@ -10745,10 +10845,6 @@ public final class GameMsgProtocol {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
@@ -10768,7 +10864,6 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-      
       /**
        * <pre>
        * 目标用户 Id
@@ -10779,7 +10874,6 @@ public final class GameMsgProtocol {
       public int getTargetUserId() {
         return targetUserId_;
       }
-      
       /**
        * <pre>
        * 目标用户 Id
@@ -10793,7 +10887,6 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-      
       /**
        * <pre>
        * 目标用户 Id
@@ -10802,7 +10895,7 @@ public final class GameMsgProtocol {
        * <code>uint32 targetUserId = 1;</code>
        */
       public Builder clearTargetUserId() {
-        
+  
         targetUserId_ = 0;
         onChanged();
         return this;
@@ -10813,8 +10906,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -10837,6 +10929,16 @@ public final class GameMsgProtocol {
                                                                                           UserLoginCmdOrBuilder {
     
     public static final int USERNAME_FIELD_NUMBER = 1;
+    
+    // Use UserLoginCmd.newBuilder() to construct.
+    private UserLoginCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserLoginCmd() {
+      userName_ = "";
+      password_ = "";
+    }
     
     public static final int PASSWORD_FIELD_NUMBER = 2;
     
@@ -10865,16 +10967,6 @@ public final class GameMsgProtocol {
     
     private byte memoizedIsInitialized = -1;
     
-    // Use UserLoginCmd.newBuilder() to construct.
-    private UserLoginCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserLoginCmd() {
-      userName_ = "";
-      password_ = "";
-    }
-    
     private UserLoginCmd(com.google.protobuf.CodedInputStream input,
                          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10901,13 +10993,13 @@ public final class GameMsgProtocol {
             }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+
               userName_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+  
               password_ = s;
               break;
             }
@@ -10965,6 +11057,22 @@ public final class GameMsgProtocol {
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd parseFrom(
       java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd parseFrom(
@@ -11026,7 +11134,7 @@ public final class GameMsgProtocol {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd.Builder.class);
     }
-    
+
     /**
      * <pre>
      * 用户名称
@@ -11064,7 +11172,7 @@ public final class GameMsgProtocol {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     /**
      * <pre>
      * 用户密码
@@ -11162,22 +11270,6 @@ public final class GameMsgProtocol {
       return result;
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -11187,17 +11279,16 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    
+
     @java.lang.Override
     public com.google.protobuf.Parser<UserLoginCmd> getParserForType() {
       return PARSER;
     }
-    
+
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11255,21 +11346,25 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserLoginCmd_descriptor;
-      }
-      
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd getDefaultInstanceForType() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd
-          .getDefaultInstance();
-      }
-      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd build() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserLoginCmd_descriptor;
+      }
+      
+      public Builder clone() {
+        return super.clone();
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd getDefaultInstanceForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd
+          .getDefaultInstance();
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd buildPartial() {
@@ -11279,10 +11374,6 @@ public final class GameMsgProtocol {
         result.password_ = password_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -11306,6 +11397,10 @@ public final class GameMsgProtocol {
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       java.lang.Object value) {
         return super.addRepeatedField(field, value);
+      }
+      
+      public final boolean isInitialized() {
+        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -11337,10 +11432,6 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public final boolean isInitialized() {
-        return true;
-      }
-      
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11358,7 +11449,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-      
+
       /**
        * <pre>
        * 用户名称
@@ -11402,6 +11493,20 @@ public final class GameMsgProtocol {
        *
        * <code>string userName = 1;</code>
        */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 1;</code>
+       */
       public com.google.protobuf.ByteString getUserNameBytes() {
         java.lang.Object ref = userName_;
         if (ref instanceof String) {
@@ -11424,28 +11529,14 @@ public final class GameMsgProtocol {
       public Builder setUserNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+  }
+  checkByteStringIsUtf8(value);
         
         userName_ = value;
         onChanged();
         return this;
       }
-      
-      /**
-       * <pre>
-       * 用户名称
-       * </pre>
-       *
-       * <code>string userName = 1;</code>
-       */
-      public Builder clearUserName() {
-        
-        userName_ = getDefaultInstance().getUserName();
-        onChanged();
-        return this;
-      }
-      
+
       /**
        * <pre>
        * 用户密码
@@ -11508,13 +11599,9 @@ public final class GameMsgProtocol {
        *
        * <code>string password = 2;</code>
        */
-      public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+      public Builder clearPassword() {
         
-        password_ = value;
+        password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
       }
@@ -11526,9 +11613,13 @@ public final class GameMsgProtocol {
        *
        * <code>string password = 2;</code>
        */
-      public Builder clearPassword() {
+      public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         
-        password_ = getDefaultInstance().getPassword();
+        password_ = value;
         onChanged();
         return this;
       }
@@ -11538,8 +11629,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -11561,6 +11651,17 @@ public final class GameMsgProtocol {
       UserLoginResultOrBuilder {
     
     public static final int USERID_FIELD_NUMBER = 1;
+    
+    // Use UserLoginResult.newBuilder() to construct.
+    private UserLoginResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserLoginResult() {
+      userId_ = 0;
+      userName_ = "";
+      heroAvatar_ = "";
+    }
     
     public static final int USERNAME_FIELD_NUMBER = 2;
     
@@ -11586,6 +11687,18 @@ public final class GameMsgProtocol {
         = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult();
     }
     
+    /**
+     * <pre>
+     * 用户 Id,
+     * 如果是 -1 则说明登录失败
+     * </pre>
+     *
+     * <code>uint32 userId = 1;</code>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+    
     private int userId_;
     
     private volatile java.lang.Object userName_;
@@ -11593,17 +11706,6 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
-    
-    // Use UserLoginResult.newBuilder() to construct.
-    private UserLoginResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserLoginResult() {
-      userId_ = 0;
-      userName_ = "";
-      heroAvatar_ = "";
-    }
     
     private UserLoginResult(com.google.protobuf.CodedInputStream input,
                             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11630,19 +11732,19 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-              
+
               userId_ = input.readUInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+
               userName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+  
               heroAvatar_ = s;
               break;
             }
@@ -11702,6 +11804,24 @@ public final class GameMsgProtocol {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
     
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -11758,22 +11878,9 @@ public final class GameMsgProtocol {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserLoginResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.class,
-          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.Builder.class);
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.class, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.Builder.class);
     }
-    
-    /**
-     * <pre>
-     * 用户 Id,
-     * 如果是 -1 则说明登录失败
-     * </pre>
-     *
-     * <code>uint32 userId = 1;</code>
-     */
-    public int getUserId() {
-      return userId_;
-    }
-    
+
     /**
      * <pre>
      * 用户名称
@@ -11811,7 +11918,7 @@ public final class GameMsgProtocol {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     /**
      * <pre>
      * 英雄形象
@@ -11916,24 +12023,6 @@ public final class GameMsgProtocol {
       return result;
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
-      hash = (53 * hash) + getHeroAvatar().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -11943,17 +12032,16 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    
+
     @java.lang.Override
     public com.google.protobuf.Parser<UserLoginResult> getParserForType() {
       return PARSER;
     }
-    
+
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11974,12 +12062,12 @@ public final class GameMsgProtocol {
       
       private java.lang.Object userName_ = "";
       
-      private java.lang.Object heroAvatar_ = "";
-      
       // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
+      
+      private java.lang.Object heroAvatar_ = "";
       
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
@@ -12017,18 +12105,13 @@ public final class GameMsgProtocol {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserLoginResult_descriptor;
       }
       
-      public Builder clone() {
-        return super.clone();
-      }
-      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult getDefaultInstanceForType() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult
           .getDefaultInstance();
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult result
-          = buildPartial();
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12043,6 +12126,10 @@ public final class GameMsgProtocol {
         result.heroAvatar_ = heroAvatar_;
         onBuilt();
         return result;
+      }
+      
+      public Builder clone() {
+        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -12063,6 +12150,10 @@ public final class GameMsgProtocol {
         return super.setRepeatedField(field, index, value);
       }
       
+      public final boolean isInitialized() {
+        return true;
+      }
+      
       public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
                                       java.lang.Object value) {
         return super.addRepeatedField(field, value);
@@ -12070,12 +12161,51 @@ public final class GameMsgProtocol {
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult) {
-          return mergeFrom(
-            (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult) other);
+          return mergeFrom((com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
+      }
+      /**
+       * <pre>
+       * 用户 Id,
+       * 如果是 -1 则说明登录失败
+       * </pre>
+       *
+       * <code>uint32 userId = 1;</code>
+       */
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <pre>
+       * 用户 Id,
+       * 如果是 -1 则说明登录失败
+       * </pre>
+       *
+       * <code>uint32 userId = 1;</code>
+       */
+      public Builder setUserId(int value) {
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 用户 Id,
+       * 如果是 -1 则说明登录失败
+       * </pre>
+       *
+       * <code>uint32 userId = 1;</code>
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0;
+        onChanged();
+        return this;
       }
       
       public Builder mergeFrom(
@@ -12100,10 +12230,6 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public final boolean isInitialized() {
-        return true;
-      }
-      
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12119,48 +12245,6 @@ public final class GameMsgProtocol {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-      
-      /**
-       * <pre>
-       * 用户 Id,
-       * 如果是 -1 则说明登录失败
-       * </pre>
-       *
-       * <code>uint32 userId = 1;</code>
-       */
-      public int getUserId() {
-        return userId_;
-      }
-      
-      /**
-       * <pre>
-       * 用户 Id,
-       * 如果是 -1 则说明登录失败
-       * </pre>
-       *
-       * <code>uint32 userId = 1;</code>
-       */
-      public Builder setUserId(int value) {
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      
-      /**
-       * <pre>
-       * 用户 Id,
-       * 如果是 -1 则说明登录失败
-       * </pre>
-       *
-       * <code>uint32 userId = 1;</code>
-       */
-      public Builder clearUserId() {
-        
-        userId_ = 0;
-        onChanged();
         return this;
       }
       
@@ -12207,6 +12291,20 @@ public final class GameMsgProtocol {
        *
        * <code>string userName = 2;</code>
        */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 2;</code>
+       */
       public com.google.protobuf.ByteString getUserNameBytes() {
         java.lang.Object ref = userName_;
         if (ref instanceof String) {
@@ -12229,28 +12327,14 @@ public final class GameMsgProtocol {
       public Builder setUserNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+  }
+  checkByteStringIsUtf8(value);
         
         userName_ = value;
         onChanged();
         return this;
       }
-      
-      /**
-       * <pre>
-       * 用户名称
-       * </pre>
-       *
-       * <code>string userName = 2;</code>
-       */
-      public Builder clearUserName() {
-        
-        userName_ = getDefaultInstance().getUserName();
-        onChanged();
-        return this;
-      }
-      
+
       /**
        * <pre>
        * 英雄形象
@@ -12313,13 +12397,9 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+      public Builder clearHeroAvatar() {
         
-        heroAvatar_ = value;
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
         onChanged();
         return this;
       }
@@ -12331,9 +12411,13 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder clearHeroAvatar() {
+      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         
-        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        heroAvatar_ = value;
         onChanged();
         return this;
       }
@@ -12343,8 +12427,7 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -12368,6 +12451,15 @@ public final class GameMsgProtocol {
     
     public static final int HEROAVATAR_FIELD_NUMBER = 1;
     
+    // Use SelectHeroCmd.newBuilder() to construct.
+    private SelectHeroCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private SelectHeroCmd() {
+      heroAvatar_ = "";
+    }
+    
     private static final long serialVersionUID = 0L;
     
     // @@protoc_insertion_point(class_scope:msg.SelectHeroCmd)
@@ -12390,15 +12482,6 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
-    
-    // Use SelectHeroCmd.newBuilder() to construct.
-    private SelectHeroCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private SelectHeroCmd() {
-      heroAvatar_ = "";
-    }
     
     private SelectHeroCmd(com.google.protobuf.CodedInputStream input,
                           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12426,7 +12509,7 @@ public final class GameMsgProtocol {
             }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              
+  
               heroAvatar_ = s;
               break;
             }
@@ -12473,6 +12556,20 @@ public final class GameMsgProtocol {
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd parseFrom(
@@ -12542,10 +12639,9 @@ public final class GameMsgProtocol {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_SelectHeroCmd_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.class,
-          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.Builder.class);
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.class, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.Builder.class);
     }
-    
+
     /**
      * <pre>
      * 英雄形象
@@ -12636,20 +12732,6 @@ public final class GameMsgProtocol {
       return result;
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
-      hash = (53 * hash) + getHeroAvatar().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -12659,12 +12741,11 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    
+
     @java.lang.Override
     public com.google.protobuf.Parser<SelectHeroCmd> getParserForType() {
       return PARSER;
@@ -12690,13 +12771,13 @@ public final class GameMsgProtocol {
       
       private java.lang.Object heroAvatar_ = "";
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.newBuilder()
-      private Builder() {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
         maybeForceBuilderInitialization();
       }
       
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.newBuilder()
+      private Builder() {
         maybeForceBuilderInitialization();
       }
       
@@ -12727,11 +12808,6 @@ public final class GameMsgProtocol {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_SelectHeroCmd_descriptor;
       }
       
-      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd getDefaultInstanceForType() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd
-          .getDefaultInstance();
-      }
-      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd build() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd result = buildPartial();
         if (!result.isInitialized()) {
@@ -12740,16 +12816,21 @@ public final class GameMsgProtocol {
         return result;
       }
       
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd getDefaultInstanceForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd
+          .getDefaultInstance();
+      }
+      
+      public Builder clone() {
+        return super.clone();
+      }
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd buildPartial() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd result
           = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd(this);
         result.heroAvatar_ = heroAvatar_;
         onBuilt();
         return result;
-      }
-      
-      public Builder clone() {
-        return super.clone();
       }
       
       public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -12785,10 +12866,6 @@ public final class GameMsgProtocol {
         }
       }
       
-      public final boolean isInitialized() {
-        return true;
-      }
-      
       public Builder mergeFrom(
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd other) {
         if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd
@@ -12802,6 +12879,10 @@ public final class GameMsgProtocol {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
       }
       
       public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
@@ -12821,7 +12902,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-      
+
       /**
        * <pre>
        * 英雄形象
@@ -12884,13 +12965,9 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 1;</code>
        */
-      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+      public Builder clearHeroAvatar() {
         
-        heroAvatar_ = value;
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
         onChanged();
         return this;
       }
@@ -12902,9 +12979,13 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 1;</code>
        */
-      public Builder clearHeroAvatar() {
+      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         
-        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        heroAvatar_ = value;
         onChanged();
         return this;
       }
@@ -12915,7 +12996,7 @@ public final class GameMsgProtocol {
       }
       
       public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -12937,6 +13018,15 @@ public final class GameMsgProtocol {
       SelectHeroResultOrBuilder {
     
     public static final int HEROAVATAR_FIELD_NUMBER = 1;
+    
+    // Use SelectHeroResult.newBuilder() to construct.
+    private SelectHeroResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private SelectHeroResult() {
+      heroAvatar_ = "";
+    }
     
     private static final long serialVersionUID = 0L;
     
@@ -12961,15 +13051,6 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
-    
-    // Use SelectHeroResult.newBuilder() to construct.
-    private SelectHeroResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private SelectHeroResult() {
-      heroAvatar_ = "";
-    }
     
     private SelectHeroResult(com.google.protobuf.CodedInputStream input,
                              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13088,21 +13169,9 @@ public final class GameMsgProtocol {
         .parseWithIOException(PARSER, input, extensionRegistry);
     }
     
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    
     public static Builder newBuilder(
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    
-    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-    
-    public static com.google.protobuf.Parser<SelectHeroResult> parser() {
-      return PARSER;
     }
     
     @java.lang.Override
@@ -13177,6 +13246,10 @@ public final class GameMsgProtocol {
       unknownFields.writeTo(output);
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) {
@@ -13238,8 +13311,16 @@ public final class GameMsgProtocol {
       return builder;
     }
     
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+    
     @java.lang.Override
     public com.google.protobuf.Parser<SelectHeroResult> getParserForType() {
+      return PARSER;
+    }
+    
+    public static com.google.protobuf.Parser<SelectHeroResult> parser() {
       return PARSER;
     }
     
@@ -13251,7 +13332,7 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code msg.SelectHeroResult}
      */
     public static final class Builder
@@ -13497,6 +13578,2325 @@ public final class GameMsgProtocol {
       }
       
       // @@protoc_insertion_point(builder_scope:msg.SelectHeroResult)
+    }
+    
+  }
+  
+  /**
+   * <pre>
+   * 获取排行榜
+   * /////////////////////////////////////////////////////////////////////
+   * 指令
+   * </pre>
+   * <p>
+   * Protobuf type {@code msg.GetRankCmd}
+   */
+  public static final class GetRankCmd extends com.google.protobuf.GeneratedMessageV3 implements
+                                                                                      // @@protoc_insertion_point(message_implements:msg.GetRankCmd)
+                                                                                        GetRankCmdOrBuilder {
+    
+    private static final long serialVersionUID = 0L;
+    
+    // @@protoc_insertion_point(class_scope:msg.GetRankCmd)
+    private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd
+      DEFAULT_INSTANCE;
+    
+    private static final com.google.protobuf.Parser<GetRankCmd> PARSER
+      = new com.google.protobuf.AbstractParser<GetRankCmd>() {
+      public GetRankCmd parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                                         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetRankCmd(input, extensionRegistry);
+      }
+    };
+    
+    static {
+      DEFAULT_INSTANCE = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd();
+    }
+    
+    private byte memoizedIsInitialized = -1;
+    
+    // Use GetRankCmd.newBuilder() to construct.
+    private GetRankCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private GetRankCmd() {
+    }
+    
+    private GetRankCmd(com.google.protobuf.CodedInputStream input,
+                       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields
+        = com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankCmd_descriptor;
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
+    public static Builder newBuilder(
+      com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+    
+    public static com.google.protobuf.Parser<GetRankCmd> parser() {
+      return PARSER;
+    }
+    
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+    
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+      return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankCmd_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.class,
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.Builder.class);
+    }
+    
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+    
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) {
+        return size;
+      }
+      
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+    
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd)) {
+        return super.equals(obj);
+      }
+      com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd other
+        = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd) obj;
+      
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+    
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRankCmd> getParserForType() {
+      return PARSER;
+    }
+    
+    public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+    
+    /**
+     * <pre>
+     * 获取排行榜
+     * /////////////////////////////////////////////////////////////////////
+     * 指令
+     * </pre>
+     * <p>
+     * Protobuf type {@code msg.GetRankCmd}
+     */
+    public static final class Builder
+      extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                                                                      // @@protoc_insertion_point(builder_implements:msg.GetRankCmd)
+                                                                        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmdOrBuilder {
+      
+      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankCmd_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankCmd_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.class,
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.Builder.class);
+      }
+      
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        }
+      }
+      
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankCmd_descriptor;
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd getDefaultInstanceForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd
+          .getDefaultInstance();
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd buildPartial() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd result
+          = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd(this);
+        onBuilt();
+        return result;
+      }
+      
+      public Builder clone() {
+        return super.clone();
+      }
+      
+      public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                              java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      
+      public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                      int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      
+      public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                      java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd) {
+          return mergeFrom(
+            (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd other) {
+        if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd
+          .getDefaultInstance()) {
+          return this;
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd) e
+            .getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      
+      public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+      
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+      
+      // @@protoc_insertion_point(builder_scope:msg.GetRankCmd)
+    }
+    
+  }
+  
+  /**
+   * <pre>
+   * 结果
+   * </pre>
+   * <p>
+   * Protobuf type {@code msg.GetRankResult}
+   */
+  public static final class GetRankResult extends com.google.protobuf.GeneratedMessageV3 implements
+                                                                                         // @@protoc_insertion_point(message_implements:msg.GetRankResult)
+                                                                                           GetRankResultOrBuilder {
+    
+    public static final int RANKITEM_FIELD_NUMBER = 1;
+    
+    private static final long serialVersionUID = 0L;
+    
+    // @@protoc_insertion_point(class_scope:msg.GetRankResult)
+    private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult
+      DEFAULT_INSTANCE;
+    
+    private static final com.google.protobuf.Parser<GetRankResult> PARSER
+      = new com.google.protobuf.AbstractParser<GetRankResult>() {
+      public GetRankResult parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetRankResult(input, extensionRegistry);
+      }
+    };
+    
+    static {
+      DEFAULT_INSTANCE = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult();
+    }
+    
+    private java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem>
+      rankItem_;
+    
+    private byte memoizedIsInitialized = -1;
+    
+    // Use GetRankResult.newBuilder() to construct.
+    private GetRankResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private GetRankResult() {
+      rankItem_ = java.util.Collections.emptyList();
+    }
+    
+    private GetRankResult(com.google.protobuf.CodedInputStream input,
+                          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields
+        = com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                rankItem_
+                  = new java.util.ArrayList<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rankItem_.add(input.readMessage(
+                com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem
+                  .parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          rankItem_ = java.util.Collections.unmodifiableList(rankItem_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_descriptor;
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
+    public static Builder newBuilder(
+      com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+    
+    public static com.google.protobuf.Parser<GetRankResult> parser() {
+      return PARSER;
+    }
+    
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+    
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+      return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.class,
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.Builder.class);
+    }
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    public java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem> getRankItemList() {
+      return rankItem_;
+    }
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    public java.util.List<? extends com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder> getRankItemOrBuilderList() {
+      return rankItem_;
+    }
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    public int getRankItemCount() {
+      return rankItem_.size();
+    }
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem getRankItem(
+      int index) {
+      return rankItem_.get(index);
+    }
+    
+    /**
+     * <pre>
+     * 排名条目
+     * </pre>
+     *
+     * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+     */
+    public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder getRankItemOrBuilder(
+      int index) {
+      return rankItem_.get(index);
+    }
+    
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < rankItem_.size(); i++) {
+        output.writeMessage(1, rankItem_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+    
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) {
+        return size;
+      }
+      
+      size = 0;
+      for (int i = 0; i < rankItem_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, rankItem_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+    
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult)) {
+        return super.equals(obj);
+      }
+      com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult other
+        = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult) obj;
+      
+      boolean result = true;
+      result = result && getRankItemList().equals(other.getRankItemList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRankItemCount() > 0) {
+        hash = (37 * hash) + RANKITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getRankItemList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+    
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRankResult> getParserForType() {
+      return PARSER;
+    }
+    
+    public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+    
+    public interface RankItemOrBuilder extends
+                                       // @@protoc_insertion_point(interface_extends:msg.GetRankResult.RankItem)
+                                         com.google.protobuf.MessageOrBuilder {
+      
+      /**
+       * <pre>
+       * 排名 Id
+       * </pre>
+       *
+       * <code>uint32 rankId = 1;</code>
+       */
+      int getRankId();
+      
+      /**
+       * <pre>
+       * 用户 Id
+       * </pre>
+       *
+       * <code>uint32 userId = 2;</code>
+       */
+      int getUserId();
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       */
+      java.lang.String getUserName();
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       */
+      com.google.protobuf.ByteString getUserNameBytes();
+      
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       */
+      java.lang.String getHeroAvatar();
+      
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       */
+      com.google.protobuf.ByteString getHeroAvatarBytes();
+      
+      /**
+       * <pre>
+       * 胜利次数
+       * </pre>
+       *
+       * <code>uint32 win = 5;</code>
+       */
+      int getWin();
+      
+    }
+    
+    /**
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * Protobuf type {@code msg.GetRankResult.RankItem}
+     */
+    public static final class RankItem extends com.google.protobuf.GeneratedMessageV3 implements
+                                                                                      // @@protoc_insertion_point(message_implements:msg.GetRankResult.RankItem)
+                                                                                        RankItemOrBuilder {
+      
+      public static final int RANKID_FIELD_NUMBER = 1;
+      
+      public static final int USERID_FIELD_NUMBER = 2;
+      
+      public static final int USERNAME_FIELD_NUMBER = 3;
+      
+      public static final int HEROAVATAR_FIELD_NUMBER = 4;
+      
+      public static final int WIN_FIELD_NUMBER = 5;
+      
+      private static final long serialVersionUID = 0L;
+      
+      // @@protoc_insertion_point(class_scope:msg.GetRankResult.RankItem)
+      private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem
+        DEFAULT_INSTANCE;
+      
+      private static final com.google.protobuf.Parser<RankItem> PARSER
+        = new com.google.protobuf.AbstractParser<RankItem>() {
+        public RankItem parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                                         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RankItem(input, extensionRegistry);
+        }
+      };
+      
+      static {
+        DEFAULT_INSTANCE
+          = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem();
+      }
+      
+      private int rankId_;
+      
+      private int userId_;
+      
+      private volatile java.lang.Object userName_;
+      
+      private volatile java.lang.Object heroAvatar_;
+      
+      private int win_;
+      
+      private byte memoizedIsInitialized = -1;
+      
+      // Use RankItem.newBuilder() to construct.
+      private RankItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      
+      private RankItem() {
+        rankId_ = 0;
+        userId_ = 0;
+        userName_ = "";
+        heroAvatar_ = "";
+        win_ = 0;
+      }
+      
+      private RankItem(com.google.protobuf.CodedInputStream input,
+                       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields
+          = com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                
+                rankId_ = input.readUInt32();
+                break;
+              }
+              case 16: {
+                
+                userId_ = input.readUInt32();
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+                
+                userName_ = s;
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+                
+                heroAvatar_ = s;
+                break;
+              }
+              case 40: {
+                
+                win_ = input.readUInt32();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_RankItem_descriptor;
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      
+      public static Builder newBuilder(
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      
+      public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+      
+      public static com.google.protobuf.Parser<RankItem> parser() {
+        return PARSER;
+      }
+      
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+      
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_RankItem_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.class,
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder.class);
+      }
+      
+      /**
+       * <pre>
+       * 排名 Id
+       * </pre>
+       *
+       * <code>uint32 rankId = 1;</code>
+       */
+      public int getRankId() {
+        return rankId_;
+      }
+      
+      /**
+       * <pre>
+       * 用户 Id
+       * </pre>
+       *
+       * <code>uint32 userId = 2;</code>
+       */
+      public int getUserId() {
+        return userId_;
+      }
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        }
+      }
+      
+      /**
+       * <pre>
+       * 用户名称
+       * </pre>
+       *
+       * <code>string userName = 3;</code>
+       */
+      public com.google.protobuf.ByteString getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       */
+      public java.lang.String getHeroAvatar() {
+        java.lang.Object ref = heroAvatar_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          heroAvatar_ = s;
+          return s;
+        }
+      }
+      
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 4;</code>
+       */
+      public com.google.protobuf.ByteString getHeroAvatarBytes() {
+        java.lang.Object ref = heroAvatar_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((java.lang.String) ref);
+          heroAvatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      
+      /**
+       * <pre>
+       * 胜利次数
+       * </pre>
+       *
+       * <code>uint32 win = 5;</code>
+       */
+      public int getWin() {
+        return win_;
+      }
+      
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) {
+          return true;
+        }
+        if (isInitialized == 0) {
+          return false;
+        }
+        
+        memoizedIsInitialized = 1;
+        return true;
+      }
+      
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (rankId_ != 0) {
+          output.writeUInt32(1, rankId_);
+        }
+        if (userId_ != 0) {
+          output.writeUInt32(2, userId_);
+        }
+        if (!getUserNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userName_);
+        }
+        if (!getHeroAvatarBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, heroAvatar_);
+        }
+        if (win_ != 0) {
+          output.writeUInt32(5, win_);
+        }
+        unknownFields.writeTo(output);
+      }
+      
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) {
+          return size;
+        }
+        
+        size = 0;
+        if (rankId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, rankId_);
+        }
+        if (userId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, userId_);
+        }
+        if (!getUserNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userName_);
+        }
+        if (!getHeroAvatarBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, heroAvatar_);
+        }
+        if (win_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, win_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+      
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem)) {
+          return super.equals(obj);
+        }
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem other
+          = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem) obj;
+        
+        boolean result = true;
+        result = result && (getRankId() == other.getRankId());
+        result = result && (getUserId() == other.getUserId());
+        result = result && getUserName().equals(other.getUserName());
+        result = result && getHeroAvatar().equals(other.getHeroAvatar());
+        result = result && (getWin() == other.getWin());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+      
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RANKID_FIELD_NUMBER;
+        hash = (53 * hash) + getRankId();
+        hash = (37 * hash) + USERID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId();
+        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getUserName().hashCode();
+        hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+        hash = (53 * hash) + getHeroAvatar().hashCode();
+        hash = (37 * hash) + WIN_FIELD_NUMBER;
+        hash = (53 * hash) + getWin();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+      
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+      
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+      
+      @java.lang.Override
+      protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      
+      @java.lang.Override
+      public com.google.protobuf.Parser<RankItem> getParserForType() {
+        return PARSER;
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+      
+      /**
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * Protobuf type {@code msg.GetRankResult.RankItem}
+       */
+      public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                                                                        // @@protoc_insertion_point(builder_implements:msg.GetRankResult.RankItem)
+                                                                          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder {
+        
+        private int rankId_;
+        
+        private int userId_;
+        
+        private java.lang.Object userName_ = "";
+        
+        private java.lang.Object heroAvatar_ = "";
+        
+        private int win_;
+        
+        // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+        
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_RankItem_descriptor;
+        }
+        
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+          return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_RankItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+              com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.class,
+              com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder.class);
+        }
+        
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          }
+        }
+        
+        public Builder clear() {
+          super.clear();
+          rankId_ = 0;
+          
+          userId_ = 0;
+          
+          userName_ = "";
+          
+          heroAvatar_ = "";
+          
+          win_ = 0;
+          
+          return this;
+        }
+        
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_RankItem_descriptor;
+        }
+        
+        public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem getDefaultInstanceForType() {
+          return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem
+            .getDefaultInstance();
+        }
+        
+        public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem build() {
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem result
+            = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+        
+        public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem buildPartial() {
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem result
+            = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem(
+            this);
+          result.rankId_ = rankId_;
+          result.userId_ = userId_;
+          result.userName_ = userName_;
+          result.heroAvatar_ = heroAvatar_;
+          result.win_ = win_;
+          onBuilt();
+          return result;
+        }
+        
+        public Builder clone() {
+          return super.clone();
+        }
+        
+        public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        
+        public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                        int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        
+        public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                        java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem) {
+            return mergeFrom(
+              (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+        
+        public Builder mergeFrom(
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem other) {
+          if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem
+            .getDefaultInstance()) {
+            return this;
+          }
+          if (other.getRankId() != 0) {
+            setRankId(other.getRankId());
+          }
+          if (other.getUserId() != 0) {
+            setUserId(other.getUserId());
+          }
+          if (!other.getUserName().isEmpty()) {
+            userName_ = other.userName_;
+            onChanged();
+          }
+          if (!other.getHeroAvatar().isEmpty()) {
+            heroAvatar_ = other.heroAvatar_;
+            onChanged();
+          }
+          if (other.getWin() != 0) {
+            setWin(other.getWin());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+        
+        public final boolean isInitialized() {
+          return true;
+        }
+        
+        public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem parsedMessage
+            = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage
+              = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem) e
+              .getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 排名 Id
+         * </pre>
+         *
+         * <code>uint32 rankId = 1;</code>
+         */
+        public int getRankId() {
+          return rankId_;
+        }
+        
+        /**
+         * <pre>
+         * 排名 Id
+         * </pre>
+         *
+         * <code>uint32 rankId = 1;</code>
+         */
+        public Builder setRankId(int value) {
+          
+          rankId_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 排名 Id
+         * </pre>
+         *
+         * <code>uint32 rankId = 1;</code>
+         */
+        public Builder clearRankId() {
+          
+          rankId_ = 0;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 2;</code>
+         */
+        public int getUserId() {
+          return userId_;
+        }
+        
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 2;</code>
+         */
+        public Builder setUserId(int value) {
+          
+          userId_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户 Id
+         * </pre>
+         *
+         * <code>uint32 userId = 2;</code>
+         */
+        public Builder clearUserId() {
+          
+          userId_ = 0;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         */
+        public java.lang.String getUserName() {
+          java.lang.Object ref = userName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            userName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         */
+        public Builder setUserName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          userName_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         */
+        public com.google.protobuf.ByteString getUserNameBytes() {
+          java.lang.Object ref = userName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+              .copyFromUtf8((java.lang.String) ref);
+            userName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         */
+        public Builder setUserNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          
+          userName_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 用户名称
+         * </pre>
+         *
+         * <code>string userName = 3;</code>
+         */
+        public Builder clearUserName() {
+          
+          userName_ = getDefaultInstance().getUserName();
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         */
+        public java.lang.String getHeroAvatar() {
+          java.lang.Object ref = heroAvatar_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            heroAvatar_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         */
+        public Builder setHeroAvatar(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          heroAvatar_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         */
+        public com.google.protobuf.ByteString getHeroAvatarBytes() {
+          java.lang.Object ref = heroAvatar_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+              .copyFromUtf8((java.lang.String) ref);
+            heroAvatar_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         */
+        public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          
+          heroAvatar_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 英雄形象
+         * </pre>
+         *
+         * <code>string heroAvatar = 4;</code>
+         */
+        public Builder clearHeroAvatar() {
+          
+          heroAvatar_ = getDefaultInstance().getHeroAvatar();
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 胜利次数
+         * </pre>
+         *
+         * <code>uint32 win = 5;</code>
+         */
+        public int getWin() {
+          return win_;
+        }
+        
+        /**
+         * <pre>
+         * 胜利次数
+         * </pre>
+         *
+         * <code>uint32 win = 5;</code>
+         */
+        public Builder setWin(int value) {
+          
+          win_ = value;
+          onChanged();
+          return this;
+        }
+        
+        /**
+         * <pre>
+         * 胜利次数
+         * </pre>
+         *
+         * <code>uint32 win = 5;</code>
+         */
+        public Builder clearWin() {
+          
+          win_ = 0;
+          onChanged();
+          return this;
+        }
+        
+        public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+        
+        public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+        
+        // @@protoc_insertion_point(builder_scope:msg.GetRankResult.RankItem)
+      }
+      
+    }
+    
+    /**
+     * <pre>
+     * 结果
+     * </pre>
+     *
+     * Protobuf type {@code msg.GetRankResult}
+     */
+    public static final class Builder
+      extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                                                                      // @@protoc_insertion_point(builder_implements:msg.GetRankResult)
+                                                                        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResultOrBuilder {
+      
+      private int bitField0_;
+      
+      private java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem>
+        rankItem_ = java.util.Collections.emptyList();
+      
+      private com.google.protobuf.RepeatedFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder>
+        rankItemBuilder_;
+      
+      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.class,
+            com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.Builder.class);
+      }
+      
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getRankItemFieldBuilder();
+        }
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (rankItemBuilder_ == null) {
+          rankItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          rankItemBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_GetRankResult_descriptor;
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult getDefaultInstanceForType() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult
+          .getDefaultInstance();
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult build() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult buildPartial() {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult result
+          = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult(this);
+        int from_bitField0_ = bitField0_;
+        if (rankItemBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            rankItem_ = java.util.Collections.unmodifiableList(rankItem_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rankItem_ = rankItem_;
+        } else {
+          result.rankItem_ = rankItemBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+      
+      public Builder clone() {
+        return super.clone();
+      }
+      
+      public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                              java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      
+      public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                      int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      
+      public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                                      java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult) {
+          return mergeFrom(
+            (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult other) {
+        if (other == com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult
+          .getDefaultInstance()) {
+          return this;
+        }
+        if (rankItemBuilder_ == null) {
+          if (!other.rankItem_.isEmpty()) {
+            if (rankItem_.isEmpty()) {
+              rankItem_ = other.rankItem_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRankItemIsMutable();
+              rankItem_.addAll(other.rankItem_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rankItem_.isEmpty()) {
+            if (rankItemBuilder_.isEmpty()) {
+              rankItemBuilder_.dispose();
+              rankItemBuilder_ = null;
+              rankItem_ = other.rankItem_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rankItemBuilder_ = com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                 getRankItemFieldBuilder() : null;
+            } else {
+              rankItemBuilder_.addAllMessages(other.rankItem_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult) e
+            .getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      
+      private void ensureRankItemIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          rankItem_
+            = new java.util.ArrayList<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem>(
+            rankItem_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem> getRankItemList() {
+        if (rankItemBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rankItem_);
+        } else {
+          return rankItemBuilder_.getMessageList();
+        }
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public int getRankItemCount() {
+        if (rankItemBuilder_ == null) {
+          return rankItem_.size();
+        } else {
+          return rankItemBuilder_.getCount();
+        }
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem getRankItem(
+        int index) {
+        if (rankItemBuilder_ == null) {
+          return rankItem_.get(index);
+        } else {
+          return rankItemBuilder_.getMessage(index);
+        }
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder setRankItem(int index,
+                                 com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem value) {
+        if (rankItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRankItemIsMutable();
+          rankItem_.set(index, value);
+          onChanged();
+        } else {
+          rankItemBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder setRankItem(int index,
+                                 com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder builderForValue) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rankItemBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem value) {
+        if (rankItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRankItemIsMutable();
+          rankItem_.add(value);
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(int index,
+                                 com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem value) {
+        if (rankItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRankItemIsMutable();
+          rankItem_.add(index, value);
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder builderForValue) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addRankItem(int index,
+                                 com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder builderForValue) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rankItemBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder addAllRankItem(
+        java.lang.Iterable<? extends com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem> values) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rankItem_);
+          onChanged();
+        } else {
+          rankItemBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder clearRankItem() {
+        if (rankItemBuilder_ == null) {
+          rankItem_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rankItemBuilder_.clear();
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public Builder removeRankItem(int index) {
+        if (rankItemBuilder_ == null) {
+          ensureRankItemIsMutable();
+          rankItem_.remove(index);
+          onChanged();
+        } else {
+          rankItemBuilder_.remove(index);
+        }
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder getRankItemBuilder(
+        int index) {
+        return getRankItemFieldBuilder().getBuilder(index);
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder getRankItemOrBuilder(
+        int index) {
+        if (rankItemBuilder_ == null) {
+          return rankItem_.get(index);
+        } else {
+          return rankItemBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public java.util.List<? extends com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder> getRankItemOrBuilderList() {
+        if (rankItemBuilder_ != null) {
+          return rankItemBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rankItem_);
+        }
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder addRankItemBuilder() {
+        return getRankItemFieldBuilder().addBuilder(
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem
+            .getDefaultInstance());
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder addRankItemBuilder(
+        int index) {
+        return getRankItemFieldBuilder().addBuilder(index,
+                                                    com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem
+                                                      .getDefaultInstance());
+      }
+      
+      /**
+       * <pre>
+       * 排名条目
+       * </pre>
+       *
+       * <code>repeated .msg.GetRankResult.RankItem rankItem = 1;</code>
+       */
+      public java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder> getRankItemBuilderList() {
+        return getRankItemFieldBuilder().getBuilderList();
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder> getRankItemFieldBuilder() {
+        if (rankItemBuilder_ == null) {
+          rankItemBuilder_
+            = new com.google.protobuf.RepeatedFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder>(
+            rankItem_, ((bitField0_ & 0x00000001) == 0x00000001), getParentForChildren(),
+            isClean());
+          rankItem_ = null;
+        }
+        return rankItemBuilder_;
+      }
+      
+      public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+      
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+      
+      // @@protoc_insertion_point(builder_scope:msg.GetRankResult)
     }
     
   }

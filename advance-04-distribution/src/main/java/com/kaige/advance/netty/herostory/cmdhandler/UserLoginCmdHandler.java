@@ -45,7 +45,7 @@ public class UserLoginCmdHandler implements ICmdHandler<GameMsgProtocol.UserLogi
   private Function<UserEntity, Void> getUserEntityFunction(ChannelHandlerContext ctx) {
     return (userEntity) -> {
       try {
-        log.info("userEntity: {}", userEntity);
+        log.info("执行线程 invoke userEntityFunction: {}", userEntity);
         GameMsgProtocol.UserLoginResult.Builder builder = GameMsgProtocol.UserLoginResult
           .newBuilder();
         if (Objects.isNull(userEntity)) {

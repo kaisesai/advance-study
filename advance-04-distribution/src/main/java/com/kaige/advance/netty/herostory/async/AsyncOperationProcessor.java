@@ -30,7 +30,6 @@ public class AsyncOperationProcessor {
       String threadName = "AsyncOperationProcessorThread-" + i;
       executorServices[i] = Executors.newSingleThreadExecutor(r -> new Thread(r, threadName));
     }
-    
   }
   
   public static AsyncOperationProcessor getInstance() {
@@ -47,11 +46,10 @@ public class AsyncOperationProcessor {
       try {
         // 执行业务操作
         operation.doAsync();
-      } catch (Exception e) {
-        log.error(e.getMessage(), e);
-      } finally {
         // 执行业务结束操作
         operation.doFinish();
+      } catch (Exception e) {
+        log.error(e.getMessage(), e);
       }
     });
     
