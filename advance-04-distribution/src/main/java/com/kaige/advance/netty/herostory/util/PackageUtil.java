@@ -240,16 +240,23 @@ public class PackageUtil {
           // 则说明不是 JAVA 类文件, 直接跳过!
           continue;
         }
-        
+  
         //
         // 如果没有开启递归模式,
         // 那么就需要判断当前 .class 文件是否在指定目录下?
         //
         // 获取目录名称
-        String tmpStr = entryName.substring(0, entryName.lastIndexOf('/'));
+        System.out.println("entryName = " + entryName);
+  
+        int index = entryName.lastIndexOf('/');
+        if (index < 0) {
+          continue;
+        }
+        String tmpStr = entryName.substring(0, index);
+        System.out.println("tmpStr = " + tmpStr);
         // 将目录中的 "/" 全部替换成 "."
         tmpStr = join(tmpStr.split("/"), ".");
-        
+  
         if (!recursive) {
           if (!packageName.equals(tmpStr)) {
             // 如果不是我们要找的包,
