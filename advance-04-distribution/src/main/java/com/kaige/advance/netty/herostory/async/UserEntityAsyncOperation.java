@@ -5,7 +5,6 @@ import com.kaige.advance.netty.herostory.config.SqlSessionFactoryConfig;
 import com.kaige.advance.netty.herostory.dao.UserEntityDao;
 import com.kaige.advance.netty.herostory.entity.UserEntity;
 import com.kaige.advance.netty.herostory.service.UserEntityService;
-import com.sun.istack.internal.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -27,8 +26,8 @@ public class UserEntityAsyncOperation implements IAsyncOperation {
   
   private UserEntity userEntity;
   
-  public UserEntityAsyncOperation(@NotNull String userName, @NotNull String password,
-                                  @NotNull Function<UserEntity, Void> callback) {
+  public UserEntityAsyncOperation(String userName, String password,
+                                  Function<UserEntity, Void> callback) {
     this.userName = userName;
     this.password = password;
     this.function = callback;
