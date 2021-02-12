@@ -1,13 +1,12 @@
 import com.kaige.advance.zookeeper.MasterResolve;
 import com.kaige.advance.zookeeper.ZkLock;
 import org.apache.commons.lang.math.RandomUtils;
-import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
 
 public class ZkTest {
   
-  @Test
+  // @Test
   public void testZkLock() throws InterruptedException {
     int threadNum = 10;
     CountDownLatch countDownLatch = new CountDownLatch(threadNum);
@@ -37,7 +36,7 @@ public class ZkTest {
     System.out.println("所有线程执行完毕");
   }
   
-  @Test
+  // @Test
   public void testMasterResolve() throws InterruptedException {
     MasterResolve instance = MasterResolve.getInstance();
     System.out.println("instance.isMaster() = " + instance.isMaster());
