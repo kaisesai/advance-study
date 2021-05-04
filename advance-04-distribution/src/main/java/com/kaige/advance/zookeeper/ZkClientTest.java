@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 public class ZkClientTest {
   
   public static void main(String[] args) throws InterruptedException {
-    ZkClient zkClient = new ZkClient(ZookeeperTest.ZookeeperHolder.CONNECT_STR, 5000);
+    ZkClient zkClient = new ZkClient(ZookeeperHolder.CONNECT_STR, 5000);
     byte[] bytes = zkClient.readData("/kaisai");
     System.out.println("bytes = " + new String(bytes, StandardCharsets.UTF_8));
     

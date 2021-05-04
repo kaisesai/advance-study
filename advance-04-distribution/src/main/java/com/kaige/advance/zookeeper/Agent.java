@@ -20,7 +20,7 @@ public class Agent {
   
   private static Agent instance;
   
-  private String server = ZookeeperTest.ZookeeperHolder.CONNECT_STR;
+  private String server = ZookeeperHolder.CONNECT_STR;
   
   private ZkClient zkClient;
   

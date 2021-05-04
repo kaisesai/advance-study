@@ -5,7 +5,7 @@ import com.github.zkclient.IZkDataListener;
 import com.github.zkclient.ZkClient;
 import com.kaige.advance.zookeeper.Agent;
 import com.kaige.advance.zookeeper.OsBean;
-import com.kaige.advance.zookeeper.ZookeeperTest;
+import com.kaige.advance.zookeeper.ZookeeperHolder;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +24,7 @@ public class MainControl implements InitializingBean {
   
   private final Map<String, OsBean> map = new HashMap<>();
   
-  private final String server = ZookeeperTest.ZookeeperHolder.CONNECT_STR;
+  private final String server = ZookeeperHolder.CONNECT_STR;
   
   private ZkClient zkClient;
   

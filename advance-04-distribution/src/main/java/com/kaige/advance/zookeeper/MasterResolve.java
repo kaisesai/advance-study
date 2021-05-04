@@ -12,7 +12,7 @@ import java.util.Optional;
  */
 public class MasterResolve {
   
-  public static final String ZK_CONNECT = ZookeeperTest.ZookeeperHolder.CONNECT_STR;
+  public static final String ZK_CONNECT = ZookeeperHolder.CONNECT_STR;
   
   public static final String ROOT_PATH = "/kaisai/master";
   

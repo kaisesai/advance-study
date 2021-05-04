@@ -10,7 +10,7 @@ public class ZkCuratorTest {
   
   public static void main(String[] args) throws Exception {
     CuratorFramework client = CuratorFrameworkFactory
-      .newClient(ZookeeperTest.ZookeeperHolder.CONNECT_STR, new RetryForever(1000));
+      .newClient(ZookeeperHolder.CONNECT_STR, new RetryForever(1000));
     client.start();
     
     getData(client);

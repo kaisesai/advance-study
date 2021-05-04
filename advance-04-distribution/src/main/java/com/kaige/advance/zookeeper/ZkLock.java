@@ -29,7 +29,7 @@ public class ZkLock {
   }
   
   private void init() {
-    zkClient = new ZkClient(ZookeeperTest.ZookeeperHolder.CONNECT_STR, 5000, 10000);
+    zkClient = new ZkClient(ZookeeperHolder.CONNECT_STR, 5000, 10000);
     // 创建根节点
     if (!zkClient.exists(ROOT_PATH)) {
       zkClient.createPersistent(ROOT_PATH, true);

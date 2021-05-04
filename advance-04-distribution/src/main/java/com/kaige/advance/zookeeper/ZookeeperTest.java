@@ -5,7 +5,6 @@ import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.data.Stat;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class ZookeeperTest {
   static CountDownLatch countDownLatch = new CountDownLatch(1);
   
   private static ZooKeeper getZooKeeper() {
-    return ZookeeperHolder.zk;
+    return ZookeeperHolder.getZk();
   }
   
   public static void main(String[] args) throws KeeperException, InterruptedException {
@@ -165,29 +164,6 @@ public class ZookeeperTest {
     ZooKeeper zk = getZooKeeper();
     byte[] data = zk.getData("/kaisai", false, null);
     System.out.println(new String(data, StandardCharsets.UTF_8));
-  }
-  
-  public static class ZookeeperHolder {
-    
-    public static final String CONNECT_STR = "www.kaige.com:2181";
-    
-    private static final int SESSION_TIMEOUT = 5000;
-    
-    private static ZooKeeper zk;
-    
-    static {
-      try {
-        Watcher watcher = event -> System.out.println(Thread.currentThread().getName() + event);
-        zk = new ZooKeeper(CONNECT_STR, SESSION_TIMEOUT, watcher);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
-    
-    private ZookeeperHolder() {
-      throw new IllegalStateException("不能实例化这个类");
-    }
-    
   }
   
 }
