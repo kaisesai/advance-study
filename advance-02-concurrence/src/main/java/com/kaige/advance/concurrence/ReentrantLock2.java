@@ -18,7 +18,7 @@ public class ReentrantLock2 extends ReentrantLock {
   public static void main(String[] args) {
     ReentrantLock2 lock = new ReentrantLock2(false);
     
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 10; i++) {
       new Thread(() -> {
         doLock(lock);
         // doLock(lock);
