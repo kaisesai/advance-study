@@ -6,9 +6,7 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.util.List;
 
-/**
- * Byte 到 Long 的转换器
- */
+/** Byte 到 Long 的转换器 */
 public class ByteToLongDecoder extends ByteToMessageDecoder {
   
   @Override
@@ -20,7 +18,6 @@ public class ByteToLongDecoder extends ByteToMessageDecoder {
       System.out.println("msg: " + msg);
       out.add(msg);
     }
-    
   }
   
 }

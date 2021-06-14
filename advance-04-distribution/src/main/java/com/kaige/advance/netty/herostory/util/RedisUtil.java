@@ -7,9 +7,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.Objects;
 
-/**
- * Redis 工具类
- */
+/** Redis 工具类 */
 @Slf4j
 public class RedisUtil {
   
@@ -24,9 +22,7 @@ public class RedisUtil {
     }
   }
   
-  /**
-   * 初始化
-   */
+  /** 初始化 */
   public static void init() {
     if (Objects.nonNull(pool)) {
       return;

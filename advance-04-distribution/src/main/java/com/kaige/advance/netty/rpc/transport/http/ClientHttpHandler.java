@@ -10,9 +10,7 @@ import io.netty.handler.codec.http.FullHttpResponse;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
 
-/**
- * 客户端 http 消息处理器
- */
+/** 客户端 http 消息处理器 */
 public class ClientHttpHandler extends SimpleChannelInboundHandler<FullHttpResponse> {
   
   @Override

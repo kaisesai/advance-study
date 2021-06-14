@@ -11,9 +11,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-/**
- * 消息生产者
- */
+/** 消息生产者 */
 public class MsgProducer {
   
   // public static final String TOPIC_MYTOPIC = "my-replicated-topic";
@@ -26,12 +24,12 @@ public class MsgProducer {
     props
       .put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9093,localhost:9094");
     /*
-      acks=0：表示 producer 不需要等待任何 broker 确认收到消息的回复，就可以继续放松下一条消息。性能最高，但是最容易丢失消息
-      acks=1：表示 producer 至少等待 leader 已经成功将数据写入本地 log，但是不需要等待所有的 follower 是否成功写入。
-      就可以继续发送下一条消息。这种情况下，如有 follower 没有成功备份，而此时 leader 又挂掉，则消息丢失。
-      acks=-1或 all：需要等待 min.insync.replicas（默认为 1，推荐配置大于配置 2）都成功写入日志，这种策略会保证只要有一个备份或者就不会丢失数据。
-      这是最强的数据保证，一般除非是金融级别，或者跟钱打交道的场精才会有用到这种配置
-     */
+     acks=0：表示 producer 不需要等待任何 broker 确认收到消息的回复，就可以继续放松下一条消息。性能最高，但是最容易丢失消息
+     acks=1：表示 producer 至少等待 leader 已经成功将数据写入本地 log，但是不需要等待所有的 follower 是否成功写入。
+     就可以继续发送下一条消息。这种情况下，如有 follower 没有成功备份，而此时 leader 又挂掉，则消息丢失。
+     acks=-1或 all：需要等待 min.insync.replicas（默认为 1，推荐配置大于配置 2）都成功写入日志，这种策略会保证只要有一个备份或者就不会丢失数据。
+     这是最强的数据保证，一般除非是金融级别，或者跟钱打交道的场精才会有用到这种配置
+    */
     props.put(ProducerConfig.ACKS_CONFIG, "all");
     // 发送失败会重试，重试能保证消息发送的可靠性，但是也可能造成消息重复发送，比如网络抖动，所以需要在接收者那边做好消息接收幂等处理
     props.put(ProducerConfig.RETRIES_CONFIG, 3);
@@ -43,10 +41,10 @@ public class MsgProducer {
     // 设置批量发送消息的大小，默认是 16KB，就是说一个 batch 满了 16KB 就发送出去
     props.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);
     /*
-      默认为 0，表示消息必须立即发送，这样会影响性能，这样会影响性能。
-      一般设置 10ms 左右，意思说这个消息发送完后会进入本地的一个 batch，如果 10ms 内，这个 batch 满了 16KB，就将消息发送出去
-      如果 10ms 内，batch 没有填满，那么也必须要把消息发送出去，不能让消息的发送延迟时间边长
-     */
+     默认为 0，表示消息必须立即发送，这样会影响性能，这样会影响性能。
+     一般设置 10ms 左右，意思说这个消息发送完后会进入本地的一个 batch，如果 10ms 内，这个 batch 满了 16KB，就将消息发送出去
+     如果 10ms 内，batch 没有填满，那么也必须要把消息发送出去，不能让消息的发送延迟时间边长
+    */
     props.put(ProducerConfig.LINGER_MS_CONFIG, 10);
     // 把发送的 key 从字符串序列化为字节数组
     props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -86,14 +84,12 @@ public class MsgProducer {
         }
         countDownLatch.countDown();
       });
-      
     }
     
     boolean await = countDownLatch.await(5, TimeUnit.MINUTES);
     System.out.println("await = " + await);
     
     producer.close();
-    
   }
   
 }

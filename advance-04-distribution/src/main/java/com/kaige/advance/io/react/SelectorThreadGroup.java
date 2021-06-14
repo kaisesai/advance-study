@@ -8,23 +8,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * IO 线程组
- * <p>
- * 负责提供绑定服务，以及分配 IO 线程选择器的工作。
- * <p>
- * 它维护 IO 线程、工作线程组
+ *
+ * <p>负责提供绑定服务，以及分配 IO 线程选择器的工作。
+ *
+ * <p>它维护 IO 线程、工作线程组
  */
 public class SelectorThreadGroup {
   
-  /**
-   * IO 线程组
-   */
+  /** IO 线程组 */
   private final SelectorThread[] threads;
   
   private final AtomicInteger xid = new AtomicInteger(0);
   
-  /**
-   * worker IO 线程组，处理绑定和处理客户端连接的线程
-   */
+  /** worker IO 线程组，处理绑定和处理客户端连接的线程 */
   private SelectorThreadGroup workerGroup;
   
   public SelectorThreadGroup(int threadNum) {
@@ -57,8 +53,8 @@ public class SelectorThreadGroup {
   
   /**
    * 绑定端口
-   * <p>
-   * 需要轮询的分配需要绑定的线程
+   *
+   * <p>需要轮询的分配需要绑定的线程
    *
    * @param port
    */
@@ -72,7 +68,6 @@ public class SelectorThreadGroup {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
   }
   
   /**
@@ -91,11 +86,11 @@ public class SelectorThreadGroup {
   
   /**
    * 轮询算法
-   * <p>
-   * 缺点：会发生倾斜。比如一些客户端连接来了，分配到 3 个 IO 线程 t0、t1、t2 上，如果 t0 和 t1 上对应的客户端关闭了连接，
-   * 这样 t2 上的有效连接就比较多，下次来的一些连接还是会轮询注册到 t2 线上去。
-   * <p>
-   * 其他的算法：hash一致性、根据有效连接数排序分配等
+   *
+   * <p>缺点：会发生倾斜。比如一些客户端连接来了，分配到 3 个 IO 线程 t0、t1、t2 上，如果 t0 和 t1 上对应的客户端关闭了连接， 这样 t2
+   * 上的有效连接就比较多，下次来的一些连接还是会轮询注册到 t2 线上去。
+   *
+   * <p>其他的算法：hash一致性、根据有效连接数排序分配等
    *
    * @return
    */

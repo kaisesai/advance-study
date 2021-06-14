@@ -13,9 +13,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
 
-/**
- * http servlet 处理器
- */
+/** http servlet 处理器 */
 public class MyHttpServletRpcHandler extends HttpServlet {
   
   @Override

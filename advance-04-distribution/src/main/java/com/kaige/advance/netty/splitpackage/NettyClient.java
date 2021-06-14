@@ -14,7 +14,6 @@ public class NettyClient {
         // ch.pipeline().addLast(new StringEncoder());
         ch.pipeline().addLast(new MyMessageEncoder());
         ch.pipeline().addLast(new ClientHandler());
-        
       }
     });
   }

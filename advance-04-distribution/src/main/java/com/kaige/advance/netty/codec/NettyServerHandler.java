@@ -3,9 +3,7 @@ package com.kaige.advance.netty.codec;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-/**
- * 服务端消息处理器
- */
+/** 服务端消息处理器 */
 public class NettyServerHandler extends ChannelInboundHandlerAdapter {
   
   @Override

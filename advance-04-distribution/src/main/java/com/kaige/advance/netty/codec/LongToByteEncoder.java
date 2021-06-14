@@ -4,9 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
-/**
- * Long 转成 byte 的转换器
- */
+/** Long 转成 byte 的转换器 */
 public class LongToByteEncoder extends MessageToByteEncoder<Long> {
   
   @Override

@@ -5,9 +5,7 @@ import com.kaige.advance.netty.rpc.protocol.MsgContent;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/**
- * 服务接口执行器
- */
+/** 服务接口执行器 */
 public class ServiceInvoker {
   
   public static final Dispatcher DISPATCHER;

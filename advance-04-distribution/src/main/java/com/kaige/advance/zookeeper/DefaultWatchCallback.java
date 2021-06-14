@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * 默认的回调类
  *
- * @author liukai  2021年05月04日
+ * @author liukai 2021年05月04日
  */
 @Slf4j
 public class DefaultWatchCallback implements Watcher {

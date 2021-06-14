@@ -8,9 +8,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * 动态代理处理器
- */
+/** 动态代理处理器 */
 public class MyProxyHandler implements InvocationHandler {
   
   private final Class<?> interfaceInfo;

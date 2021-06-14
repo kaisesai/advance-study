@@ -87,4 +87,3 @@ public interface UserEntityDao {
   int deleteById(int id);
   
 }
-

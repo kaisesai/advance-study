@@ -7,9 +7,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
-/**
- * Netty 服务端
- */
+/** Netty 服务端 */
 public class NettyServer {
   
   public static void main(String[] args) throws InterruptedException {
@@ -33,7 +31,6 @@ public class NettyServer {
     };
     
     CommonNettyServer.startNettyServer(channelInitializer);
-    
   }
   
 }

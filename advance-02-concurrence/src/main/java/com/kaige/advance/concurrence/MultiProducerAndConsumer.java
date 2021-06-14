@@ -3,9 +3,7 @@ package com.kaige.advance.concurrence;
 import java.util.List;
 import java.util.concurrent.*;
 
-/**
- * 多生产者和多消费者模式
- */
+/** 多生产者和多消费者模式 */
 public class MultiProducerAndConsumer {
   
   public static void main(String[] args) throws InterruptedException {
@@ -89,9 +87,7 @@ public class MultiProducerAndConsumer {
     
   }
   
-  /**
-   * 消息总队列
-   */
+  /** 消息总队列 */
   static class MsgQueueManger implements IMsgQueue {
     
     public final BlockingQueue<Message> messageQueue;
@@ -124,9 +120,7 @@ public class MultiProducerAndConsumer {
     
   }
   
-  /**
-   * 分发消息，负责把消息从大队列赛到小队列里
-   */
+  /** 分发消息，负责把消息从大队列赛到小队列里 */
   static class DispatchMessageTask implements Runnable {
     
     @Override
@@ -215,9 +209,7 @@ public class MultiProducerAndConsumer {
       return InstanceHolder.MSG_QUEUE_MANGER;
     }
     
-    /**
-     * 静态内部类初始化类
-     */
+    /** 静态内部类初始化类 */
     private static class InstanceHolder {
       
       private static final MsgQueueManger MSG_QUEUE_MANGER = new MsgQueueManger();

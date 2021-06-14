@@ -8,9 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-/**
- * BIO 服务端
- */
+/** BIO 服务端 */
 @Slf4j
 public class BIOServer {
   
@@ -31,7 +29,6 @@ public class BIOServer {
         }
       }).start();
     }
-    
   }
   
   private static void handler(Socket socket) throws IOException {

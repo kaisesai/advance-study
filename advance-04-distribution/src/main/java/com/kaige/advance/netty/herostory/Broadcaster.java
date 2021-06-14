@@ -14,9 +14,7 @@ import java.util.Objects;
  */
 public class Broadcaster {
   
-  /**
-   * 全局通信信道
-   */
+  /** 全局通信信道 */
   private static final ChannelGroup CHANNEL_GROUP = new DefaultChannelGroup(
     GlobalEventExecutor.INSTANCE);
   
@@ -57,7 +55,6 @@ public class Broadcaster {
       return;
     }
     CHANNEL_GROUP.writeAndFlush(msg);
-    
   }
   
 }

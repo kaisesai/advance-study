@@ -322,168 +322,105 @@ public final class GameMsgProtocol {
    * <pre>
    * 消息代号
    * </pre>
-   * <p>
-   * Protobuf enum {@code msg.MsgCode}
+   *
+   * <p>Protobuf enum {@code msg.MsgCode}
    */
   public enum MsgCode implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>USER_ENTRY_CMD = 0;</code>
-     */
+    /** <code>USER_ENTRY_CMD = 0;</code> */
     USER_ENTRY_CMD(0),
-    /**
-     * <code>USER_ENTRY_RESULT = 1;</code>
-     */
+    /** <code>USER_ENTRY_RESULT = 1;</code> */
     USER_ENTRY_RESULT(1),
-    /**
-     * <code>WHO_ELSE_IS_HERE_CMD = 2;</code>
-     */
+    /** <code>WHO_ELSE_IS_HERE_CMD = 2;</code> */
     WHO_ELSE_IS_HERE_CMD(2),
-    /**
-     * <code>WHO_ELSE_IS_HERE_RESULT = 3;</code>
-     */
+    /** <code>WHO_ELSE_IS_HERE_RESULT = 3;</code> */
     WHO_ELSE_IS_HERE_RESULT(3),
-    /**
-     * <code>USER_MOVE_TO_CMD = 4;</code>
-     */
+    /** <code>USER_MOVE_TO_CMD = 4;</code> */
     USER_MOVE_TO_CMD(4),
-    /**
-     * <code>USER_MOVE_TO_RESULT = 5;</code>
-     */
+    /** <code>USER_MOVE_TO_RESULT = 5;</code> */
     USER_MOVE_TO_RESULT(5),
-    /**
-     * <code>USER_QUIT_RESULT = 6;</code>
-     */
+    /** <code>USER_QUIT_RESULT = 6;</code> */
     USER_QUIT_RESULT(6),
-    /**
-     * <code>USER_STOP_CMD = 7;</code>
-     */
+    /** <code>USER_STOP_CMD = 7;</code> */
     USER_STOP_CMD(7),
-    /**
-     * <code>USER_STOP_RESULT = 8;</code>
-     */
+    /** <code>USER_STOP_RESULT = 8;</code> */
     USER_STOP_RESULT(8),
-    /**
-     * <code>USER_ATTK_CMD = 9;</code>
-     */
+    /** <code>USER_ATTK_CMD = 9;</code> */
     USER_ATTK_CMD(9),
-    /**
-     * <code>USER_ATTK_RESULT = 10;</code>
-     */
+    /** <code>USER_ATTK_RESULT = 10;</code> */
     USER_ATTK_RESULT(10),
-    /**
-     * <code>USER_SUBTRACT_HP_RESULT = 11;</code>
-     */
+    /** <code>USER_SUBTRACT_HP_RESULT = 11;</code> */
     USER_SUBTRACT_HP_RESULT(11),
-    /**
-     * <code>USER_DIE_RESULT = 12;</code>
-     */
+    /** <code>USER_DIE_RESULT = 12;</code> */
     USER_DIE_RESULT(12),
-    /**
-     * <code>USER_LOGIN_CMD = 13;</code>
-     */
+    /** <code>USER_LOGIN_CMD = 13;</code> */
     USER_LOGIN_CMD(13),
-    /**
-     * <code>USER_LOGIN_RESULT = 14;</code>
-     */
+    /** <code>USER_LOGIN_RESULT = 14;</code> */
     USER_LOGIN_RESULT(14),
-    /**
-     * <code>SELECT_HERO_CMD = 15;</code>
-     */
+    /** <code>SELECT_HERO_CMD = 15;</code> */
     SELECT_HERO_CMD(15),
-    /**
-     * <code>SELECT_HERO_RESULT = 16;</code>
-     */
+    /** <code>SELECT_HERO_RESULT = 16;</code> */
     SELECT_HERO_RESULT(16),
-    /**
-     * <code>GET_RANK_CMD = 17;</code>
-     */
+    /** <code>GET_RANK_CMD = 17;</code> */
     GET_RANK_CMD(17),
-    /**
-     * <code>GET_RANK_RESULT = 18;</code>
-     */
+    /** <code>GET_RANK_RESULT = 18;</code> */
     GET_RANK_RESULT(18), UNRECOGNIZED(-1),
     ;
     
-    /**
-     * <code>USER_ENTRY_CMD = 0;</code>
-     */
+    /** <code>USER_ENTRY_CMD = 0;</code> */
     public static final int USER_ENTRY_CMD_VALUE = 0;
     
-    /**
-     * <code>USER_ENTRY_RESULT = 1;</code>
-     */
+    /** <code>USER_ENTRY_RESULT = 1;</code> */
     public static final int USER_ENTRY_RESULT_VALUE = 1;
-    /**
-     * <code>WHO_ELSE_IS_HERE_CMD = 2;</code>
-     */
+    
+    /** <code>WHO_ELSE_IS_HERE_CMD = 2;</code> */
     public static final int WHO_ELSE_IS_HERE_CMD_VALUE = 2;
-    /**
-     * <code>WHO_ELSE_IS_HERE_RESULT = 3;</code>
-     */
+    
+    /** <code>WHO_ELSE_IS_HERE_RESULT = 3;</code> */
     public static final int WHO_ELSE_IS_HERE_RESULT_VALUE = 3;
-    /**
-     * <code>USER_MOVE_TO_CMD = 4;</code>
-     */
+    
+    /** <code>USER_MOVE_TO_CMD = 4;</code> */
     public static final int USER_MOVE_TO_CMD_VALUE = 4;
-    /**
-     * <code>USER_MOVE_TO_RESULT = 5;</code>
-     */
+    
+    /** <code>USER_MOVE_TO_RESULT = 5;</code> */
     public static final int USER_MOVE_TO_RESULT_VALUE = 5;
-    /**
-     * <code>USER_QUIT_RESULT = 6;</code>
-     */
+    
+    /** <code>USER_QUIT_RESULT = 6;</code> */
     public static final int USER_QUIT_RESULT_VALUE = 6;
-    /**
-     * <code>USER_STOP_CMD = 7;</code>
-     */
+    
+    /** <code>USER_STOP_CMD = 7;</code> */
     public static final int USER_STOP_CMD_VALUE = 7;
-    /**
-     * <code>USER_STOP_RESULT = 8;</code>
-     */
+    
+    /** <code>USER_STOP_RESULT = 8;</code> */
     public static final int USER_STOP_RESULT_VALUE = 8;
-    /**
-     * <code>USER_ATTK_CMD = 9;</code>
-     */
+    
+    /** <code>USER_ATTK_CMD = 9;</code> */
     public static final int USER_ATTK_CMD_VALUE = 9;
-    /**
-     * <code>USER_ATTK_RESULT = 10;</code>
-     */
+    
+    /** <code>USER_ATTK_RESULT = 10;</code> */
     public static final int USER_ATTK_RESULT_VALUE = 10;
-    /**
-     * <code>USER_SUBTRACT_HP_RESULT = 11;</code>
-     */
+    
+    /** <code>USER_SUBTRACT_HP_RESULT = 11;</code> */
     public static final int USER_SUBTRACT_HP_RESULT_VALUE = 11;
-    /**
-     * <code>USER_DIE_RESULT = 12;</code>
-     */
+    
+    /** <code>USER_DIE_RESULT = 12;</code> */
     public static final int USER_DIE_RESULT_VALUE = 12;
-    /**
-     * <code>USER_LOGIN_CMD = 13;</code>
-     */
+    
+    /** <code>USER_LOGIN_CMD = 13;</code> */
     public static final int USER_LOGIN_CMD_VALUE = 13;
-    /**
-     * <code>USER_LOGIN_RESULT = 14;</code>
-     */
+    
+    /** <code>USER_LOGIN_RESULT = 14;</code> */
     public static final int USER_LOGIN_RESULT_VALUE = 14;
     
-    /**
-     * <code>SELECT_HERO_CMD = 15;</code>
-     */
+    /** <code>SELECT_HERO_CMD = 15;</code> */
     public static final int SELECT_HERO_CMD_VALUE = 15;
     
-    /**
-     * <code>SELECT_HERO_RESULT = 16;</code>
-     */
+    /** <code>SELECT_HERO_RESULT = 16;</code> */
     public static final int SELECT_HERO_RESULT_VALUE = 16;
     
-    /**
-     * <code>GET_RANK_CMD = 17;</code>
-     */
+    /** <code>GET_RANK_CMD = 17;</code> */
     public static final int GET_RANK_CMD_VALUE = 17;
     
-    /**
-     * <code>GET_RANK_RESULT = 18;</code>
-     */
+    /** <code>GET_RANK_RESULT = 18;</code> */
     public static final int GET_RANK_RESULT_VALUE = 18;
     
     private static final com.google.protobuf.Internal.EnumLiteMap<MsgCode> internalValueMap
@@ -493,21 +430,20 @@ public final class GameMsgProtocol {
       }
     };
     
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    private static final MsgCode[] VALUES = values();
+    
+    private final int value;
+    
+    MsgCode(int value) {
+      this.value = value;
+    }
+    
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static MsgCode valueOf(int value) {
       return forNumber(value);
     }
     
-    private static final MsgCode[] VALUES = values();
-
-    private final int value;
-    MsgCode(int value) {
-      this.value = value;
-    }
-
     public static MsgCode forNumber(int value) {
       switch (value) {
         case 0:
@@ -609,7 +545,7 @@ public final class GameMsgProtocol {
      * <code>uint32 userId = 1;</code>
      */
     int getUserId();
-
+    
     /**
      * <pre>
      * 用户名称
@@ -721,7 +657,7 @@ public final class GameMsgProtocol {
      * <code>float moveFromPosX = 1;</code>
      */
     float getMoveFromPosX();
-
+    
     /**
      * <pre>
      * 起始位置 Y
@@ -730,7 +666,7 @@ public final class GameMsgProtocol {
      * <code>float moveFromPosY = 2;</code>
      */
     float getMoveFromPosY();
-
+    
     /**
      * <pre>
      * 移动到位置 X
@@ -763,7 +699,7 @@ public final class GameMsgProtocol {
      * <code>uint32 moveUserId = 1;</code>
      */
     int getMoveUserId();
-
+    
     /**
      * <pre>
      * 起始位置 X
@@ -772,7 +708,7 @@ public final class GameMsgProtocol {
      * <code>float moveFromPosX = 2;</code>
      */
     float getMoveFromPosX();
-
+    
     /**
      * <pre>
      * 起始位置 Y
@@ -781,7 +717,7 @@ public final class GameMsgProtocol {
      * <code>float moveFromPosY = 3;</code>
      */
     float getMoveFromPosY();
-
+    
     /**
      * <pre>
      * 移动到位置 X
@@ -790,7 +726,7 @@ public final class GameMsgProtocol {
      * <code>float moveToPosX = 4;</code>
      */
     float getMoveToPosX();
-
+    
     /**
      * <pre>
      * 移动到位置 Y
@@ -844,7 +780,7 @@ public final class GameMsgProtocol {
      * <code>uint32 stopUserId = 1;</code>
      */
     int getStopUserId();
-
+    
     /**
      * <pre>
      * 停驻在位置 X
@@ -998,7 +934,7 @@ public final class GameMsgProtocol {
      * <code>uint32 userId = 1;</code>
      */
     int getUserId();
-
+    
     /**
      * <pre>
      * 用户名称
@@ -1152,22 +1088,14 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserEntryCmd}
+   *
+   * <p>Protobuf type {@code msg.UserEntryCmd}
    */
   public static final class UserEntryCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                         // @@protoc_insertion_point(message_implements:msg.UserEntryCmd)
                                                                                           UserEntryCmdOrBuilder {
     
     private static final long serialVersionUID = 0L;
-    
-    // Use UserEntryCmd.newBuilder() to construct.
-    private UserEntryCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserEntryCmd() {
-    }
     
     // @@protoc_insertion_point(class_scope:msg.UserEntryCmd)
     private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd
@@ -1187,6 +1115,14 @@ public final class GameMsgProtocol {
     }
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserEntryCmd.newBuilder() to construct.
+    private UserEntryCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserEntryCmd() {
+    }
     
     private UserEntryCmd(com.google.protobuf.CodedInputStream input,
                          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1311,6 +1247,10 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -1321,10 +1261,6 @@ public final class GameMsgProtocol {
         .ensureFieldAccessorsInitialized(
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd.Builder.class);
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -1355,7 +1291,7 @@ public final class GameMsgProtocol {
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1366,12 +1302,12 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd) obj;
-  
+      
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
-
+    
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
@@ -1398,12 +1334,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserEntryCmd> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1414,8 +1350,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserEntryCmd}
+     *
+     * <p>Protobuf type {@code msg.UserEntryCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -1427,13 +1363,14 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserEntryCmd_descriptor;
-      }
-      
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserEntryCmd_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
@@ -1556,8 +1493,7 @@ public final class GameMsgProtocol {
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-
+      
       // @@protoc_insertion_point(builder_scope:msg.UserEntryCmd)
     }
     
@@ -1567,8 +1503,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserEntryResult}
+   *
+   * <p>Protobuf type {@code msg.UserEntryResult}
    */
   public static final class UserEntryResult extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -1576,17 +1512,6 @@ public final class GameMsgProtocol {
       UserEntryResultOrBuilder {
     
     public static final int USERID_FIELD_NUMBER = 1;
-    
-    // Use UserEntryResult.newBuilder() to construct.
-    private UserEntryResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserEntryResult() {
-      userId_ = 0;
-      userName_ = "";
-      heroAvatar_ = "";
-    }
     
     public static final int USERNAME_FIELD_NUMBER = 2;
     
@@ -1612,17 +1537,6 @@ public final class GameMsgProtocol {
         = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult();
     }
     
-    /**
-     * <pre>
-     * 用户 Id
-     * </pre>
-     *
-     * <code>uint32 userId = 1;</code>
-     */
-    public int getUserId() {
-      return userId_;
-    }
-    
     private int userId_;
     
     private volatile java.lang.Object userName_;
@@ -1630,6 +1544,17 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserEntryResult.newBuilder() to construct.
+    private UserEntryResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserEntryResult() {
+      userId_ = 0;
+      userName_ = "";
+      heroAvatar_ = "";
+    }
     
     private UserEntryResult(com.google.protobuf.CodedInputStream input,
                             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1656,19 +1581,18 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-
               userId_ = input.readUInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
+              
               userName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-
+              
               heroAvatar_ = s;
               break;
             }
@@ -1728,24 +1652,6 @@ public final class GameMsgProtocol {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
-      hash = (53 * hash) + getHeroAvatar().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1792,6 +1698,35 @@ public final class GameMsgProtocol {
     
     public static com.google.protobuf.Parser<UserEntryResult> parser() {
       return PARSER;
+    }
+    
+    /**
+     * <pre>
+     * 用户 Id
+     * </pre>
+     *
+     * <code>uint32 userId = 1;</code>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
     
     @java.lang.Override
@@ -1843,7 +1778,7 @@ public final class GameMsgProtocol {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     /**
      * <pre>
      * 英雄形象
@@ -1907,13 +1842,13 @@ public final class GameMsgProtocol {
       }
       unknownFields.writeTo(output);
     }
-
+    
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) {
         return size;
       }
-  
+      
       size = 0;
       if (userId_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, userId_);
@@ -1928,7 +1863,7 @@ public final class GameMsgProtocol {
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1939,7 +1874,7 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult) obj;
-  
+      
       boolean result = true;
       result = result && (getUserId() == other.getUserId());
       result = result && getUserName().equals(other.getUserName());
@@ -1962,12 +1897,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserEntryResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1976,8 +1911,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserEntryResult}
+     *
+     * <p>Protobuf type {@code msg.UserEntryResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -1988,12 +1923,13 @@ public final class GameMsgProtocol {
       
       private java.lang.Object userName_ = "";
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult.newBuilder()
+      private java.lang.Object heroAvatar_ = "";
+      
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserEntryResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private java.lang.Object heroAvatar_ = "";
       
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
@@ -2125,6 +2061,20 @@ public final class GameMsgProtocol {
         return userId_;
       }
       
+      /**
+       * <pre>
+       * 用户 Id
+       * </pre>
+       *
+       * <code>uint32 userId = 1;</code>
+       */
+      public Builder setUserId(int value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      
       public final boolean isInitialized() {
         return true;
       }
@@ -2161,20 +2111,6 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      /**
-       * <pre>
-       * 用户 Id
-       * </pre>
-       *
-       * <code>uint32 userId = 1;</code>
-       */
-      public Builder setUserId(int value) {
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
       /**
        * <pre>
        * 用户名称
@@ -2261,7 +2197,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-
+      
       /**
        * <pre>
        * 英雄形象
@@ -2324,9 +2260,13 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder clearHeroAvatar() {
+      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         
-        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        heroAvatar_ = value;
         onChanged();
         return this;
       }
@@ -2338,13 +2278,9 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+      public Builder clearHeroAvatar() {
         
-        heroAvatar_ = value;
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
         onChanged();
         return this;
       }
@@ -2358,8 +2294,7 @@ public final class GameMsgProtocol {
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-
+      
       // @@protoc_insertion_point(builder_scope:msg.UserEntryResult)
     }
     
@@ -2371,8 +2306,8 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.WhoElseIsHereCmd}
+   *
+   * <p>Protobuf type {@code msg.WhoElseIsHereCmd}
    */
   public static final class WhoElseIsHereCmd extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -2380,14 +2315,6 @@ public final class GameMsgProtocol {
       WhoElseIsHereCmdOrBuilder {
     
     private static final long serialVersionUID = 0L;
-    
-    // Use WhoElseIsHereCmd.newBuilder() to construct.
-    private WhoElseIsHereCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private WhoElseIsHereCmd() {
-    }
     
     // @@protoc_insertion_point(class_scope:msg.WhoElseIsHereCmd)
     private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd
@@ -2408,6 +2335,14 @@ public final class GameMsgProtocol {
     }
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use WhoElseIsHereCmd.newBuilder() to construct.
+    private WhoElseIsHereCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private WhoElseIsHereCmd() {
+    }
     
     private WhoElseIsHereCmd(com.google.protobuf.CodedInputStream input,
                              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2532,6 +2467,10 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -2542,10 +2481,6 @@ public final class GameMsgProtocol {
         .ensureFieldAccessorsInitialized(
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.Builder.class);
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -2576,7 +2511,7 @@ public final class GameMsgProtocol {
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2587,7 +2522,7 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd) obj;
-  
+      
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -2619,12 +2554,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<WhoElseIsHereCmd> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2635,8 +2570,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.WhoElseIsHereCmd}
+     *
+     * <p>Protobuf type {@code msg.WhoElseIsHereCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -2648,13 +2583,14 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereCmd_descriptor;
-      }
-      
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereCmd_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
@@ -2778,8 +2714,7 @@ public final class GameMsgProtocol {
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-
+      
       // @@protoc_insertion_point(builder_scope:msg.WhoElseIsHereCmd)
     }
     
@@ -2789,8 +2724,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.WhoElseIsHereResult}
+   *
+   * <p>Protobuf type {@code msg.WhoElseIsHereResult}
    */
   public static final class WhoElseIsHereResult extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -2798,15 +2733,6 @@ public final class GameMsgProtocol {
       WhoElseIsHereResultOrBuilder {
     
     public static final int USERINFO_FIELD_NUMBER = 1;
-    
-    // Use WhoElseIsHereResult.newBuilder() to construct.
-    private WhoElseIsHereResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private WhoElseIsHereResult() {
-      userInfo_ = java.util.Collections.emptyList();
-    }
     
     private static final long serialVersionUID = 0L;
     
@@ -2832,6 +2758,15 @@ public final class GameMsgProtocol {
       userInfo_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use WhoElseIsHereResult.newBuilder() to construct.
+    private WhoElseIsHereResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private WhoElseIsHereResult() {
+      userInfo_ = java.util.Collections.emptyList();
+    }
     
     private WhoElseIsHereResult(com.google.protobuf.CodedInputStream input,
                                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3008,7 +2943,7 @@ public final class GameMsgProtocol {
     public java.util.List<? extends com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfoOrBuilder> getUserInfoOrBuilderList() {
       return userInfo_;
     }
-
+    
     /**
      * <pre>
      * 用户信息数组
@@ -3078,7 +3013,7 @@ public final class GameMsgProtocol {
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3089,13 +3024,13 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult) obj;
-  
+      
       boolean result = true;
       result = result && getUserInfoList().equals(other.getUserInfoList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
-
+    
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
@@ -3126,12 +3061,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<WhoElseIsHereResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3148,7 +3083,7 @@ public final class GameMsgProtocol {
        * <code>uint32 userId = 1;</code>
        */
       int getUserId();
-
+      
       /**
        * <pre>
        * 用户名称
@@ -3193,6 +3128,7 @@ public final class GameMsgProtocol {
        * <code>.msg.WhoElseIsHereResult.UserInfo.MoveState moveState = 4;</code>
        */
       boolean hasMoveState();
+      
       /**
        * <pre>
        * 移动状态
@@ -3201,6 +3137,7 @@ public final class GameMsgProtocol {
        * <code>.msg.WhoElseIsHereResult.UserInfo.MoveState moveState = 4;</code>
        */
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState getMoveState();
+      
       /**
        * <pre>
        * 移动状态
@@ -3216,25 +3153,14 @@ public final class GameMsgProtocol {
      * <pre>
      * 用户信息
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.WhoElseIsHereResult.UserInfo}
+     *
+     * <p>Protobuf type {@code msg.WhoElseIsHereResult.UserInfo}
      */
     public static final class UserInfo extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                       // @@protoc_insertion_point(message_implements:msg.WhoElseIsHereResult.UserInfo)
                                                                                         UserInfoOrBuilder {
       
       public static final int USERID_FIELD_NUMBER = 1;
-      
-      // Use UserInfo.newBuilder() to construct.
-      private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      
-      private UserInfo() {
-        userId_ = 0;
-        userName_ = "";
-        heroAvatar_ = "";
-      }
       
       public static final int USERNAME_FIELD_NUMBER = 2;
       
@@ -3273,6 +3199,17 @@ public final class GameMsgProtocol {
       
       private byte memoizedIsInitialized = -1;
       
+      // Use UserInfo.newBuilder() to construct.
+      private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      
+      private UserInfo() {
+        userId_ = 0;
+        userName_ = "";
+        heroAvatar_ = "";
+      }
+      
       private UserInfo(com.google.protobuf.CodedInputStream input,
                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3298,34 +3235,35 @@ public final class GameMsgProtocol {
                 break;
               }
               case 8: {
-
                 userId_ = input.readUInt32();
                 break;
               }
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
-
+                
                 userName_ = s;
                 break;
               }
               case 26: {
                 java.lang.String s = input.readStringRequireUtf8();
-
+                
                 heroAvatar_ = s;
                 break;
               }
               case 34: {
-                com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.Builder subBuilder = null;
+                com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.Builder
+                  subBuilder = null;
                 if (moveState_ != null) {
                   subBuilder = moveState_.toBuilder();
                 }
                 moveState_ = input.readMessage(
-                  com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.parser(), extensionRegistry);
+                  com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
+                    .parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(moveState_);
                   moveState_ = subBuilder.buildPartial();
                 }
-
+                
                 break;
               }
             }
@@ -3455,7 +3393,7 @@ public final class GameMsgProtocol {
       public int getUserId() {
         return userId_;
       }
-
+      
       /**
        * <pre>
        * 用户名称
@@ -3493,7 +3431,7 @@ public final class GameMsgProtocol {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
+      
       /**
        * <pre>
        * 英雄形象
@@ -3531,7 +3469,7 @@ public final class GameMsgProtocol {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
+      
       /**
        * <pre>
        * 移动状态
@@ -3542,7 +3480,7 @@ public final class GameMsgProtocol {
       public boolean hasMoveState() {
         return moveState_ != null;
       }
-
+      
       /**
        * <pre>
        * 移动状态
@@ -3552,9 +3490,10 @@ public final class GameMsgProtocol {
        */
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState getMoveState() {
         return moveState_ == null ?
-               com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.getDefaultInstance() : moveState_;
+               com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
+                 .getDefaultInstance() : moveState_;
       }
-
+      
       /**
        * <pre>
        * 移动状态
@@ -3618,7 +3557,7 @@ public final class GameMsgProtocol {
         memoizedSize = size;
         return size;
       }
-
+      
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -3629,7 +3568,7 @@ public final class GameMsgProtocol {
         }
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo other
           = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo) obj;
-  
+        
         boolean result = true;
         result = result && (getUserId() == other.getUserId());
         result = result && getUserName().equals(other.getUserName());
@@ -3641,7 +3580,7 @@ public final class GameMsgProtocol {
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
-
+      
       @java.lang.Override
       public int hashCode() {
         if (memoizedHashCode != 0) {
@@ -3678,12 +3617,12 @@ public final class GameMsgProtocol {
         Builder builder = new Builder(parent);
         return builder;
       }
-
+      
       @java.lang.Override
       public com.google.protobuf.Parser<UserInfo> getParserForType() {
         return PARSER;
       }
-
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -3700,7 +3639,7 @@ public final class GameMsgProtocol {
          * <code>float fromPosX = 1;</code>
          */
         float getFromPosX();
-
+        
         /**
          * <pre>
          * 起始位置 Y
@@ -3709,7 +3648,7 @@ public final class GameMsgProtocol {
          * <code>float fromPosY = 2;</code>
          */
         float getFromPosY();
-
+        
         /**
          * <pre>
          * 移动到位置 X
@@ -3718,7 +3657,7 @@ public final class GameMsgProtocol {
          * <code>float toPosX = 3;</code>
          */
         float getToPosX();
-
+        
         /**
          * <pre>
          * 移动到位置 Y
@@ -3727,7 +3666,7 @@ public final class GameMsgProtocol {
          * <code>float toPosY = 4;</code>
          */
         float getToPosY();
-
+        
         /**
          * <pre>
          * 启程时间戳
@@ -3743,27 +3682,14 @@ public final class GameMsgProtocol {
        * <pre>
        * 移动状态
        * </pre>
-       * <p>
-       * Protobuf type {@code msg.WhoElseIsHereResult.UserInfo.MoveState}
+       *
+       * <p>Protobuf type {@code msg.WhoElseIsHereResult.UserInfo.MoveState}
        */
       public static final class MoveState extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                          // @@protoc_insertion_point(message_implements:msg.WhoElseIsHereResult.UserInfo.MoveState)
                                                                                            MoveStateOrBuilder {
         
         public static final int FROMPOSX_FIELD_NUMBER = 1;
-        
-        // Use MoveState.newBuilder() to construct.
-        private MoveState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
-        
-        private MoveState() {
-          fromPosX_ = 0F;
-          fromPosY_ = 0F;
-          toPosX_ = 0F;
-          toPosY_ = 0F;
-          startTime_ = 0L;
-        }
         
         public static final int FROMPOSY_FIELD_NUMBER = 2;
         
@@ -3805,6 +3731,19 @@ public final class GameMsgProtocol {
         
         private byte memoizedIsInitialized = -1;
         
+        // Use MoveState.newBuilder() to construct.
+        private MoveState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+        
+        private MoveState() {
+          fromPosX_ = 0F;
+          fromPosY_ = 0F;
+          toPosX_ = 0F;
+          toPosY_ = 0F;
+          startTime_ = 0L;
+        }
+        
         private MoveState(com.google.protobuf.CodedInputStream input,
                           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3830,27 +3769,22 @@ public final class GameMsgProtocol {
                   break;
                 }
                 case 13: {
-
                   fromPosX_ = input.readFloat();
                   break;
                 }
                 case 21: {
-
                   fromPosY_ = input.readFloat();
                   break;
                 }
                 case 29: {
-
                   toPosX_ = input.readFloat();
                   break;
                 }
                 case 37: {
-
                   toPosY_ = input.readFloat();
                   break;
                 }
                 case 40: {
-
                   startTime_ = input.readUInt64();
                   break;
                 }
@@ -4086,7 +4020,7 @@ public final class GameMsgProtocol {
           memoizedSize = size;
           return size;
         }
-
+        
         @java.lang.Override
         public boolean equals(final java.lang.Object obj) {
           if (obj == this) {
@@ -4098,7 +4032,7 @@ public final class GameMsgProtocol {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
             other
             = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState) obj;
-  
+          
           boolean result = true;
           result = result && (java.lang.Float.floatToIntBits(getFromPosX()) == java.lang.Float
             .floatToIntBits(other.getFromPosX()));
@@ -4112,7 +4046,7 @@ public final class GameMsgProtocol {
           result = result && unknownFields.equals(other.unknownFields);
           return result;
         }
-
+        
         @java.lang.Override
         public int hashCode() {
           if (memoizedHashCode != 0) {
@@ -4149,12 +4083,12 @@ public final class GameMsgProtocol {
           Builder builder = new Builder(parent);
           return builder;
         }
-
+        
         @java.lang.Override
         public com.google.protobuf.Parser<MoveState> getParserForType() {
           return PARSER;
         }
-
+        
         public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
@@ -4163,8 +4097,8 @@ public final class GameMsgProtocol {
          * <pre>
          * 移动状态
          * </pre>
-         * <p>
-         * Protobuf type {@code msg.WhoElseIsHereResult.UserInfo.MoveState}
+         *
+         * <p>Protobuf type {@code msg.WhoElseIsHereResult.UserInfo.MoveState}
          */
         public static final class Builder
           extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -4175,16 +4109,17 @@ public final class GameMsgProtocol {
           
           private float fromPosY_;
           
-          // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-          
           private float toPosX_;
           
           private float toPosY_;
           
           private long startTime_;
+          
+          // Construct using
+          // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
           
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
@@ -4206,19 +4141,19 @@ public final class GameMsgProtocol {
             if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             }
           }
-
+          
           public Builder clear() {
             super.clear();
             fromPosX_ = 0F;
-  
+            
             fromPosY_ = 0F;
-  
+            
             toPosX_ = 0F;
-  
+            
             toPosY_ = 0F;
-  
+            
             startTime_ = 0L;
-  
+            
             return this;
           }
           
@@ -4291,6 +4226,7 @@ public final class GameMsgProtocol {
           public float getFromPosX() {
             return fromPosX_;
           }
+          
           /**
            * <pre>
            * 起始位置 X
@@ -4339,6 +4275,7 @@ public final class GameMsgProtocol {
           public float getFromPosY() {
             return fromPosY_;
           }
+          
           /**
            * <pre>
            * 起始位置 Y
@@ -4404,6 +4341,7 @@ public final class GameMsgProtocol {
           public float getToPosX() {
             return toPosX_;
           }
+          
           /**
            * <pre>
            * 移动到位置 X
@@ -4446,6 +4384,7 @@ public final class GameMsgProtocol {
           public float getToPosY() {
             return toPosY_;
           }
+          
           /**
            * <pre>
            * 移动到位置 Y
@@ -4493,6 +4432,7 @@ public final class GameMsgProtocol {
             }
             return this;
           }
+          
           /**
            * <pre>
            * 启程时间戳
@@ -4503,6 +4443,7 @@ public final class GameMsgProtocol {
           public long getStartTime() {
             return startTime_;
           }
+          
           /**
            * <pre>
            * 启程时间戳
@@ -4516,6 +4457,7 @@ public final class GameMsgProtocol {
             onChanged();
             return this;
           }
+          
           /**
            * <pre>
            * 启程时间戳
@@ -4539,8 +4481,7 @@ public final class GameMsgProtocol {
             final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.mergeUnknownFields(unknownFields);
           }
-
-
+          
           // @@protoc_insertion_point(builder_scope:msg.WhoElseIsHereResult.UserInfo.MoveState)
         }
         
@@ -4550,8 +4491,8 @@ public final class GameMsgProtocol {
        * <pre>
        * 用户信息
        * </pre>
-       * <p>
-       * Protobuf type {@code msg.WhoElseIsHereResult.UserInfo}
+       *
+       * <p>Protobuf type {@code msg.WhoElseIsHereResult.UserInfo}
        */
       public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -4562,11 +4503,6 @@ public final class GameMsgProtocol {
         
         private java.lang.Object userName_ = "";
         
-        // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-        
         private java.lang.Object heroAvatar_ = "";
         
         private com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
@@ -4574,6 +4510,12 @@ public final class GameMsgProtocol {
         
         private com.google.protobuf.SingleFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveStateOrBuilder>
           moveStateBuilder_;
+        
+        // Construct using
+        // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
         
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
@@ -4634,7 +4576,7 @@ public final class GameMsgProtocol {
           }
           return result;
         }
-
+        
         public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo buildPartial() {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo result
             = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo(
@@ -4859,7 +4801,7 @@ public final class GameMsgProtocol {
           onChanged();
           return this;
         }
-
+        
         /**
          * <pre>
          * 英雄形象
@@ -4886,9 +4828,12 @@ public final class GameMsgProtocol {
          *
          * <code>string heroAvatar = 3;</code>
          */
-        public Builder clearHeroAvatar() {
+        public Builder setHeroAvatar(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
           
-          heroAvatar_ = getDefaultInstance().getHeroAvatar();
+          heroAvatar_ = value;
           onChanged();
           return this;
         }
@@ -4900,12 +4845,9 @@ public final class GameMsgProtocol {
          *
          * <code>string heroAvatar = 3;</code>
          */
-        public Builder setHeroAvatar(java.lang.String value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
+        public Builder clearHeroAvatar() {
           
-          heroAvatar_ = value;
+          heroAvatar_ = getDefaultInstance().getHeroAvatar();
           onChanged();
           return this;
         }
@@ -4946,6 +4888,7 @@ public final class GameMsgProtocol {
           onChanged();
           return this;
         }
+        
         /**
          * <pre>
          * 移动状态
@@ -4956,7 +4899,7 @@ public final class GameMsgProtocol {
         public boolean hasMoveState() {
           return moveStateBuilder_ != null || moveState_ != null;
         }
-
+        
         /**
          * <pre>
          * 移动状态
@@ -4967,8 +4910,8 @@ public final class GameMsgProtocol {
         public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState getMoveState() {
           if (moveStateBuilder_ == null) {
             return moveState_ == null ?
-                   com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState.getDefaultInstance() :
-                   moveState_;
+                   com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.MoveState
+                     .getDefaultInstance() : moveState_;
           } else {
             return moveStateBuilder_.getMessage();
           }
@@ -5036,9 +4979,10 @@ public final class GameMsgProtocol {
           } else {
             moveStateBuilder_.mergeFrom(value);
           }
-
+          
           return this;
         }
+        
         /**
          * <pre>
          * 移动状态
@@ -5054,9 +4998,10 @@ public final class GameMsgProtocol {
             moveState_ = null;
             moveStateBuilder_ = null;
           }
-
+          
           return this;
         }
+        
         /**
          * <pre>
          * 移动状态
@@ -5069,6 +5014,7 @@ public final class GameMsgProtocol {
           onChanged();
           return getMoveStateFieldBuilder().getBuilder();
         }
+        
         /**
          * <pre>
          * 移动状态
@@ -5112,8 +5058,7 @@ public final class GameMsgProtocol {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
-
-
+        
         // @@protoc_insertion_point(builder_scope:msg.WhoElseIsHereResult.UserInfo)
       }
       
@@ -5123,8 +5068,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.WhoElseIsHereResult}
+     *
+     * <p>Protobuf type {@code msg.WhoElseIsHereResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -5136,17 +5081,22 @@ public final class GameMsgProtocol {
       private java.util.List<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo>
         userInfo_ = java.util.Collections.emptyList();
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.newBuilder()
+      private com.google.protobuf.RepeatedFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfoOrBuilder>
+        userInfoBuilder_;
+      
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
       
-      private com.google.protobuf.RepeatedFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfoOrBuilder>
-        userInfoBuilder_;
-      
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereResult_descriptor;
       }
       
       public Builder clear() {
@@ -5158,10 +5108,6 @@ public final class GameMsgProtocol {
           userInfoBuilder_.clear();
         }
         return this;
-      }
-      
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereResult_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
@@ -5198,7 +5144,7 @@ public final class GameMsgProtocol {
         }
         return result;
       }
-
+      
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult buildPartial() {
         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult result
           = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult(this);
@@ -5308,15 +5254,16 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-
+      
       private void ensureUserInfoIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           userInfo_
-            = new java.util.ArrayList<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo>(userInfo_);
+            = new java.util.ArrayList<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.WhoElseIsHereResult.UserInfo>(
+            userInfo_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
-
+      
       /**
        * <pre>
        * 用户信息数组
@@ -5331,6 +5278,7 @@ public final class GameMsgProtocol {
           return userInfoBuilder_.getMessageList();
         }
       }
+      
       /**
        * <pre>
        * 用户信息数组
@@ -5503,6 +5451,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 用户信息数组
@@ -5520,6 +5469,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 用户信息数组
@@ -5639,8 +5589,7 @@ public final class GameMsgProtocol {
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-
+      
       // @@protoc_insertion_point(builder_scope:msg.WhoElseIsHereResult)
     }
     
@@ -5652,26 +5601,14 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserMoveToCmd}
+   *
+   * <p>Protobuf type {@code msg.UserMoveToCmd}
    */
   public static final class UserMoveToCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                          // @@protoc_insertion_point(message_implements:msg.UserMoveToCmd)
                                                                                            UserMoveToCmdOrBuilder {
     
     public static final int MOVEFROMPOSX_FIELD_NUMBER = 1;
-    
-    // Use UserMoveToCmd.newBuilder() to construct.
-    private UserMoveToCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserMoveToCmd() {
-      moveFromPosX_ = 0F;
-      moveFromPosY_ = 0F;
-      moveToPosX_ = 0F;
-      moveToPosY_ = 0F;
-    }
     
     public static final int MOVEFROMPOSY_FIELD_NUMBER = 2;
     
@@ -5694,19 +5631,6 @@ public final class GameMsgProtocol {
       }
     };
     
-    /**
-     * <pre>
-     * XXX 注意: 用户移动指令中没有用户 Id,
-     * 这是为什么?
-     * 起始位置 X
-     * </pre>
-     *
-     * <code>float moveFromPosX = 1;</code>
-     */
-    public float getMoveFromPosX() {
-      return moveFromPosX_;
-    }
-    
     static {
       DEFAULT_INSTANCE = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd();
     }
@@ -5720,6 +5644,18 @@ public final class GameMsgProtocol {
     private float moveToPosY_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserMoveToCmd.newBuilder() to construct.
+    private UserMoveToCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserMoveToCmd() {
+      moveFromPosX_ = 0F;
+      moveFromPosY_ = 0F;
+      moveToPosX_ = 0F;
+      moveToPosY_ = 0F;
+    }
     
     private UserMoveToCmd(com.google.protobuf.CodedInputStream input,
                           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5746,22 +5682,18 @@ public final class GameMsgProtocol {
               break;
             }
             case 13: {
-
               moveFromPosX_ = input.readFloat();
               break;
             }
             case 21: {
-
               moveFromPosY_ = input.readFloat();
               break;
             }
             case 29: {
-
               moveToPosX_ = input.readFloat();
               break;
             }
             case 37: {
-
               moveToPosY_ = input.readFloat();
               break;
             }
@@ -5869,6 +5801,19 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    /**
+     * <pre>
+     * XXX 注意: 用户移动指令中没有用户 Id,
+     * 这是为什么?
+     * 起始位置 X
+     * </pre>
+     *
+     * <code>float moveFromPosX = 1;</code>
+     */
+    public float getMoveFromPosX() {
+      return moveFromPosX_;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -5954,22 +5899,19 @@ public final class GameMsgProtocol {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, moveFromPosX_);
       }
       if (moveFromPosY_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, moveFromPosY_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, moveFromPosY_);
       }
       if (moveToPosX_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, moveToPosX_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, moveToPosX_);
       }
       if (moveToPosY_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, moveToPosY_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, moveToPosY_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5980,7 +5922,7 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd) obj;
-  
+      
       boolean result = true;
       result = result && (java.lang.Float.floatToIntBits(getMoveFromPosX()) == java.lang.Float
         .floatToIntBits(other.getMoveFromPosX()));
@@ -6028,12 +5970,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserMoveToCmd> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6044,8 +5986,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserMoveToCmd}
+     *
+     * <p>Protobuf type {@code msg.UserMoveToCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -6056,14 +5998,15 @@ public final class GameMsgProtocol {
       
       private float moveFromPosY_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
       private float moveToPosX_;
       
       private float moveToPosY_;
+      
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
       
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
@@ -6171,6 +6114,22 @@ public final class GameMsgProtocol {
         return moveFromPosX_;
       }
       
+      /**
+       * <pre>
+       * XXX 注意: 用户移动指令中没有用户 Id,
+       * 这是为什么?
+       * 起始位置 X
+       * </pre>
+       *
+       * <code>float moveFromPosX = 1;</code>
+       */
+      public Builder setMoveFromPosX(float value) {
+        
+        moveFromPosX_ = value;
+        onChanged();
+        return this;
+      }
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToCmd) {
           return mergeFrom(
@@ -6224,35 +6183,6 @@ public final class GameMsgProtocol {
       
       /**
        * <pre>
-       * XXX 注意: 用户移动指令中没有用户 Id,
-       * 这是为什么?
-       * 起始位置 X
-       * </pre>
-       *
-       * <code>float moveFromPosX = 1;</code>
-       */
-      public Builder setMoveFromPosX(float value) {
-        
-        moveFromPosX_ = value;
-        onChanged();
-        return this;
-      }
-      
-      /**
-       * <pre>
-       * 起始位置 Y
-       * </pre>
-       *
-       * <code>float moveFromPosY = 2;</code>
-       */
-      public Builder setMoveFromPosY(float value) {
-        
-        moveFromPosY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
        * 起始位置 Y
        * </pre>
        *
@@ -6291,6 +6221,7 @@ public final class GameMsgProtocol {
       public float getMoveToPosX() {
         return moveToPosX_;
       }
+      
       /**
        * <pre>
        * 移动到位置 X
@@ -6304,6 +6235,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 移动到位置 X
@@ -6331,6 +6263,20 @@ public final class GameMsgProtocol {
       
       /**
        * <pre>
+       * 起始位置 Y
+       * </pre>
+       *
+       * <code>float moveFromPosY = 2;</code>
+       */
+      public Builder setMoveFromPosY(float value) {
+        
+        moveFromPosY_ = value;
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
        * 移动到位置 Y
        * </pre>
        *
@@ -6339,6 +6285,7 @@ public final class GameMsgProtocol {
       public float getMoveToPosY() {
         return moveToPosY_;
       }
+      
       /**
        * <pre>
        * 移动到位置 Y
@@ -6352,6 +6299,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 移动到位置 Y
@@ -6375,8 +6323,7 @@ public final class GameMsgProtocol {
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-
+      
       // @@protoc_insertion_point(builder_scope:msg.UserMoveToCmd)
     }
     
@@ -6386,8 +6333,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserMoveToResult}
+   *
+   * <p>Protobuf type {@code msg.UserMoveToResult}
    */
   public static final class UserMoveToResult extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -6420,17 +6367,6 @@ public final class GameMsgProtocol {
         return new UserMoveToResult(input, extensionRegistry);
       }
     };
-    
-    /**
-     * <pre>
-     * 移动用户 Id
-     * </pre>
-     *
-     * <code>uint32 moveUserId = 1;</code>
-     */
-    public int getMoveUserId() {
-      return moveUserId_;
-    }
     
     static {
       DEFAULT_INSTANCE
@@ -6490,32 +6426,26 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-
               moveUserId_ = input.readUInt32();
               break;
             }
             case 21: {
-
               moveFromPosX_ = input.readFloat();
               break;
             }
             case 29: {
-
               moveFromPosY_ = input.readFloat();
               break;
             }
             case 37: {
-
               moveToPosX_ = input.readFloat();
               break;
             }
             case 45: {
-
               moveToPosY_ = input.readFloat();
               break;
             }
             case 48: {
-
               moveStartTime_ = input.readUInt64();
               break;
             }
@@ -6621,6 +6551,17 @@ public final class GameMsgProtocol {
     
     public static com.google.protobuf.Parser<UserMoveToResult> parser() {
       return PARSER;
+    }
+    
+    /**
+     * <pre>
+     * 移动用户 Id
+     * </pre>
+     *
+     * <code>uint32 moveUserId = 1;</code>
+     */
+    public int getMoveUserId() {
+      return moveUserId_;
     }
     
     @java.lang.Override
@@ -6736,30 +6677,25 @@ public final class GameMsgProtocol {
         size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, moveUserId_);
       }
       if (moveFromPosX_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, moveFromPosX_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, moveFromPosX_);
       }
       if (moveFromPosY_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, moveFromPosY_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, moveFromPosY_);
       }
       if (moveToPosX_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, moveToPosX_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, moveToPosX_);
       }
       if (moveToPosY_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, moveToPosY_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, moveToPosY_);
       }
       if (moveStartTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, moveStartTime_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt64Size(6, moveStartTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6770,7 +6706,7 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult) obj;
-  
+      
       boolean result = true;
       result = result && (getMoveUserId() == other.getMoveUserId());
       result = result && (java.lang.Float.floatToIntBits(getMoveFromPosX()) == java.lang.Float
@@ -6824,12 +6760,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserMoveToResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6838,8 +6774,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserMoveToResult}
+     *
+     * <p>Protobuf type {@code msg.UserMoveToResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -6850,23 +6786,19 @@ public final class GameMsgProtocol {
       
       private float moveFromPosX_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
       private float moveFromPosY_;
-      
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        }
-      }
       
       private float moveToPosX_;
       
       private float moveToPosY_;
       
       private long moveStartTime_;
+      
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserMoveToResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
       
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
@@ -6875,6 +6807,11 @@ public final class GameMsgProtocol {
       
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserMoveToResult_descriptor;
+      }
+      
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        }
       }
       
       public Builder clone() {
@@ -7001,6 +6938,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 起始位置 X
@@ -7011,6 +6949,7 @@ public final class GameMsgProtocol {
       public float getMoveFromPosX() {
         return moveFromPosX_;
       }
+      
       /**
        * <pre>
        * 起始位置 X
@@ -7056,6 +6995,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 起始位置 Y
@@ -7066,6 +7006,7 @@ public final class GameMsgProtocol {
       public float getMoveFromPosY() {
         return moveFromPosY_;
       }
+      
       /**
        * <pre>
        * 起始位置 Y
@@ -7079,6 +7020,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 起始位置 Y
@@ -7092,7 +7034,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-
+      
       /**
        * <pre>
        * 移动用户 Id
@@ -7103,17 +7045,7 @@ public final class GameMsgProtocol {
       public int getMoveUserId() {
         return moveUserId_;
       }
-      /**
-       * <pre>
-       * 移动到位置 X
-       * </pre>
-       *
-       * <code>float moveToPosX = 4;</code>
-       */
-      public float getMoveToPosX() {
-        return moveToPosX_;
-      }
-
+      
       /**
        * <pre>
        * 移动用户 Id
@@ -7124,6 +7056,31 @@ public final class GameMsgProtocol {
       public Builder setMoveUserId(int value) {
         
         moveUserId_ = value;
+        onChanged();
+        return this;
+      }
+      
+      /**
+       * <pre>
+       * 移动到位置 X
+       * </pre>
+       *
+       * <code>float moveToPosX = 4;</code>
+       */
+      public float getMoveToPosX() {
+        return moveToPosX_;
+      }
+      
+      /**
+       * <pre>
+       * 移动到位置 X
+       * </pre>
+       *
+       * <code>float moveToPosX = 4;</code>
+       */
+      public Builder setMoveToPosX(float value) {
+        
+        moveToPosX_ = value;
         onChanged();
         return this;
       }
@@ -7144,20 +7101,6 @@ public final class GameMsgProtocol {
       
       /**
        * <pre>
-       * 移动到位置 X
-       * </pre>
-       *
-       * <code>float moveToPosX = 4;</code>
-       */
-      public Builder setMoveToPosX(float value) {
-        
-        moveToPosX_ = value;
-        onChanged();
-        return this;
-      }
-      
-      /**
-       * <pre>
        * 移动到位置 Y
        * </pre>
        *
@@ -7166,6 +7109,7 @@ public final class GameMsgProtocol {
       public float getMoveToPosY() {
         return moveToPosY_;
       }
+      
       /**
        * <pre>
        * 移动到位置 Y
@@ -7179,6 +7123,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 移动到位置 Y
@@ -7192,7 +7137,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-
+      
       /**
        * <pre>
        * 移动到位置 X
@@ -7206,6 +7151,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 启程时间戳
@@ -7216,6 +7162,7 @@ public final class GameMsgProtocol {
       public long getMoveStartTime() {
         return moveStartTime_;
       }
+      
       /**
        * <pre>
        * 启程时间戳
@@ -7229,6 +7176,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 启程时间戳
@@ -7252,8 +7200,7 @@ public final class GameMsgProtocol {
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-
+      
       // @@protoc_insertion_point(builder_scope:msg.UserMoveToResult)
     }
     
@@ -7266,23 +7213,14 @@ public final class GameMsgProtocol {
    * XXX 注意: 用户退场不需要指令, 因为是在断开服务器的时候执行
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserQuitResult}
+   *
+   * <p>Protobuf type {@code msg.UserQuitResult}
    */
   public static final class UserQuitResult extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                           // @@protoc_insertion_point(message_implements:msg.UserQuitResult)
                                                                                             UserQuitResultOrBuilder {
     
     public static final int QUITUSERID_FIELD_NUMBER = 1;
-    
-    // Use UserQuitResult.newBuilder() to construct.
-    private UserQuitResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserQuitResult() {
-      quitUserId_ = 0;
-    }
     
     private static final long serialVersionUID = 0L;
     
@@ -7306,6 +7244,15 @@ public final class GameMsgProtocol {
     private int quitUserId_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserQuitResult.newBuilder() to construct.
+    private UserQuitResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserQuitResult() {
+      quitUserId_ = 0;
+    }
     
     private UserQuitResult(com.google.protobuf.CodedInputStream input,
                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7332,7 +7279,6 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-
               quitUserId_ = input.readUInt32();
               break;
             }
@@ -7436,6 +7382,10 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -7457,10 +7407,6 @@ public final class GameMsgProtocol {
      */
     public int getQuitUserId() {
       return quitUserId_;
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -7497,7 +7443,7 @@ public final class GameMsgProtocol {
       memoizedSize = size;
       return size;
     }
-
+    
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7508,7 +7454,7 @@ public final class GameMsgProtocol {
       }
       com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult other
         = (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult) obj;
-  
+      
       boolean result = true;
       result = result && (getQuitUserId() == other.getQuitUserId());
       result = result && unknownFields.equals(other.unknownFields);
@@ -7543,12 +7489,12 @@ public final class GameMsgProtocol {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserQuitResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7560,8 +7506,8 @@ public final class GameMsgProtocol {
      * XXX 注意: 用户退场不需要指令, 因为是在断开服务器的时候执行
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserQuitResult}
+     *
+     * <p>Protobuf type {@code msg.UserQuitResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -7575,7 +7521,8 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserQuitResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7701,6 +7648,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 退出用户 Id
@@ -7711,7 +7659,7 @@ public final class GameMsgProtocol {
       public int getQuitUserId() {
         return quitUserId_;
       }
-
+      
       /**
        * <pre>
        * 退出用户 Id
@@ -7740,7 +7688,8 @@ public final class GameMsgProtocol {
         return this;
       }
       
-      public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
@@ -7760,22 +7709,14 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserStopCmd}
+   *
+   * <p>Protobuf type {@code msg.UserStopCmd}
    */
   public static final class UserStopCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                        // @@protoc_insertion_point(message_implements:msg.UserStopCmd)
                                                                                          UserStopCmdOrBuilder {
     
     private static final long serialVersionUID = 0L;
-    
-    // Use UserStopCmd.newBuilder() to construct.
-    private UserStopCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserStopCmd() {
-    }
     
     // @@protoc_insertion_point(class_scope:msg.UserStopCmd)
     private static final com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopCmd
@@ -7795,6 +7736,14 @@ public final class GameMsgProtocol {
     }
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserStopCmd.newBuilder() to construct.
+    private UserStopCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserStopCmd() {
+    }
     
     private UserStopCmd(com.google.protobuf.CodedInputStream input,
                         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7919,6 +7868,10 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -7929,10 +7882,6 @@ public final class GameMsgProtocol {
         .ensureFieldAccessorsInitialized(
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopCmd.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopCmd.Builder.class);
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -8001,16 +7950,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserStopCmd> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8021,8 +7971,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserStopCmd}
+     *
+     * <p>Protobuf type {@code msg.UserStopCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -8034,13 +7984,14 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserStopCmd_descriptor;
-      }
-      
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserStopCmd_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
@@ -8173,25 +8124,14 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserStopResult}
+   *
+   * <p>Protobuf type {@code msg.UserStopResult}
    */
   public static final class UserStopResult extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                           // @@protoc_insertion_point(message_implements:msg.UserStopResult)
                                                                                             UserStopResultOrBuilder {
     
     public static final int STOPUSERID_FIELD_NUMBER = 1;
-    
-    // Use UserStopResult.newBuilder() to construct.
-    private UserStopResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserStopResult() {
-      stopUserId_ = 0;
-      stopAtPosX_ = 0F;
-      stopAtPosY_ = 0F;
-    }
     
     public static final int STOPATPOSX_FIELD_NUMBER = 2;
     
@@ -8216,45 +8156,23 @@ public final class GameMsgProtocol {
       DEFAULT_INSTANCE = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult();
     }
     
-    /**
-     * <pre>
-     * 停驻用户 Id
-     * </pre>
-     *
-     * <code>uint32 stopUserId = 1;</code>
-     */
-    public int getStopUserId() {
-      return stopUserId_;
-    }
-    
     private int stopUserId_;
     
     private float stopAtPosX_;
-    
-    /**
-     * <pre>
-     * 停驻在位置 X
-     * </pre>
-     *
-     * <code>float stopAtPosX = 2;</code>
-     */
-    public float getStopAtPosX() {
-      return stopAtPosX_;
-    }
     
     private float stopAtPosY_;
     
     private byte memoizedIsInitialized = -1;
     
-    /**
-     * <pre>
-     * 停驻在位置 Y
-     * </pre>
-     *
-     * <code>float stopAtPosY = 3;</code>
-     */
-    public float getStopAtPosY() {
-      return stopAtPosY_;
+    // Use UserStopResult.newBuilder() to construct.
+    private UserStopResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserStopResult() {
+      stopUserId_ = 0;
+      stopAtPosX_ = 0F;
+      stopAtPosY_ = 0F;
     }
     
     private UserStopResult(com.google.protobuf.CodedInputStream input,
@@ -8282,17 +8200,14 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-
               stopUserId_ = input.readUInt32();
               break;
             }
             case 21: {
-
               stopAtPosX_ = input.readFloat();
               break;
             }
             case 29: {
-
               stopAtPosY_ = input.readFloat();
               break;
             }
@@ -8400,6 +8315,39 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    /**
+     * <pre>
+     * 停驻用户 Id
+     * </pre>
+     *
+     * <code>uint32 stopUserId = 1;</code>
+     */
+    public int getStopUserId() {
+      return stopUserId_;
+    }
+    
+    /**
+     * <pre>
+     * 停驻在位置 X
+     * </pre>
+     *
+     * <code>float stopAtPosX = 2;</code>
+     */
+    public float getStopAtPosX() {
+      return stopAtPosX_;
+    }
+    
+    /**
+     * <pre>
+     * 停驻在位置 Y
+     * </pre>
+     *
+     * <code>float stopAtPosY = 3;</code>
+     */
+    public float getStopAtPosY() {
+      return stopAtPosY_;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -8449,12 +8397,10 @@ public final class GameMsgProtocol {
         size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, stopUserId_);
       }
       if (stopAtPosX_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, stopAtPosX_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, stopAtPosX_);
       }
       if (stopAtPosY_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, stopAtPosY_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, stopAtPosY_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8509,16 +8455,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserStopResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8527,8 +8474,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserStopResult}
+     *
+     * <p>Protobuf type {@code msg.UserStopResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -8539,12 +8486,13 @@ public final class GameMsgProtocol {
       
       private float stopAtPosX_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult.newBuilder()
+      private float stopAtPosY_;
+      
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserStopResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private float stopAtPosY_;
       
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
@@ -8662,6 +8610,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 停驻用户 Id
@@ -8672,6 +8621,7 @@ public final class GameMsgProtocol {
       public int getStopUserId() {
         return stopUserId_;
       }
+      
       /**
        * <pre>
        * 停驻用户 Id
@@ -8685,6 +8635,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 停驻用户 Id
@@ -8698,10 +8649,11 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
-
+      
       public final boolean isInitialized() {
         return true;
       }
+      
       /**
        * <pre>
        * 停驻在位置 X
@@ -8712,6 +8664,7 @@ public final class GameMsgProtocol {
       public float getStopAtPosX() {
         return stopAtPosX_;
       }
+      
       /**
        * <pre>
        * 停驻在位置 X
@@ -8757,6 +8710,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 停驻在位置 Y
@@ -8767,6 +8721,7 @@ public final class GameMsgProtocol {
       public float getStopAtPosY() {
         return stopAtPosY_;
       }
+      
       /**
        * <pre>
        * 停驻在位置 Y
@@ -8780,6 +8735,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 停驻在位置 Y
@@ -8788,7 +8744,7 @@ public final class GameMsgProtocol {
        * <code>float stopAtPosY = 3;</code>
        */
       public Builder clearStopAtPosY() {
-  
+        
         stopAtPosY_ = 0F;
         onChanged();
         return this;
@@ -8799,7 +8755,8 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -8814,23 +8771,14 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserAttkCmd}
+   *
+   * <p>Protobuf type {@code msg.UserAttkCmd}
    */
   public static final class UserAttkCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                        // @@protoc_insertion_point(message_implements:msg.UserAttkCmd)
                                                                                          UserAttkCmdOrBuilder {
     
     public static final int TARGETUSERID_FIELD_NUMBER = 1;
-    
-    // Use UserAttkCmd.newBuilder() to construct.
-    private UserAttkCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserAttkCmd() {
-      targetUserId_ = 0;
-    }
     
     private static final long serialVersionUID = 0L;
     
@@ -8854,6 +8802,15 @@ public final class GameMsgProtocol {
     private int targetUserId_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserAttkCmd.newBuilder() to construct.
+    private UserAttkCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserAttkCmd() {
+      targetUserId_ = 0;
+    }
     
     private UserAttkCmd(com.google.protobuf.CodedInputStream input,
                         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8880,7 +8837,6 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-  
               targetUserId_ = input.readUInt32();
               break;
             }
@@ -8984,6 +8940,10 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -9005,10 +8965,6 @@ public final class GameMsgProtocol {
      */
     public int getTargetUserId() {
       return targetUserId_;
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -9086,16 +9042,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserAttkCmd> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9106,8 +9063,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserAttkCmd}
+     *
+     * <p>Protobuf type {@code msg.UserAttkCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -9121,7 +9078,8 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9246,6 +9204,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -9256,6 +9215,7 @@ public final class GameMsgProtocol {
       public int getTargetUserId() {
         return targetUserId_;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -9269,6 +9229,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -9277,7 +9238,7 @@ public final class GameMsgProtocol {
        * <code>uint32 targetUserId = 1;</code>
        */
       public Builder clearTargetUserId() {
-  
+        
         targetUserId_ = 0;
         onChanged();
         return this;
@@ -9288,7 +9249,8 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -9301,24 +9263,14 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserAttkResult}
+   *
+   * <p>Protobuf type {@code msg.UserAttkResult}
    */
   public static final class UserAttkResult extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                           // @@protoc_insertion_point(message_implements:msg.UserAttkResult)
                                                                                             UserAttkResultOrBuilder {
     
     public static final int ATTKUSERID_FIELD_NUMBER = 1;
-    
-    // Use UserAttkResult.newBuilder() to construct.
-    private UserAttkResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserAttkResult() {
-      attkUserId_ = 0;
-      targetUserId_ = 0;
-    }
     
     public static final int TARGETUSERID_FIELD_NUMBER = 2;
     
@@ -9343,30 +9295,18 @@ public final class GameMsgProtocol {
     
     private int attkUserId_;
     
-    /**
-     * <pre>
-     * 发动攻击的用户 Id
-     * </pre>
-     *
-     * <code>uint32 attkUserId = 1;</code>
-     */
-    public int getAttkUserId() {
-      return attkUserId_;
-    }
-    
     private int targetUserId_;
     
     private byte memoizedIsInitialized = -1;
     
-    /**
-     * <pre>
-     * 目标用户 Id
-     * </pre>
-     *
-     * <code>uint32 targetUserId = 2;</code>
-     */
-    public int getTargetUserId() {
-      return targetUserId_;
+    // Use UserAttkResult.newBuilder() to construct.
+    private UserAttkResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserAttkResult() {
+      attkUserId_ = 0;
+      targetUserId_ = 0;
     }
     
     private UserAttkResult(com.google.protobuf.CodedInputStream input,
@@ -9394,12 +9334,10 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-  
               attkUserId_ = input.readUInt32();
               break;
             }
             case 16: {
-  
               targetUserId_ = input.readUInt32();
               break;
             }
@@ -9507,6 +9445,28 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    /**
+     * <pre>
+     * 发动攻击的用户 Id
+     * </pre>
+     *
+     * <code>uint32 attkUserId = 1;</code>
+     */
+    public int getAttkUserId() {
+      return attkUserId_;
+    }
+    
+    /**
+     * <pre>
+     * 目标用户 Id
+     * </pre>
+     *
+     * <code>uint32 targetUserId = 2;</code>
+     */
+    public int getTargetUserId() {
+      return targetUserId_;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -9553,8 +9513,7 @@ public final class GameMsgProtocol {
         size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, attkUserId_);
       }
       if (targetUserId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, targetUserId_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, targetUserId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9604,16 +9563,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserAttkResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9622,8 +9582,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserAttkResult}
+     *
+     * <p>Protobuf type {@code msg.UserAttkResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -9634,7 +9594,8 @@ public final class GameMsgProtocol {
       
       private int targetUserId_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserAttkResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9656,8 +9617,7 @@ public final class GameMsgProtocol {
       }
       
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         }
       }
       
@@ -9754,6 +9714,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 发动攻击的用户 Id
@@ -9764,6 +9725,7 @@ public final class GameMsgProtocol {
       public int getAttkUserId() {
         return attkUserId_;
       }
+      
       /**
        * <pre>
        * 发动攻击的用户 Id
@@ -9809,6 +9771,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -9819,6 +9782,7 @@ public final class GameMsgProtocol {
       public int getTargetUserId() {
         return targetUserId_;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -9832,6 +9796,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -9840,7 +9805,7 @@ public final class GameMsgProtocol {
        * <code>uint32 targetUserId = 2;</code>
        */
       public Builder clearTargetUserId() {
-  
+        
         targetUserId_ = 0;
         onChanged();
         return this;
@@ -9851,7 +9816,8 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -9864,8 +9830,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 用户减血结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserSubtractHpResult}
+   *
+   * <p>Protobuf type {@code msg.UserSubtractHpResult}
    */
   public static final class UserSubtractHpResult extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -9873,16 +9839,6 @@ public final class GameMsgProtocol {
       UserSubtractHpResultOrBuilder {
     
     public static final int TARGETUSERID_FIELD_NUMBER = 1;
-    
-    // Use UserSubtractHpResult.newBuilder() to construct.
-    private UserSubtractHpResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserSubtractHpResult() {
-      targetUserId_ = 0;
-      subtractHp_ = 0;
-    }
     
     public static final int SUBTRACTHP_FIELD_NUMBER = 2;
     
@@ -9908,30 +9864,18 @@ public final class GameMsgProtocol {
     
     private int targetUserId_;
     
-    /**
-     * <pre>
-     * 目标用户 Id
-     * </pre>
-     *
-     * <code>uint32 targetUserId = 1;</code>
-     */
-    public int getTargetUserId() {
-      return targetUserId_;
-    }
-    
     private int subtractHp_;
     
     private byte memoizedIsInitialized = -1;
     
-    /**
-     * <pre>
-     * 减血量
-     * </pre>
-     *
-     * <code>uint32 subtractHp = 2;</code>
-     */
-    public int getSubtractHp() {
-      return subtractHp_;
+    // Use UserSubtractHpResult.newBuilder() to construct.
+    private UserSubtractHpResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserSubtractHpResult() {
+      targetUserId_ = 0;
+      subtractHp_ = 0;
     }
     
     private UserSubtractHpResult(com.google.protobuf.CodedInputStream input,
@@ -9959,12 +9903,10 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-
               targetUserId_ = input.readUInt32();
               break;
             }
             case 16: {
-  
               subtractHp_ = input.readUInt32();
               break;
             }
@@ -10072,6 +10014,28 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    /**
+     * <pre>
+     * 目标用户 Id
+     * </pre>
+     *
+     * <code>uint32 targetUserId = 1;</code>
+     */
+    public int getTargetUserId() {
+      return targetUserId_;
+    }
+    
+    /**
+     * <pre>
+     * 减血量
+     * </pre>
+     *
+     * <code>uint32 subtractHp = 2;</code>
+     */
+    public int getSubtractHp() {
+      return subtractHp_;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -10118,8 +10082,7 @@ public final class GameMsgProtocol {
         size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, targetUserId_);
       }
       if (subtractHp_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, subtractHp_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, subtractHp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10169,16 +10132,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserSubtractHpResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10187,8 +10151,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 用户减血结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserSubtractHpResult}
+     *
+     * <p>Protobuf type {@code msg.UserSubtractHpResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -10199,7 +10163,8 @@ public final class GameMsgProtocol {
       
       private int subtractHp_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserSubtractHpResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10221,8 +10186,7 @@ public final class GameMsgProtocol {
       }
       
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         }
       }
       
@@ -10389,6 +10353,7 @@ public final class GameMsgProtocol {
       public int getSubtractHp() {
         return subtractHp_;
       }
+      
       /**
        * <pre>
        * 减血量
@@ -10402,6 +10367,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 减血量
@@ -10410,7 +10376,7 @@ public final class GameMsgProtocol {
        * <code>uint32 subtractHp = 2;</code>
        */
       public Builder clearSubtractHp() {
-  
+        
         subtractHp_ = 0;
         onChanged();
         return this;
@@ -10421,7 +10387,8 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -10434,23 +10401,14 @@ public final class GameMsgProtocol {
    * <pre>
    * 死亡结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserDieResult}
+   *
+   * <p>Protobuf type {@code msg.UserDieResult}
    */
   public static final class UserDieResult extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                          // @@protoc_insertion_point(message_implements:msg.UserDieResult)
                                                                                            UserDieResultOrBuilder {
     
     public static final int TARGETUSERID_FIELD_NUMBER = 1;
-    
-    // Use UserDieResult.newBuilder() to construct.
-    private UserDieResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserDieResult() {
-      targetUserId_ = 0;
-    }
     
     private static final long serialVersionUID = 0L;
     
@@ -10474,6 +10432,15 @@ public final class GameMsgProtocol {
     private int targetUserId_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserDieResult.newBuilder() to construct.
+    private UserDieResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserDieResult() {
+      targetUserId_ = 0;
+    }
     
     private UserDieResult(com.google.protobuf.CodedInputStream input,
                           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10500,7 +10467,6 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-              
               targetUserId_ = input.readUInt32();
               break;
             }
@@ -10604,6 +10570,10 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -10625,10 +10595,6 @@ public final class GameMsgProtocol {
      */
     public int getTargetUserId() {
       return targetUserId_;
-    }
-    
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
     }
     
     public final boolean isInitialized() {
@@ -10706,16 +10672,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserDieResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10724,8 +10691,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 死亡结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserDieResult}
+     *
+     * <p>Protobuf type {@code msg.UserDieResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -10739,7 +10706,8 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserDieResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10864,6 +10832,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -10874,6 +10843,7 @@ public final class GameMsgProtocol {
       public int getTargetUserId() {
         return targetUserId_;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -10887,6 +10857,7 @@ public final class GameMsgProtocol {
         onChanged();
         return this;
       }
+      
       /**
        * <pre>
        * 目标用户 Id
@@ -10895,7 +10866,7 @@ public final class GameMsgProtocol {
        * <code>uint32 targetUserId = 1;</code>
        */
       public Builder clearTargetUserId() {
-  
+        
         targetUserId_ = 0;
         onChanged();
         return this;
@@ -10906,7 +10877,8 @@ public final class GameMsgProtocol {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -10921,24 +10893,14 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserLoginCmd}
+   *
+   * <p>Protobuf type {@code msg.UserLoginCmd}
    */
   public static final class UserLoginCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                         // @@protoc_insertion_point(message_implements:msg.UserLoginCmd)
                                                                                           UserLoginCmdOrBuilder {
     
     public static final int USERNAME_FIELD_NUMBER = 1;
-    
-    // Use UserLoginCmd.newBuilder() to construct.
-    private UserLoginCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserLoginCmd() {
-      userName_ = "";
-      password_ = "";
-    }
     
     public static final int PASSWORD_FIELD_NUMBER = 2;
     
@@ -10967,6 +10929,16 @@ public final class GameMsgProtocol {
     
     private byte memoizedIsInitialized = -1;
     
+    // Use UserLoginCmd.newBuilder() to construct.
+    private UserLoginCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserLoginCmd() {
+      userName_ = "";
+      password_ = "";
+    }
+    
     private UserLoginCmd(com.google.protobuf.CodedInputStream input,
                          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10993,13 +10965,13 @@ public final class GameMsgProtocol {
             }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
+              
               userName_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-  
+              
               password_ = s;
               break;
             }
@@ -11059,22 +11031,6 @@ public final class GameMsgProtocol {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -11124,6 +11080,22 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -11134,7 +11106,7 @@ public final class GameMsgProtocol {
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd.class,
           com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd.Builder.class);
     }
-
+    
     /**
      * <pre>
      * 用户名称
@@ -11172,7 +11144,7 @@ public final class GameMsgProtocol {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     /**
      * <pre>
      * 用户密码
@@ -11279,16 +11251,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserLoginCmd> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11299,8 +11272,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserLoginCmd}
+     *
+     * <p>Protobuf type {@code msg.UserLoginCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -11311,7 +11284,8 @@ public final class GameMsgProtocol {
       
       private java.lang.Object password_ = "";
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11449,7 +11423,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-
+      
       /**
        * <pre>
        * 用户名称
@@ -11529,14 +11503,14 @@ public final class GameMsgProtocol {
       public Builder setUserNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        }
+        checkByteStringIsUtf8(value);
         
         userName_ = value;
         onChanged();
         return this;
       }
-
+      
       /**
        * <pre>
        * 用户密码
@@ -11599,20 +11573,6 @@ public final class GameMsgProtocol {
        *
        * <code>string password = 2;</code>
        */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      
-      /**
-       * <pre>
-       * 用户密码
-       * </pre>
-       *
-       * <code>string password = 2;</code>
-       */
       public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -11624,12 +11584,27 @@ public final class GameMsgProtocol {
         return this;
       }
       
+      /**
+       * <pre>
+       * 用户密码
+       * </pre>
+       *
+       * <code>string password = 2;</code>
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      
       public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -11642,8 +11617,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.UserLoginResult}
+   *
+   * <p>Protobuf type {@code msg.UserLoginResult}
    */
   public static final class UserLoginResult extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -11651,17 +11626,6 @@ public final class GameMsgProtocol {
       UserLoginResultOrBuilder {
     
     public static final int USERID_FIELD_NUMBER = 1;
-    
-    // Use UserLoginResult.newBuilder() to construct.
-    private UserLoginResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private UserLoginResult() {
-      userId_ = 0;
-      userName_ = "";
-      heroAvatar_ = "";
-    }
     
     public static final int USERNAME_FIELD_NUMBER = 2;
     
@@ -11687,18 +11651,6 @@ public final class GameMsgProtocol {
         = new com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult();
     }
     
-    /**
-     * <pre>
-     * 用户 Id,
-     * 如果是 -1 则说明登录失败
-     * </pre>
-     *
-     * <code>uint32 userId = 1;</code>
-     */
-    public int getUserId() {
-      return userId_;
-    }
-    
     private int userId_;
     
     private volatile java.lang.Object userName_;
@@ -11706,6 +11658,17 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use UserLoginResult.newBuilder() to construct.
+    private UserLoginResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private UserLoginResult() {
+      userId_ = 0;
+      userName_ = "";
+      heroAvatar_ = "";
+    }
     
     private UserLoginResult(com.google.protobuf.CodedInputStream input,
                             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11732,19 +11695,18 @@ public final class GameMsgProtocol {
               break;
             }
             case 8: {
-
               userId_ = input.readUInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
+              
               userName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-  
+              
               heroAvatar_ = s;
               break;
             }
@@ -11804,24 +11766,6 @@ public final class GameMsgProtocol {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
     
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
-      hash = (53 * hash) + getHeroAvatar().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-    
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -11870,6 +11814,36 @@ public final class GameMsgProtocol {
       return PARSER;
     }
     
+    /**
+     * <pre>
+     * 用户 Id,
+     * 如果是 -1 则说明登录失败
+     * </pre>
+     *
+     * <code>uint32 userId = 1;</code>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -11878,9 +11852,10 @@ public final class GameMsgProtocol {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_UserLoginResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.class, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.Builder.class);
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.class,
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.Builder.class);
     }
-
+    
     /**
      * <pre>
      * 用户名称
@@ -11918,7 +11893,7 @@ public final class GameMsgProtocol {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     /**
      * <pre>
      * 英雄形象
@@ -12032,16 +12007,17 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<UserLoginResult> getParserForType() {
       return PARSER;
     }
-
+    
     public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12050,8 +12026,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.UserLoginResult}
+     *
+     * <p>Protobuf type {@code msg.UserLoginResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -12062,12 +12038,13 @@ public final class GameMsgProtocol {
       
       private java.lang.Object userName_ = "";
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.newBuilder()
+      private java.lang.Object heroAvatar_ = "";
+      
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private java.lang.Object heroAvatar_ = "";
       
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
@@ -12111,7 +12088,8 @@ public final class GameMsgProtocol {
       }
       
       public com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult build() {
-        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult result = buildPartial();
+        com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult result
+          = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12161,12 +12139,14 @@ public final class GameMsgProtocol {
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult) {
-          return mergeFrom((com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult)other);
+          return mergeFrom(
+            (com.kaige.advance.netty.herostory.msg.GameMsgProtocol.UserLoginResult) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
+      
       /**
        * <pre>
        * 用户 Id,
@@ -12178,6 +12158,7 @@ public final class GameMsgProtocol {
       public int getUserId() {
         return userId_;
       }
+      
       /**
        * <pre>
        * 用户 Id,
@@ -12187,7 +12168,7 @@ public final class GameMsgProtocol {
        * <code>uint32 userId = 1;</code>
        */
       public Builder setUserId(int value) {
-  
+        
         userId_ = value;
         onChanged();
         return this;
@@ -12327,14 +12308,14 @@ public final class GameMsgProtocol {
       public Builder setUserNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        }
+        checkByteStringIsUtf8(value);
         
         userName_ = value;
         onChanged();
         return this;
       }
-
+      
       /**
        * <pre>
        * 英雄形象
@@ -12397,20 +12378,6 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 3;</code>
        */
-      public Builder clearHeroAvatar() {
-        
-        heroAvatar_ = getDefaultInstance().getHeroAvatar();
-        onChanged();
-        return this;
-      }
-      
-      /**
-       * <pre>
-       * 英雄形象
-       * </pre>
-       *
-       * <code>string heroAvatar = 3;</code>
-       */
       public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -12422,12 +12389,27 @@ public final class GameMsgProtocol {
         return this;
       }
       
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 3;</code>
+       */
+      public Builder clearHeroAvatar() {
+        
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        onChanged();
+        return this;
+      }
+      
       public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
-      public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -12442,23 +12424,14 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.SelectHeroCmd}
+   *
+   * <p>Protobuf type {@code msg.SelectHeroCmd}
    */
   public static final class SelectHeroCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                          // @@protoc_insertion_point(message_implements:msg.SelectHeroCmd)
                                                                                            SelectHeroCmdOrBuilder {
     
     public static final int HEROAVATAR_FIELD_NUMBER = 1;
-    
-    // Use SelectHeroCmd.newBuilder() to construct.
-    private SelectHeroCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private SelectHeroCmd() {
-      heroAvatar_ = "";
-    }
     
     private static final long serialVersionUID = 0L;
     
@@ -12482,6 +12455,15 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use SelectHeroCmd.newBuilder() to construct.
+    private SelectHeroCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private SelectHeroCmd() {
+      heroAvatar_ = "";
+    }
     
     private SelectHeroCmd(com.google.protobuf.CodedInputStream input,
                           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12509,7 +12491,7 @@ public final class GameMsgProtocol {
             }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-  
+              
               heroAvatar_ = s;
               break;
             }
@@ -12556,20 +12538,6 @@ public final class GameMsgProtocol {
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
-      hash = (53 * hash) + getHeroAvatar().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
     
     public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd parseFrom(
@@ -12632,6 +12600,20 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HEROAVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getHeroAvatar().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+    
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -12639,9 +12621,10 @@ public final class GameMsgProtocol {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.kaige.advance.netty.herostory.msg.GameMsgProtocol.internal_static_msg_SelectHeroCmd_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.class, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.Builder.class);
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.class,
+          com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.Builder.class);
     }
-
+    
     /**
      * <pre>
      * 英雄形象
@@ -12741,11 +12724,12 @@ public final class GameMsgProtocol {
     }
     
     @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-
+    
     @java.lang.Override
     public com.google.protobuf.Parser<SelectHeroCmd> getParserForType() {
       return PARSER;
@@ -12761,8 +12745,8 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.SelectHeroCmd}
+     *
+     * <p>Protobuf type {@code msg.SelectHeroCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -12776,7 +12760,8 @@ public final class GameMsgProtocol {
         maybeForceBuilderInitialization();
       }
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12902,7 +12887,7 @@ public final class GameMsgProtocol {
         }
         return this;
       }
-
+      
       /**
        * <pre>
        * 英雄形象
@@ -12965,20 +12950,6 @@ public final class GameMsgProtocol {
        *
        * <code>string heroAvatar = 1;</code>
        */
-      public Builder clearHeroAvatar() {
-        
-        heroAvatar_ = getDefaultInstance().getHeroAvatar();
-        onChanged();
-        return this;
-      }
-      
-      /**
-       * <pre>
-       * 英雄形象
-       * </pre>
-       *
-       * <code>string heroAvatar = 1;</code>
-       */
       public Builder setHeroAvatarBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -12990,13 +12961,27 @@ public final class GameMsgProtocol {
         return this;
       }
       
+      /**
+       * <pre>
+       * 英雄形象
+       * </pre>
+       *
+       * <code>string heroAvatar = 1;</code>
+       */
+      public Builder clearHeroAvatar() {
+        
+        heroAvatar_ = getDefaultInstance().getHeroAvatar();
+        onChanged();
+        return this;
+      }
+      
       public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
       
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
       
@@ -13009,8 +12994,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.SelectHeroResult}
+   *
+   * <p>Protobuf type {@code msg.SelectHeroResult}
    */
   public static final class SelectHeroResult extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -13018,15 +13003,6 @@ public final class GameMsgProtocol {
       SelectHeroResultOrBuilder {
     
     public static final int HEROAVATAR_FIELD_NUMBER = 1;
-    
-    // Use SelectHeroResult.newBuilder() to construct.
-    private SelectHeroResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    
-    private SelectHeroResult() {
-      heroAvatar_ = "";
-    }
     
     private static final long serialVersionUID = 0L;
     
@@ -13051,6 +13027,15 @@ public final class GameMsgProtocol {
     private volatile java.lang.Object heroAvatar_;
     
     private byte memoizedIsInitialized = -1;
+    
+    // Use SelectHeroResult.newBuilder() to construct.
+    private SelectHeroResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    
+    private SelectHeroResult() {
+      heroAvatar_ = "";
+    }
     
     private SelectHeroResult(com.google.protobuf.CodedInputStream input,
                              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13174,6 +13159,18 @@ public final class GameMsgProtocol {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    
+    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+    
+    public static com.google.protobuf.Parser<SelectHeroResult> parser() {
+      return PARSER;
+    }
+    
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
@@ -13246,10 +13243,6 @@ public final class GameMsgProtocol {
       unknownFields.writeTo(output);
     }
     
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) {
@@ -13311,16 +13304,8 @@ public final class GameMsgProtocol {
       return builder;
     }
     
-    public static com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-    
     @java.lang.Override
     public com.google.protobuf.Parser<SelectHeroResult> getParserForType() {
-      return PARSER;
-    }
-    
-    public static com.google.protobuf.Parser<SelectHeroResult> parser() {
       return PARSER;
     }
     
@@ -13332,8 +13317,8 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.SelectHeroResult}
+     *
+     * <p>Protobuf type {@code msg.SelectHeroResult}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -13342,7 +13327,8 @@ public final class GameMsgProtocol {
       
       private java.lang.Object heroAvatar_ = "";
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.SelectHeroResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13588,8 +13574,8 @@ public final class GameMsgProtocol {
    * /////////////////////////////////////////////////////////////////////
    * 指令
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.GetRankCmd}
+   *
+   * <p>Protobuf type {@code msg.GetRankCmd}
    */
   public static final class GetRankCmd extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                       // @@protoc_insertion_point(message_implements:msg.GetRankCmd)
@@ -13850,15 +13836,16 @@ public final class GameMsgProtocol {
      * /////////////////////////////////////////////////////////////////////
      * 指令
      * </pre>
-     * <p>
-     * Protobuf type {@code msg.GetRankCmd}
+     *
+     * <p>Protobuf type {@code msg.GetRankCmd}
      */
     public static final class Builder
       extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
                                                                       // @@protoc_insertion_point(builder_implements:msg.GetRankCmd)
                                                                         com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmdOrBuilder {
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankCmd.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14002,8 +13989,8 @@ public final class GameMsgProtocol {
    * <pre>
    * 结果
    * </pre>
-   * <p>
-   * Protobuf type {@code msg.GetRankResult}
+   *
+   * <p>Protobuf type {@code msg.GetRankResult}
    */
   public static final class GetRankResult extends com.google.protobuf.GeneratedMessageV3 implements
                                                                                          // @@protoc_insertion_point(message_implements:msg.GetRankResult)
@@ -14420,7 +14407,7 @@ public final class GameMsgProtocol {
      * <pre>
      * 用户信息
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code msg.GetRankResult.RankItem}
      */
     public static final class RankItem extends com.google.protobuf.GeneratedMessageV3 implements
@@ -14507,12 +14494,10 @@ public final class GameMsgProtocol {
                 break;
               }
               case 8: {
-                
                 rankId_ = input.readUInt32();
                 break;
               }
               case 16: {
-                
                 userId_ = input.readUInt32();
                 break;
               }
@@ -14529,7 +14514,6 @@ public final class GameMsgProtocol {
                 break;
               }
               case 40: {
-                
                 win_ = input.readUInt32();
                 break;
               }
@@ -14889,7 +14873,7 @@ public final class GameMsgProtocol {
        * <pre>
        * 用户信息
        * </pre>
-       *
+       * <p>
        * Protobuf type {@code msg.GetRankResult.RankItem}
        */
       public static final class Builder
@@ -14907,7 +14891,8 @@ public final class GameMsgProtocol {
         
         private int win_;
         
-        // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.newBuilder()
+        // Construct using
+        // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -15378,7 +15363,7 @@ public final class GameMsgProtocol {
      * <pre>
      * 结果
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code msg.GetRankResult}
      */
     public static final class Builder
@@ -15394,7 +15379,8 @@ public final class GameMsgProtocol {
       private com.google.protobuf.RepeatedFieldBuilderV3<com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItem.Builder, com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.RankItemOrBuilder>
         rankItemBuilder_;
       
-      // Construct using com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.newBuilder()
+      // Construct using
+      // com.kaige.advance.netty.herostory.msg.GameMsgProtocol.GetRankResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -15900,6 +15886,6 @@ public final class GameMsgProtocol {
     }
     
   }
-
+  
   // @@protoc_insertion_point(outer_class_scope)
 }

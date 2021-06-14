@@ -7,9 +7,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-/**
- * 阻塞 IO 客户端程序
- */
+/** 阻塞 IO 客户端程序 */
 public class BIOClient {
   
   // public static final String REMOTE = "192.168.1.109";
@@ -43,7 +41,6 @@ public class BIOClient {
         }
       }
     }
-    
   }
   
 }

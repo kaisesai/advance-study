@@ -14,9 +14,7 @@ import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * 测试线程与纤程的性能
- */
+/** 测试线程与纤程的性能 */
 public class HelloFiber {
   
   public static final int NUM = 10_000;
@@ -82,10 +80,10 @@ public class HelloFiber {
   @Suspendable
   static void m1() throws InterruptedException, SuspendExecution {
     String m = "m1";
-    //System.out.println("m1 begin");
+    // System.out.println("m1 begin");
     m = m2();
-    //System.out.println("m1 end");
-    //System.out.println(m);
+    // System.out.println("m1 end");
+    // System.out.println(m);
   }
   
   static String m2() throws SuspendExecution, InterruptedException {
@@ -94,7 +92,7 @@ public class HelloFiber {
     return m;
   }
   
-  //or define in META-INF/suspendables
+  // or define in META-INF/suspendables
   @Suspendable
   static String m3() {
     List l = Stream.of(1, 2, 3).filter(i -> i % 2 == 0).collect(Collectors.toList());

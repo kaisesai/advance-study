@@ -16,29 +16,19 @@ public class UserEntity implements Serializable {
   
   private static final long serialVersionUID = -64655809848501395L;
   
-  /**
-   * 主键
-   */
+  /** 主键 */
   private Long id;
   
-  /**
-   * 姓名
-   */
+  /** 姓名 */
   private String name;
   
-  /**
-   * 年龄
-   */
+  /** 年龄 */
   private Integer age;
   
-  /**
-   * 创建时间
-   */
+  /** 创建时间 */
   private Date createTime;
   
-  /**
-   * 更新时间
-   */
+  /** 更新时间 */
   private Date updateTime;
   
 }

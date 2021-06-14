@@ -8,9 +8,7 @@ import io.netty.channel.ChannelHandlerContext;
 
 import java.util.Objects;
 
-/**
- * 用户移动命令处理器
- */
+/** 用户移动命令处理器 */
 public class UserMoveToCmdHandler implements ICmdHandler<GameMsgProtocol.UserMoveToCmd> {
   
   @Override
@@ -20,13 +18,13 @@ public class UserMoveToCmdHandler implements ICmdHandler<GameMsgProtocol.UserMov
     if (Objects.isNull(userId)) {
       return;
     }
-  
+    
     // 获取用户信息
     User user = UserManager.getUserById(userId);
     if (Objects.isNull(user)) {
       return;
     }
-  
+    
     long nowTime = System.currentTimeMillis();
     // 修改用户移动状态
     user.getMoveState().setStartTime(nowTime);
@@ -34,13 +32,13 @@ public class UserMoveToCmdHandler implements ICmdHandler<GameMsgProtocol.UserMov
     user.getMoveState().setFromPosY(cmd.getMoveFromPosY());
     user.getMoveState().setToPosX(cmd.getMoveToPosX());
     user.getMoveState().setToPosY(cmd.getMoveToPosY());
-  
+    
     // 用户移动消息
     GameMsgProtocol.UserMoveToResult userMoveToResult = GameMsgProtocol.UserMoveToResult
       .newBuilder().setMoveUserId(userId).setMoveFromPosX(cmd.getMoveFromPosX())
       .setMoveFromPosY(cmd.getMoveFromPosY()).setMoveToPosX(cmd.getMoveToPosX())
       .setMoveToPosY(cmd.getMoveToPosY()).setMoveStartTime(nowTime).build();
-  
+    
     // 广播用户移动结果
     Broadcaster.broadcast(userMoveToResult);
   }

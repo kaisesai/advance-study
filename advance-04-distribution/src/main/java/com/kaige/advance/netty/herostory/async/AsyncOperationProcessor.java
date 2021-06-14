@@ -8,8 +8,8 @@ import java.util.concurrent.Executors;
 
 /**
  * 异步操作处理器
- * <p>
- * 单例，使用多个单线程池来执行
+ *
+ * <p>单例，使用多个单线程池来执行
  */
 @Slf4j
 public class AsyncOperationProcessor {
@@ -18,9 +18,7 @@ public class AsyncOperationProcessor {
   
   private static final AsyncOperationProcessor PROCESSOR = new AsyncOperationProcessor();
   
-  /**
-   * 线程池数组
-   */
+  /** 线程池数组 */
   private final ExecutorService[] executorServices;
   
   private AsyncOperationProcessor() {
@@ -52,7 +50,6 @@ public class AsyncOperationProcessor {
         log.error(e.getMessage(), e);
       }
     });
-    
   }
   
 }

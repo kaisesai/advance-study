@@ -6,9 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-/**
- * 客户端 socket
- */
+/** 客户端 socket */
 @Slf4j
 public class BIOClient {
   

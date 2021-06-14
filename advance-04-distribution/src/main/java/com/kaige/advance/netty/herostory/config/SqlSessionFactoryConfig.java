@@ -14,9 +14,7 @@ public class SqlSessionFactoryConfig {
   
   private static SqlSessionFactory sqlSessionFactory;
   
-  /**
-   * 初始化 {@link SqlSessionFactory}
-   */
+  /** 初始化 {@link SqlSessionFactory} */
   public static void init() {
     SqlSessionFactoryBuilder factoryBuilder = new SqlSessionFactoryBuilder();
     try (Reader reader = Resources.getResourceAsReader("MyBatisConfig.xml")) {
@@ -33,7 +31,6 @@ public class SqlSessionFactoryConfig {
     } catch (Exception e) {
       throw new IllegalStateException("SqlSessionFactory 初始化异常", e);
     }
-    
   }
   
   /**

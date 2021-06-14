@@ -3,9 +3,7 @@ package com.kaige.advance.netty.herostory.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-/**
- * 用户消息
- */
+/** 用户消息 */
 @Data
 @AllArgsConstructor
 public class User {

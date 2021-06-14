@@ -2,9 +2,7 @@ package com.kaige.advance.reflect.orm.step4;
 
 import java.sql.ResultSet;
 
-/**
- * 抽象的实体类辅助器
- */
+/** 抽象的实体类辅助器 */
 public abstract class AbstractEntityHelper<T> {
   
   /**

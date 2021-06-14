@@ -10,8 +10,8 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 自定义 handler 需要继承 netty 规定好的某个 handlerAdapter（规范）
- * <p>
- * ChannelInboundHandlerAdapter 是一个入站请求处理器，对应的还有出站请求处理器
+ *
+ * <p>ChannelInboundHandlerAdapter 是一个入站请求处理器，对应的还有出站请求处理器
  */
 @Slf4j
 public class NettyServerHandler extends ChannelInboundHandlerAdapter {

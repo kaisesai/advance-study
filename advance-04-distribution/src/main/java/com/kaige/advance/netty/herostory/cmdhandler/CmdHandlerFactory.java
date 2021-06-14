@@ -11,9 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * 命令处理器工厂
- */
+/** 命令处理器工厂 */
 @Slf4j
 public class CmdHandlerFactory {
   
@@ -27,9 +25,7 @@ public class CmdHandlerFactory {
   private CmdHandlerFactory() {
   }
   
-  /**
-   * 初始化命令处理器
-   */
+  /** 初始化命令处理器 */
   public static void init() {
     log.info("初始化命令处理器工厂");
     // 通过扫描指定路径下的类文件来通过反射生成对应的类
@@ -80,8 +76,8 @@ public class CmdHandlerFactory {
   
   /**
    * 维护命令类型与命令处理器实例的关系
-   * <p>
-   * 方法二：通过查询类的具体方法的参数类型的方式
+   *
+   * <p>方法二：通过查询类的具体方法的参数类型的方式
    *
    * @param clazz
    * @return
@@ -126,7 +122,6 @@ public class CmdHandlerFactory {
   }
   
   public static void main(String[] args) {
-  
   }
   
   /**

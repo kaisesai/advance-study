@@ -5,9 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 
-/**
- * 入站数据的处理器
- */
+/** 入站数据的处理器 */
 // @ChannelHandler.Sharable
 class MyHandler extends ChannelInboundHandlerAdapter {
   

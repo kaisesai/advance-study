@@ -37,18 +37,19 @@ public class MyThreadExecutorService extends AbstractExecutorService {
   
   private final int queueMaxSize;
   
-  private int largestPoolSize;
-  
-  private long completedTaskCount;
-  
   private final AtomicInteger threadNum = new AtomicInteger();
   
-  private final ThreadFactory threadFactory = r -> new Thread(r, "myThread" + threadNum.getAndIncrement());
+  private final ThreadFactory threadFactory = r -> new Thread(r, "myThread" + threadNum
+    .getAndIncrement());
   
   private final RejectedExecutionHandler rejectedExecutionHandler = (r, executor) -> {
     System.out.println("任务队列已满，无法提交任务");
     throw new RuntimeException("任务队列已满，无法提交任务");
   };
+  
+  private int largestPoolSize;
+  
+  private long completedTaskCount;
   
   public MyThreadExecutorService(int corePoolSize, int queueMaxSize) {
     this.corePoolSize = corePoolSize;
@@ -68,13 +69,13 @@ public class MyThreadExecutorService extends AbstractExecutorService {
         }
       });
     }
-  
+    
     try {
       Thread.sleep(10000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-  
+    
     es.shutdown();
   }
   
@@ -100,7 +101,6 @@ public class MyThreadExecutorService extends AbstractExecutorService {
     }
     // 执行 TERMINATED
     tryTerminate();
-    
   }
   
   private void advanceRunState(int targetState) {
@@ -161,7 +161,6 @@ public class MyThreadExecutorService extends AbstractExecutorService {
     } else if (!addWorker(command)) {
       reject(command);
     }
-    
   }
   
   private void reject(Runnable command) {
@@ -207,7 +206,6 @@ public class MyThreadExecutorService extends AbstractExecutorService {
     } finally {
       processWorkerExit(worker, completedAbruptly);
     }
-    
   }
   
   private void processWorkerExit(Worker worker, boolean completedAbruptly) {
@@ -239,7 +237,6 @@ public class MyThreadExecutorService extends AbstractExecutorService {
       }
       addWorker(null);
     }
-    
   }
   
   private boolean addWorker(Runnable firstTask) {
@@ -365,7 +362,6 @@ public class MyThreadExecutorService extends AbstractExecutorService {
       } finally {
         mainLock.unlock();
       }
-      
     }
   }
   
@@ -386,7 +382,6 @@ public class MyThreadExecutorService extends AbstractExecutorService {
         if (onlyOne) {
           break;
         }
-        
       }
       
     } finally {
@@ -428,18 +423,14 @@ public class MyThreadExecutorService extends AbstractExecutorService {
         return workerQueue.take();
       } catch (InterruptedException ignored) {
       }
-      
     }
-    
   }
   
   private boolean compareAndDecrementWorkerCount(int expect) {
     return workerCounter.compareAndSet(expect, expect - 1);
   }
   
-  /**
-   * 工作者线程数量减一
-   */
+  /** 工作者线程数量减一 */
   private void decrementWorkerCount() {
     do {
     }
@@ -488,9 +479,7 @@ public class MyThreadExecutorService extends AbstractExecutorService {
       return true;
     }
     
-    /**
-     * @return 是否持有独占模式
-     */
+    /** @return 是否持有独占模式 */
     @Override
     protected boolean isHeldExclusively() {
       // 资源状态不为 0

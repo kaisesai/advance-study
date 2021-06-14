@@ -2,9 +2,7 @@ package com.kaige.advance.netty.rpc.service;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * 派发器
- */
+/** 派发器 */
 public class Dispatcher {
   
   private final ConcurrentHashMap<String, Object> SERVER_MAP = new ConcurrentHashMap<>();

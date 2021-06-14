@@ -40,7 +40,6 @@ public class NIOServer {
         handle(key);
       }
     }
-    
   }
   
   private static void handle(SelectionKey key) throws IOException {
@@ -77,7 +76,6 @@ public class NIOServer {
       key.interestOps(SelectionKey.OP_READ);
       // key.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
     }
-    
   }
   
 }

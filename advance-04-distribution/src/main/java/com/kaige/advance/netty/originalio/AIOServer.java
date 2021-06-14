@@ -10,9 +10,7 @@ import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.charset.StandardCharsets;
 
-/**
- * AIO 服务端
- */
+/** AIO 服务端 */
 @Slf4j
 public class AIOServer {
   
@@ -39,7 +37,6 @@ public class AIOServer {
               
               // 写数据
               socketChannel.write(ByteBuffer.wrap("helloClient".getBytes(StandardCharsets.UTF_8)));
-              
             }
             
             @Override

@@ -8,8 +8,8 @@ import io.netty.handler.codec.MessageToByteEncoder;
 
 /**
  * 消息编码器
- * <p>
- * 将 MyMsg 类型的消息转成 ByteBuf 类型
+ *
+ * <p>将 MyMsg 类型的消息转成 ByteBuf 类型
  */
 public class MyRpcEncoder extends MessageToByteEncoder<MyMsg> {
   

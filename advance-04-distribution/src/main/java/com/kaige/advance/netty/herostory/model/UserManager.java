@@ -8,9 +8,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * 用户管理器
- */
+/** 用户管理器 */
 public class UserManager {
   
   private static final Map<Integer, User> USER_MAP = new ConcurrentHashMap<>();
@@ -36,9 +34,7 @@ public class UserManager {
     USER_MAP.remove(userId);
   }
   
-  /**
-   * @return 用户列表
-   */
+  /** @return 用户列表 */
   public static Collection<User> listUser() {
     return USER_MAP.values();
   }
@@ -78,7 +74,6 @@ public class UserManager {
       return null;
     }
     return USER_MAP.get(userId);
-  
   }
   
   /**

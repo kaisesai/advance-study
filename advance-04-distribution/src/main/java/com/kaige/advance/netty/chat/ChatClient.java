@@ -12,9 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Scanner;
 
-/**
- * 聊天室客户端
- */
+/** 聊天室客户端 */
 @Slf4j
 public class ChatClient {
   
@@ -49,7 +47,8 @@ public class ChatClient {
       while (scanner.hasNextLine()) {
         String next = scanner.nextLine();
         log.info("发送消息：{}", next);
-        // channelFuture.channel().writeAndFlush(Unpooled.copiedBuffer(next, StandardCharsets.UTF_8));
+        // channelFuture.channel().writeAndFlush(Unpooled.copiedBuffer(next,
+        // StandardCharsets.UTF_8));
         channelFuture.channel().writeAndFlush(next);
       }
       

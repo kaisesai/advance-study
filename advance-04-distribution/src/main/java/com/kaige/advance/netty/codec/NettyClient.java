@@ -7,9 +7,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
-/**
- * netty 客户端
- */
+/** netty 客户端 */
 public class NettyClient {
   
   public static void main(String[] args) throws Exception {

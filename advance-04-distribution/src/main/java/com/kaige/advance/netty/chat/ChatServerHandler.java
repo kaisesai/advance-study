@@ -9,15 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
 
-/**
- * 聊天室消息处理器
- */
+/** 聊天室消息处理器 */
 @Slf4j
 public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
   
-  /**
-   * 管理所有的客户端 channel
-   */
+  /** 管理所有的客户端 channel */
   private static final DefaultChannelGroup CHANNEL_GROUP = new DefaultChannelGroup(
     GlobalEventExecutor.INSTANCE);
   
@@ -33,7 +29,8 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
     String msg = "【客户端】：" + channel.remoteAddress().toString() + "加入了聊天室";
     log.info(msg);
     // 通知目前所有的客户端 channel
-    // CHANNEL_GROUP.forEach(c -> c.writeAndFlush(Unpooled.copiedBuffer(msg, StandardCharsets.UTF_8)));
+    // CHANNEL_GROUP.forEach(c -> c.writeAndFlush(Unpooled.copiedBuffer(msg,
+    // StandardCharsets.UTF_8)));
     CHANNEL_GROUP.forEach(c -> c.writeAndFlush(msg));
     // 把客户端 channel 加入 group 中
     CHANNEL_GROUP.add(channel);
@@ -55,7 +52,8 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
     CHANNEL_GROUP.remove(channel);
     
     // 通知目前所有的客户端 channel
-    // CHANNEL_GROUP.forEach(c -> c.writeAndFlush(Unpooled.copiedBuffer(msg, StandardCharsets.UTF_8)));
+    // CHANNEL_GROUP.forEach(c -> c.writeAndFlush(Unpooled.copiedBuffer(msg,
+    // StandardCharsets.UTF_8)));
     CHANNEL_GROUP.forEach(c -> c.writeAndFlush(msg));
     
     super.channelInactive(ctx);

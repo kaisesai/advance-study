@@ -12,8 +12,8 @@ import java.util.Objects;
 
 /**
  * 自定义消息编码器
- * <p>
- * 消息格式：消息的格式为：2 byte 的消息长度 --> 2 byte 消息编码 --> 消息 body
+ *
+ * <p>消息格式：消息的格式为：2 byte 的消息长度 --> 2 byte 消息编码 --> 消息 body
  */
 @Slf4j
 public class GameMsgEncoder extends ChannelOutboundHandlerAdapter {

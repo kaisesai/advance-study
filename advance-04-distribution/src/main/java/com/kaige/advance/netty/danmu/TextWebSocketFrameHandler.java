@@ -8,9 +8,7 @@ import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
 
-/**
- * 文本格式的 websocket 处理器
- */
+/** 文本格式的 websocket 处理器 */
 public class TextWebSocketFrameHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
   
   private static final ChannelGroup channels = new DefaultChannelGroup(

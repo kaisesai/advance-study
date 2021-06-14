@@ -7,25 +7,19 @@ import java.util.UUID;
 
 /**
  * 消息头
- * <p>
- * 这个类序列化之后得到的字节长度为 109
+ *
+ * <p>这个类序列化之后得到的字节长度为 109
  */
 @Data
 public class MsgHeader implements Serializable {
   
-  /**
-   * 消息 ID
-   */
+  /** 消息 ID */
   private String requestId;
   
-  /**
-   * 消息标识
-   */
+  /** 消息标识 */
   private int flag;
   
-  /**
-   * 消息体长度
-   */
+  /** 消息体长度 */
   private int bodyLength;
   
   public static MsgHeader getMsgHeader() {

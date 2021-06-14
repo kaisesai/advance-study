@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
 
-/**
- * 消费者
- */
+/** 消费者 */
 @Slf4j
 public class Consumer {
   
@@ -51,28 +49,24 @@ public class Consumer {
     } catch (TimeoutException | IOException e) {
       e.printStackTrace();
     }
-    
   }
   
   /**
    * 消费端限流量：消费端启动时，如果有大量的消息进来，此时消费端可能不能处理这么多的消息，就会导致消费单出现巨大的压力。
-   * <p>
-   * 解决方案：
-   * rabbitmq 提供一个 qos（服务质量保证），就是在关闭了消费端的自动 ack 的前提下，通过设置阈值（出队）的消息数
+   *
+   * <p>解决方案： rabbitmq 提供一个 qos（服务质量保证），就是在关闭了消费端的自动 ack 的前提下，通过设置阈值（出队）的消息数
    * 没有被确认（手动确认），那么就不会推送消息进来。
-   * <p>
-   * 限流的级别（consumer 级别或者是 channel 级别）
+   *
+   * <p>限流的级别（consumer 级别或者是 channel 级别）
    *
    * @param channel
    */
   private static void limitMsg(Channel channel) throws IOException {
     /**
-     * prefetchSize: 设置消息的大小（rabbitmq 没有该功能，一般填写 0）
-     * prefetchCount: 设置消息的阈值，每次过来几条消息（一般填写 1，即一条一条的处理）
+     * prefetchSize: 设置消息的大小（rabbitmq 没有该功能，一般填写 0） prefetchCount: 设置消息的阈值，每次过来几条消息（一般填写 1，即一条一条的处理）
      * global: 表示 channel 级别还是 consumer 级别。（rabbitmq 没有 channel 级别的限制）
      */
     channel.basicQos(0, 1, false);
-    
   }
   
   private static CancelCallback getCancelCallback() {
@@ -101,7 +95,6 @@ public class Consumer {
         // channel.basicNack(message.getEnvelope().getDeliveryTag(), false, true);
         channel.basicNack(message.getEnvelope().getDeliveryTag(), false, false);
       }
-      
     };
   }
   

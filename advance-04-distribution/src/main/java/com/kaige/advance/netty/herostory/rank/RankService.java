@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 
-/**
- * 排名服务
- */
+/** 排名服务 */
 @Slf4j
 public class RankService {
   

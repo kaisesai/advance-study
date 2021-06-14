@@ -1,8 +1,6 @@
 package com.kaige.advance.netty.rpc.service;
 
-/**
- * 服务端 Car 的实现
- */
+/** 服务端 Car 的实现 */
 public class CarImpl implements Car {
   
   @Override

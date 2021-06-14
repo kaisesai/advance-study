@@ -9,34 +9,30 @@ import org.apache.rocketmq.remoting.common.RemotingHelper;
 
 import java.util.Objects;
 
-/**
- * 生产者
- */
+/** 生产者 */
 @Slf4j
 public class MyProducer {
   
-  /**
-   * 消息生产者
-   */
+  /** 消息生产者 */
   private static DefaultMQProducer producer;
   
   public static void main(String[] args) throws Exception {
-    //Instantiate with a producer group name.
+    // Instantiate with a producer group name.
     DefaultMQProducer producer = new DefaultMQProducer("herostory-producer-group");
     // Specify name server addresses.
     producer.setNamesrvAddr("www.kaige.com:9876");
     producer.setSendMsgTimeout(600000);
-    //Launch the instance.
+    // Launch the instance.
     producer.start();
     for (int i = 0; i < 10; i++) {
-      //Create a message instance, specifying topic, tag and message body.
+      // Create a message instance, specifying topic, tag and message body.
       Message msg = new Message("topic-1" /* Topic */, "tag-a" /* Tag */, ("Hello RocketMQ " + i)
         .getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */);
-      //Call send message to deliver message to one of brokers.
+      // Call send message to deliver message to one of brokers.
       SendResult sendResult = producer.send(msg);
       System.out.printf("%s%n", sendResult);
     }
-    //Shut down once the producer instance is not longer in use.
+    // Shut down once the producer instance is not longer in use.
     producer.shutdown();
   }
   
@@ -61,9 +57,7 @@ public class MyProducer {
     }
   }
   
-  /**
-   * 初始化消息生产者
-   */
+  /** 初始化消息生产者 */
   public static void init() {
     if (Objects.nonNull(producer)) {
       return;

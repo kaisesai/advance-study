@@ -5,12 +5,10 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.StampedLock;
 
-/**
- * 原子操作类
- */
+/** 原子操作类 */
 public class MyAtomicClass {
   
-  volatile static boolean flag = false;
+  static volatile boolean flag = false;
   
   public static void main(String[] args) throws InterruptedException, NoSuchFieldException {
     // 测试 AtomicReference
@@ -31,7 +29,6 @@ public class MyAtomicClass {
     // }
     
     StampedLock sl = new StampedLock();
-    
   }
   
   private static void testFence() throws InterruptedException {
@@ -45,7 +42,6 @@ public class MyAtomicClass {
       myData.a = myData.j;
       // MyAtomicObjUpdater.UNSAFE.storeFence();
       myData.i = 1;
-      
     }, "t1");
     
     Thread t2 = new Thread(() -> {
@@ -56,7 +52,6 @@ public class MyAtomicClass {
       // MyAtomicObjUpdater.UNSAFE.storeFence();
       
       myData.j = 2;
-      
     }, "t2");
     
     t1.start();
@@ -84,7 +79,6 @@ public class MyAtomicClass {
     final Object o = new Object();
     
     Thread t1 = new Thread(() -> {
-      
       System.out.println(Thread.currentThread().getName() + "线程执行 park 操作");
       // 阻塞 t1 线程
       LockSupport.park(o);

@@ -12,9 +12,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.Objects;
 import java.util.function.Function;
 
-/**
- * 用户实体类异步操作
- */
+/** 用户实体类异步操作 */
 @Slf4j
 public class UserEntityAsyncOperation implements IAsyncOperation {
   
@@ -57,10 +55,10 @@ public class UserEntityAsyncOperation implements IAsyncOperation {
         // 密码不正确
         throw new IllegalStateException("密码不正确，userName: " + userName + ", password: " + password);
       }
-  
+      
       // 保存到 redis 中
       UserEntityService.getInstance().updateUserBasicInfoToRedis(userEntity);
-  
+      
       // 密码正确
       this.userEntity = userEntity;
     }

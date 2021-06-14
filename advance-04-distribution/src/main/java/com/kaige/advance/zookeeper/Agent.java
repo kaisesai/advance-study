@@ -56,7 +56,6 @@ public class Agent {
     
     // 开启新的线程监听服务节点
     stateThread = new Thread(() -> {
-      
       while (true) {
         // 更新服务节点
         updateServerNode();
@@ -66,7 +65,6 @@ public class Agent {
           e.printStackTrace();
         }
       }
-      
     }, "zk_stat_thread");
     // 设置守护线程
     stateThread.setDaemon(true);
@@ -75,17 +73,13 @@ public class Agent {
     stateThread.start();
   }
   
-  /**
-   * 更细服务节点信息
-   */
+  /** 更细服务节点信息 */
   private void updateServerNode() {
     // 获取系统信息并写入节点数据
     zkClient.writeData(nodePath, getOsInfo());
   }
   
-  /**
-   * 创建服务节点
-   */
+  /** 创建服务节点 */
   private void createServerNode() {
     // 创建虚拟的序列节点，同时设置操作系统属性
     nodePath = zkClient.createEphemeralSequential(SERVICE_PATH, getOsInfo());

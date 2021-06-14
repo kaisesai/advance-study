@@ -18,16 +18,16 @@ public class ZkTest {
   public static void main(String[] args) throws Exception {
     CountDownLatch countDownLatch = new CountDownLatch(1);
     try (
-      /*
-        zk 是 session 的概念，没有连接池的概念
-        watch 是观察，它注册值发生在，该类型调用 get、exists
-        watch 有两类：
-        第一类是 new ZooKeeper 的时候，传入的 watch，属于 session 级别的，与 path、node 没有关系
-        第二类是 path、node 级别的，只是与客户端查询的某一个 path 或者 node 值有关
-        
-        一个 watch 就是单独一个线程
-       
-      */
+    /*
+      zk 是 session 的概念，没有连接池的概念
+      watch 是观察，它注册值发生在，该类型调用 get、exists
+      watch 有两类：
+      第一类是 new ZooKeeper 的时候，传入的 watch，属于 session 级别的，与 path、node 没有关系
+      第二类是 path、node 级别的，只是与客户端查询的某一个 path 或者 node 值有关
+
+      一个 watch 就是单独一个线程
+
+    */
       ZooKeeper zk = new ZooKeeper(ZookeeperHolder.CONNECT_STR, 1000, event -> {
         // watch 的回调方法
         System.out.println("new zk event = " + event);
@@ -100,12 +100,12 @@ public class ZkTest {
       String pathName = zk
         .create("/ooxx", "mydata".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
       System.out.println("pathName = " + pathName);
- 
+
       /*
-        获取节点 API 有两类，两类 api 都可以传入是否需要 watch
-        第一类是同步获取
-        第二类是异步获取，需要传入一个回调函数处理逻辑
-       */
+       获取节点 API 有两类，两类 api 都可以传入是否需要 watch
+       第一类是同步获取
+       第二类是异步获取，需要传入一个回调函数处理逻辑
+      */
       // 1. 同步获取数据，不传 watch
       byte[] data = zk.getData("/ooxx", false, null);
       System.out.println("getData1 = " + new String(data));
@@ -180,7 +180,6 @@ public class ZkTest {
       
       TimeUnit.SECONDS.sleep(5);
     }
-    
   }
   
 }

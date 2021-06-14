@@ -7,8 +7,8 @@ import java.util.concurrent.locks.Lock;
 
 /**
  * 双资源锁
- * <p>
- * 采用一个共享模式的资源
+ *
+ * <p>采用一个共享模式的资源
  */
 public class TwinsLock implements Lock {
   
@@ -30,12 +30,8 @@ public class TwinsLock implements Lock {
         } finally {
           lock.unlock();
         }
-        
-        
-        
       }, "t" + i).start();
     }
-    
   }
   
   @Override
@@ -69,9 +65,7 @@ public class TwinsLock implements Lock {
     return null;
   }
   
-  /**
-   * 自己实现的同步器
-   */
+  /** 自己实现的同步器 */
   private static class Sync extends AbstractQueuedSynchronizer {
     
     public Sync(int count) {
@@ -123,7 +117,6 @@ public class TwinsLock implements Lock {
           return true;
         }
       }
-      
     }
     
   }

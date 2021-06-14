@@ -6,9 +6,7 @@ import org.apache.zookeeper.ZooKeeper;
 import java.io.IOException;
 import java.util.Objects;
 
-/**
- * zk 持有类
- */
+/** zk 持有类 */
 public class ZookeeperHolder {
   
   public static final String CONNECT_STR = "www.kaige.com:2181";

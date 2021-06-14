@@ -9,8 +9,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
  * 客户端消息接收处理器
- * <p>
- * 用来接收服务器端的消息，服务器端的消息也是 MyMsg 格式
+ *
+ * <p>用来接收服务器端的消息，服务器端的消息也是 MyMsg 格式
  */
 public class ClientRpcHandler extends SimpleChannelInboundHandler<MyMsg> {
   

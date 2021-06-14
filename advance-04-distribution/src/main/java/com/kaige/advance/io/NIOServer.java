@@ -9,16 +9,13 @@ import java.util.LinkedList;
 
 /**
  * 非阻塞 IO 服务端程序
- * <p>
- * 服务端的 listen socket 设置非阻塞选项，那么它在执行 accept 方法时，不论客户端有没有连接，都会立刻返回结果，
- * <p>
- * 优点：
- * 1. 接收客户端的连接和处理客户端 IO 不会阻塞
- * 2. 只需要一个线程或者几个线程就可以完成接收客户端连接与处理已连接的客户端
- * <p>
- * 缺点：
- * 1. C10K 问题：当客户端连接数量 N 很大时，那么处理客户端数据时就需要遍历 N 次，即调用 N 次系统调用（用户态与内核态切换）
- * 2. 并且这些客户款并不全是有数据要处理，造成很多无用的系统调用，浪费资源
+ *
+ * <p>服务端的 listen socket 设置非阻塞选项，那么它在执行 accept 方法时，不论客户端有没有连接，都会立刻返回结果，
+ *
+ * <p>优点： 1. 接收客户端的连接和处理客户端 IO 不会阻塞 2. 只需要一个线程或者几个线程就可以完成接收客户端连接与处理已连接的客户端
+ *
+ * <p>缺点： 1. C10K 问题：当客户端连接数量 N 很大时，那么处理客户端数据时就需要遍历 N 次，即调用 N 次系统调用（用户态与内核态切换） 2.
+ * 并且这些客户款并不全是有数据要处理，造成很多无用的系统调用，浪费资源
  */
 public class NIOServer {
   
@@ -35,7 +32,7 @@ public class NIOServer {
       
       // 连接客户端
       while (true) {
-        
+
         /*
           接收客户端 socket 连接
           这个 accept 方法会调用内核的 accept 系统调用，因为设置了非阻塞选项，所以它会立刻返回结果。
@@ -48,9 +45,9 @@ public class NIOServer {
           // System.out.println("null...");
         } else {
           /*
-            设置非阻塞
-            服务端的 listen socket（三次握手之后，往我这里仍，我去通过 accept 得到连接的 socket，连接 socket（用于连接后的数据读写使用的））
-           */
+           设置非阻塞
+           服务端的 listen socket（三次握手之后，往我这里仍，我去通过 accept 得到连接的 socket，连接 socket（用于连接后的数据读写使用的））
+          */
           socket.configureBlocking(false);
           System.out.println("client connected :" + socket.socket());
           
@@ -74,11 +71,8 @@ public class NIOServer {
             // 清理 buffer
             buffer.clear();
           }
-          
         }
-        
       }
-      
     }
   }
   

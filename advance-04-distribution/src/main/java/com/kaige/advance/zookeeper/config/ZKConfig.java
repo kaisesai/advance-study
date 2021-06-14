@@ -39,12 +39,10 @@ public class ZKConfig {
           Thread.currentThread().interrupt();
           break;
         }
-        
       }
     } catch (Exception e) {
       log.error("myConfig 异常", e);
     }
-    
   }
   
 }

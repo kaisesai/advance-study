@@ -2,9 +2,7 @@ package com.kaige.advance.netty.zerocopy;
 
 import java.nio.ByteBuffer;
 
-/**
- * 直接内存之零拷贝
- */
+/** 直接内存之零拷贝 */
 public class DirectMemory {
   
   public static void main(String[] args) {
@@ -21,9 +19,7 @@ public class DirectMemory {
     }
   }
   
-  /**
-   * 堆内存访问
-   */
+  /** 堆内存访问 */
   public static void heapAccess() {
     long startTime = System.currentTimeMillis();
     // 分配堆内存
@@ -33,9 +29,7 @@ public class DirectMemory {
     System.out.println("堆内存访问耗时：" + (endTime - startTime) + "ms");
   }
   
-  /**
-   * 直接内存访问
-   */
+  /** 直接内存访问 */
   public static void directAccess() {
     long startTime = System.currentTimeMillis();
     // 分配直接内存
@@ -59,9 +53,7 @@ public class DirectMemory {
     return System.currentTimeMillis();
   }
   
-  /**
-   * 堆内存申请
-   */
+  /** 堆内存申请 */
   public static void heapAllocate() {
     long startTime = System.currentTimeMillis();
     for (int i = 0; i < 100000; i++) {
@@ -71,9 +63,7 @@ public class DirectMemory {
     System.out.println("堆内存申请耗时:" + (endTime - startTime) + "ms");
   }
   
-  /**
-   * 直接内存申请
-   */
+  /** 直接内存申请 */
   public static void directAllocate() {
     long startTime = System.currentTimeMillis();
     for (int i = 0; i < 100000; i++) {
@@ -84,4 +74,3 @@ public class DirectMemory {
   }
   
 }
-

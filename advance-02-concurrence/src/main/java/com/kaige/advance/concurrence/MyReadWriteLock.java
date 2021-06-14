@@ -41,7 +41,6 @@ public class MyReadWriteLock {
     } finally {
       lock.unlock();
     }
-    
   }
   
   /**
@@ -61,7 +60,6 @@ public class MyReadWriteLock {
     } finally {
       lock.unlock();
     }
-    
   }
   
   public static void main(String[] args) {
@@ -81,7 +79,6 @@ public class MyReadWriteLock {
       // 使用普通的重入锁
       // new Thread(() -> write(REENTRANT_LOCK, ThreadLocalRandom.current().nextInt())).start();
     }
-    
   }
   
 }

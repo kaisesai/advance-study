@@ -46,7 +46,7 @@ public class ReadBookPdServiceImpl extends ServiceImpl<ReadBookPdMapper, ReadBoo
   
   @Override
   public void putAllDataToElasticsearch() {
-    
+
     /*
     // 读取 book 数据灌入到 es 中
     // 开启多线程查询数据
@@ -106,7 +106,6 @@ public class ReadBookPdServiceImpl extends ServiceImpl<ReadBookPdMapper, ReadBoo
     stringRedisTemplate.opsForValue().set(BOOK_INDEX_CURRENT, updateIndex);
     stringRedisTemplate.opsForValue().set(BOOK_INDEX_UPDATE, currentIndex);
     log.info("正在服务中的索引集合为：{}，备份的索引集合为：{}", updateIndex, currentIndex);
-    
   }
   
   private void queryBookDataAndPutToES(String index, int startBookId, int endBookId) {

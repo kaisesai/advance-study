@@ -7,9 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * master 选择器
- */
+/** master 选择器 */
 public class MasterResolve {
   
   public static final String ZK_CONNECT = ZookeeperHolder.CONNECT_STR;
@@ -51,9 +49,7 @@ public class MasterResolve {
     subscribeServiceNode();
   }
   
-  /**
-   * 监听所有的服务节点事件
-   */
+  /** 监听所有的服务节点事件 */
   private void subscribeServiceNode() {
     // 监听所有服务节点变更事件
     zkClient.subscribeChildChanges(ROOT_PATH, (parentPath, currentChildren) -> {

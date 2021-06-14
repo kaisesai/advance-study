@@ -4,9 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
-/**
- * 自定义的消息编码器
- */
+/** 自定义的消息编码器 */
 public class MyMessageEncoder extends MessageToByteEncoder<MyMessageProtocol> {
   
   @Override

@@ -10,7 +10,6 @@ public class MyStampedLock {
     point.move(1, 2);
     
     System.out.println(point.distanceFromOrigin());
-    
   }
   
   static class Point {

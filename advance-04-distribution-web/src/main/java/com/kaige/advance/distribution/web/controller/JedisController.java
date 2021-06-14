@@ -12,8 +12,8 @@ public class JedisController {
   private StringRedisTemplate stringRedisTemplate;
   
   /**
-   * 测试主从节点架构，主节点挂掉，哨兵自动切换 master，客户端能否感知。
-   * 客户端实现了监听机制，当哨兵把新 master 的消息发布出去，客户端会立刻感知到 master，从而动态切换 master ip。
+   * 测试主从节点架构，主节点挂掉，哨兵自动切换 master，客户端能否感知。 客户端实现了监听机制，当哨兵把新 master 的消息发布出去，客户端会立刻感知到 master，从而动态切换
+   * master ip。
    *
    * @return
    */

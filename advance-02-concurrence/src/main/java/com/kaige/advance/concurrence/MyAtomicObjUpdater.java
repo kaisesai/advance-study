@@ -2,11 +2,7 @@ package com.kaige.advance.concurrence;
 
 import sun.misc.Unsafe;
 
-import java.lang.reflect.Field;
-
-/**
- * 原子的字段更新器
- */
+/** 原子的字段更新器 */
 public class MyAtomicObjUpdater {
   
   private static final Unsafe UNSAFE = getUnsafe();
@@ -28,18 +24,16 @@ public class MyAtomicObjUpdater {
     this.age = age;
   }
   
-  /**
-   * @return 通过反射获取 Unsafe 的实例
-   */
+  /** @return 通过反射获取 Unsafe 的实例 */
   private static Unsafe getUnsafe() {
-    try {
-      Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
-      theUnsafe.setAccessible(true);
-      return (Unsafe) theUnsafe.get(null);
-    } catch (Exception e) {
-      throw new Error(e);
-    }
-    
+    // try {
+    //   Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+    //   theUnsafe.setAccessible(true);
+    //   return (Unsafe) theUnsafe.get(null);
+    // } catch (Exception e) {
+    //   throw new Error(e);
+    // }
+    return Unsafe.getUnsafe();
   }
   
   public int getAge() {

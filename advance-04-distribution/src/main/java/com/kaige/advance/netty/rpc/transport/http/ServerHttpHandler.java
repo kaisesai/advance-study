@@ -14,9 +14,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.lang.reflect.InvocationTargetException;
 
-/**
- * 处理 http 请求的处理器
- */
+/** 处理 http 请求的处理器 */
 public class ServerHttpHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
   
   public ServerHttpHandler(boolean autoRelease) {
@@ -26,7 +24,8 @@ public class ServerHttpHandler extends SimpleChannelInboundHandler<FullHttpReque
   @Override
   protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest msg) throws Exception {
     //   FullHttpRequest msg1 = (FullHttpRequest) msg;
-    // 如果 autoRelease = true，不能使用其他线程异步执行，会报出 io.netty.util.IllegalReferenceCountException: refCnt: 0 异常，http 解码器处理好
+    // 如果 autoRelease = true，不能使用其他线程异步执行，会报出 io.netty.util.IllegalReferenceCountException: refCnt:
+    // 0 异常，http 解码器处理好
     ctx.executor().parent().next().execute(() -> {
       try {
         // doProcess(ctx, msg1);

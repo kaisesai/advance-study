@@ -23,7 +23,6 @@ public class MySemphonre {
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      
     }, "线程 1");
     
     // 启动线程
@@ -38,7 +37,6 @@ public class MySemphonre {
     // 主线程释放令牌
     semaphore.release();
     System.out.println(Thread.currentThread().getName() + " 线程释放到了资源");
-    
   }
   
 }

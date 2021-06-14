@@ -2,9 +2,7 @@ package com.kaige.advance.netty.herostory.model;
 
 import lombok.Data;
 
-/**
- * 用户移动状态
- */
+/** 用户移动状态 */
 @Data
 public class MoveState {
   

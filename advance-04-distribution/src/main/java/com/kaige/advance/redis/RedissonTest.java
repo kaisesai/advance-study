@@ -67,7 +67,6 @@ public class RedissonTest {
         }
       }, "线程" + i).start();
     }
-    
   }
   
   private static void lock(RedissonClient redisson, String orderId) {

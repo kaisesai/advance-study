@@ -35,9 +35,8 @@ public class MyCyclicBarrier {
         }
       });
     }
-  
-    executorService.shutdown();
     
+    executorService.shutdown();
   }
   
   private static void c() {
@@ -59,7 +58,6 @@ public class MyCyclicBarrier {
       e.printStackTrace();
     }
     System.out.println(1);
-    
   }
   
 }

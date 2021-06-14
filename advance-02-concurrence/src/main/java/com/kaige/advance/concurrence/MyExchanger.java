@@ -6,9 +6,9 @@ import java.util.concurrent.TimeUnit;
 public class MyExchanger {
   
   public static void main(String[] args) {
-  
+    
     Exchanger<String> exchanger = new Exchanger<>();
-  
+    
     new Thread(() -> {
       String a = "银行流水A";
       try {
@@ -18,7 +18,7 @@ public class MyExchanger {
         e.printStackTrace();
       }
     }, "线程1").start();
-  
+    
     new Thread(() -> {
       String b = "银行流水B";
       try {
@@ -30,7 +30,6 @@ public class MyExchanger {
         e.printStackTrace();
       }
     }, "线程1").start();
-    
   }
   
 }

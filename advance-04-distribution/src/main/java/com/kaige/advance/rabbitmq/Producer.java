@@ -9,9 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 生产者
- */
+/** 生产者 */
 @Slf4j
 public class Producer {
   
@@ -116,7 +114,7 @@ public class Producer {
     // 5. 通过 channel 来发送消息
     int messageNum = 10;
     for (int i = 0; i < messageNum; i++) {
-      //设置消息超时
+      // 设置消息超时
       AMQP.BasicProperties basicProperties = new AMQP.BasicProperties().builder()
         .expiration("10000").build();
       
@@ -132,14 +130,11 @@ public class Producer {
   
   /**
    * return listener消息处理机制：用来处理一些不可路由的消息
-   * <p>
-   * 以下情况会出现不可被路由的情况：
-   * 1. broker 中没有对应的 exchange 交换机
-   * 2. 交换机根据路由 key 不能路由到某一个队列上
-   * <p>
-   * 解决：
-   * 1. 在消息生产端设置 mandatory 为 true，那么就会调用生产端的 ReturnListener 来处理
-   * 2. 消息生产端的 mandatory 为 false（默认值为 false），那么 broker 就会自动删除消息
+   *
+   * <p>以下情况会出现不可被路由的情况： 1. broker 中没有对应的 exchange 交换机 2. 交换机根据路由 key 不能路由到某一个队列上
+   *
+   * <p>解决： 1. 在消息生产端设置 mandatory 为 true，那么就会调用生产端的 ReturnListener 来处理 2. 消息生产端的 mandatory 为
+   * false（默认值为 false），那么 broker 就会自动删除消息
    *
    * @param channel
    * @throws IOException
@@ -179,8 +174,8 @@ public class Producer {
   
   /**
    * 消息确认模式：生产端投递消息之成功之后，消息服务就会给生产者一个应答。
-   * <p>
-   * 该模式保障了消息的可靠性投递
+   *
+   * <p>该模式保障了消息的可靠性投递
    *
    * @param channel
    * @throws IOException
@@ -237,7 +232,7 @@ public class Producer {
     
     // 创建一个带有额外信息的消息体
     AMQP.BasicProperties basicProperties = new AMQP.BasicProperties().builder()
-      .deliveryMode(2)// 发送类型：1 是非持久化，2 是持久化
+      .deliveryMode(2) // 发送类型：1 是非持久化，2 是持久化
       .appId("测试 appid").clusterId("测试集群 id").contentType("application/json")
       .contentEncoding("UTF-8").headers(map).build();
     
@@ -250,8 +245,8 @@ public class Producer {
   
   /**
    * 创建扇形交换机
-   * <p>
-   * 消息通过从交换机到队列上不会通过路由 key，所以该模式的速度是最快的，只要和交换机绑定的那么消息就会被分发到与之绑定的队列上
+   *
+   * <p>消息通过从交换机到队列上不会通过路由 key，所以该模式的速度是最快的，只要和交换机绑定的那么消息就会被分发到与之绑定的队列上
    *
    * @param channel
    * @throws IOException
@@ -274,11 +269,11 @@ public class Producer {
     // 路由 key，不用声明
     String routingKey1 = "routingKey1";
     String routingKey2 = "routingKey2";
-    
+
     /*
-     xxx.# 表示可以匹配多个单词，比如 log.# 可以匹配 log.a、log.b、log.a.b
-     xxx.* 表示可以匹配一个单词，比如 log.* 可以匹配 log.a、log.b，但是不能匹配 log.a.b
-     */
+    xxx.# 表示可以匹配多个单词，比如 log.# 可以匹配 log.a、log.b、log.a.b
+    xxx.* 表示可以匹配一个单词，比如 log.* 可以匹配 log.a、log.b，但是不能匹配 log.a.b
+    */
     // 绑定队列到扇形交换机
     channel.queueBind(queueDeclare1.getQueue(), myFanoutExchange, "");
     channel.queueBind(queueDeclare2.getQueue(), myFanoutExchange, "");
@@ -301,11 +296,9 @@ public class Producer {
   
   /**
    * 创建 topic 交换机
-   * <p>
-   * 队列上绑定到 topic 交换机上的路由 key 可以是通过通配符来匹配的。
-   * 规则为：
-   * xxx.# 表示可以匹配多个单词，比如 log.# 可以匹配 log.a、log.b、log.a.b
-   * xxx.* 表示可以匹配一个单词，比如 log.* 可以匹配 log.a、log.b，但是不能匹配 log.a.b
+   *
+   * <p>队列上绑定到 topic 交换机上的路由 key 可以是通过通配符来匹配的。 规则为： xxx.# 表示可以匹配多个单词，比如 log.# 可以匹配
+   * log.a、log.b、log.a.b xxx.* 表示可以匹配一个单词，比如 log.* 可以匹配 log.a、log.b，但是不能匹配 log.a.b
    *
    * @param channel
    * @throws IOException
@@ -328,11 +321,11 @@ public class Producer {
     // 路由 key
     String routingKey1 = "top.key";
     String routingKey2 = "news.key";
-    
+
     /*
-     xxx.# 表示可以匹配多个单词，比如 log.# 可以匹配 log.a、log.b、log.a.b
-     xxx.* 表示可以匹配一个单词，比如 log.* 可以匹配 log.a、log.b，但是不能匹配 log.a.b
-     */
+    xxx.# 表示可以匹配多个单词，比如 log.# 可以匹配 log.a、log.b、log.a.b
+    xxx.* 表示可以匹配一个单词，比如 log.* 可以匹配 log.a、log.b，但是不能匹配 log.a.b
+    */
     // 绑定队列
     channel.queueBind(queueDeclare1.getQueue(), MY_TOPIC_EXCHANGE, "top.key.#");
     channel.queueBind(queueDeclare2.getQueue(), MY_TOPIC_EXCHANGE, "#.key");
@@ -355,8 +348,7 @@ public class Producer {
   }
   
   /**
-   * 直接交换机
-   * 所有发送到直接交换机的消息都是会被投递到与路由 key 名称相同的队列上
+   * 直接交换机 所有发送到直接交换机的消息都是会被投递到与路由 key 名称相同的队列上
    *
    * @param channel
    * @throws IOException
@@ -367,15 +359,15 @@ public class Producer {
     AMQP.Exchange.DeclareOk declareOk = channel
       .exchangeDeclare(exchange, BuiltinExchangeType.DIRECT, true, false, null);
     log.info("declareOk = " + declareOk);
-  
+
     /*
-      参数：
-        queue：队列名称
-        durable：是否持久化，队列的声明是存放在内存中的，如果重启 rabbitmq 对列举就会丢失
-        exclusive：是否独占，当连接断开时候，该队列是否会自动删除，如果为 false，则其他消费者也可以访问同一个队列
-          如果是 true，当前消费者会对当前队列加锁，其他的 channel 是不能访问的。如果为 true 的话，一个队列只能有一个消费者来消费的场景
-        autoDelete：是否自动删除。当最后一个消费者断开连接之后，队列是否自动被删除。
-     */
+     参数：
+       queue：队列名称
+       durable：是否持久化，队列的声明是存放在内存中的，如果重启 rabbitmq 对列举就会丢失
+       exclusive：是否独占，当连接断开时候，该队列是否会自动删除，如果为 false，则其他消费者也可以访问同一个队列
+         如果是 true，当前消费者会对当前队列加锁，其他的 channel 是不能访问的。如果为 true 的话，一个队列只能有一个消费者来消费的场景
+       autoDelete：是否自动删除。当最后一个消费者断开连接之后，队列是否自动被删除。
+    */
     AMQP.Queue.DeclareOk queueDeclare = channel
       .queueDeclare(MY_DIRECT_QUEUE, true, false, false, null);
     log.info("queueDeclare = " + queueDeclare);

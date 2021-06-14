@@ -4,15 +4,13 @@ import com.kaige.advance.netty.rpc.protocol.ProtocolType;
 
 import java.lang.reflect.Proxy;
 
-/**
- * 代理工具类
- */
+/** 代理工具类 */
 public class MyProxy {
   
   /**
    * 获取代理对象
-   * <p>
-   * 代理对象主要负责建立所代理的服务信息
+   *
+   * <p>代理对象主要负责建立所代理的服务信息
    *
    * @param carClass
    * @param protocolType

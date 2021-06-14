@@ -1,8 +1,6 @@
 package com.kaige.advance.jvm;
 
-/**
- * 垃圾收集测试，运行时 JVM 参数：-XX:+PrintGCDetails -Xms=100M -Xmx=100M
- */
+/** 垃圾收集测试，运行时 JVM 参数：-XX:+PrintGCDetails -Xms=100M -Xmx=100M */
 public class GCTest {
   
   static int unitM = 1024 * 1024;

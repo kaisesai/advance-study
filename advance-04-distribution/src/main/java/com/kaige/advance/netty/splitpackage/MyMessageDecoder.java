@@ -6,9 +6,7 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.util.List;
 
-/**
- * 自定义消息解码器
- */
+/** 自定义消息解码器 */
 public class MyMessageDecoder extends ByteToMessageDecoder {
   
   private int length = 0;
@@ -40,7 +38,6 @@ public class MyMessageDecoder extends ByteToMessageDecoder {
       // }
       length = 0;
     }
-    
   }
   
 }

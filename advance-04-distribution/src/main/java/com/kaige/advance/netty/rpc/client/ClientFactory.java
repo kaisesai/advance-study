@@ -22,8 +22,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 客户端工厂
- * <p>
- * 负责创建客户端 Channel 连接池，每个服务有自己的连接池
+ *
+ * <p>负责创建客户端 Channel 连接池，每个服务有自己的连接池
  */
 public class ClientFactory {
   
@@ -37,7 +37,6 @@ public class ClientFactory {
     = new ConcurrentHashMap<>();
   
   private ClientFactory() {
-  
   }
   
   public static ClientFactory getClientFactory() {
@@ -54,14 +53,14 @@ public class ClientFactory {
    */
   public static CompletableFuture<Object> transport(MsgContent content, ProtocolType protocolType)
     throws InterruptedException {
-    
+
     /*
-      content 是一个货物，现在可以用定义的 rpc 传输协议（有状态），也可以用 http 协议作为载体传输
-      我们先手工用 http 协议作为载体，那这样就代表我们可以让 provider 是一个 tomcat、jetty 基于 http 协议的容器
-      有无状态来自于你使用的什么协议，那么 http 协议肯定是无状态的，没请求对应一个连接
-      dubbo 是一个 rpc 框架，net统一是一个 io 框架
-      dubbo 中传输协议上，可以是自定义的 rpc 传输协议、http 协议
-     */
+     content 是一个货物，现在可以用定义的 rpc 传输协议（有状态），也可以用 http 协议作为载体传输
+     我们先手工用 http 协议作为载体，那这样就代表我们可以让 provider 是一个 tomcat、jetty 基于 http 协议的容器
+     有无状态来自于你使用的什么协议，那么 http 协议肯定是无状态的，没请求对应一个连接
+     dubbo 是一个 rpc 框架，net统一是一个 io 框架
+     dubbo 中传输协议上，可以是自定义的 rpc 传输协议、http 协议
+    */
     
     CompletableFuture<Object> future = new CompletableFuture<>();
     

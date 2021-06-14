@@ -35,24 +35,16 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
   
   private long defaultTime;
   
-  /**
-   * 锁的路径，格式为 /lock/{businessKey}
-   */
+  /** 锁的路径，格式为 /lock/{businessKey} */
   private String businessLockPath;
   
-  /**
-   * 最终锁的 key, /lock/order1230000000085
-   */
+  /** 最终锁的 key, /lock/order1230000000085 */
   private volatile String lockKey;
   
-  /**
-   * 锁类型
-   */
+  /** 锁类型 */
   private LockType lockType;
   
-  /**
-   * 锁的次数
-   */
+  /** 锁的次数 */
   private AtomicInteger lockTime = new AtomicInteger(0);
   
   public MyLock(ZooKeeper zooKeeper, String businessKey, LockType lockType) {
@@ -95,9 +87,7 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
     return true;
   }
   
-  /**
-   * 释放锁
-   */
+  /** 释放锁 */
   public void unLock() {
     if (StringUtils.isBlank(this.lockKey)) {
       return;
@@ -166,12 +156,9 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
       // 监听到上一个节点的变化，不管，只关心是否被删除
       
     }
-    
   }
   
-  /**
-   * 创建锁
-   */
+  /** 创建锁 */
   private void createLock() {
     // log.info("createLock lockkey:{}, lockValue:{}", this.lockKey, lockValue);
     log.info("开始创建锁createLock...");
@@ -190,12 +177,11 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
     log.info("监听到事件 event:{}", event);
     String path = event.getPath();
     if (!StringUtils.equals(LOCK_PATH, path)) {
-      if (event.getType() == Event.EventType.NodeDeleted) {// 调用获取子节点信息
+      if (event.getType() == Event.EventType.NodeDeleted) { // 调用获取子节点信息
         log.info("节点被删除 path: {}", path);
         zooKeeper.getChildren(LOCK_PATH, false, this, "getChild2");
       }
     }
-    
   }
   
   @Override
@@ -235,9 +221,7 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
       } catch (KeeperException | InterruptedException e) {
         log.error("set data error lockKey:{}, lockValue:{}", this.lockKey, lockValue);
       }
-      
     }
-    
   }
   
   @Override
@@ -264,18 +248,18 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
       // zooKeeper.getChildren(LOCK_PATH, false, this, "getChild");
       return;
     }
-    
+
     /*
-      读锁的情况
-        获取比它小的第一个写锁即可
-        可以独占锁，也可以是共享锁
-        共享锁：
-          1. 没有比自己小的节点，或者 2. 所有比自己小的都是读请求
-      
-      写锁的情况
-        监听上一个读锁即可
-        一定是独占锁
-     */
+     读锁的情况
+       获取比它小的第一个写锁即可
+       可以独占锁，也可以是共享锁
+       共享锁：
+         1. 没有比自己小的节点，或者 2. 所有比自己小的都是读请求
+
+     写锁的情况
+       监听上一个读锁即可
+       一定是独占锁
+    */
     
     // 获取第一个
     if (indexOf == 0) {
@@ -320,18 +304,12 @@ public class MyLock implements Watcher, AsyncCallback.StatCallback, AsyncCallbac
     zooKeeper.exists(watchPreLock, this, this, "preLockKey");
   }
   
-  /**
-   * 锁类型
-   */
+  /** 锁类型 */
   public enum LockType {
     
-    /**
-     * 读锁
-     */
+    /** 读锁 */
     READ,
-    /**
-     * 写锁
-     */
+    /** 写锁 */
     WRITE
   }
   

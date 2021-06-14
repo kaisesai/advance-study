@@ -11,9 +11,7 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 聊天室服务端
- */
+/** 聊天室服务端 */
 @Slf4j
 public class ChatServer {
   
@@ -50,7 +48,6 @@ public class ChatServer {
       bossGroup.shutdownGracefully();
       workerGroup.shutdownGracefully();
     }
-    
   }
   
 }

@@ -7,14 +7,7 @@ import redis.clients.jedis.params.SetParams;
 import java.io.Closeable;
 import java.util.Collections;
 
-/**
- * 实现一个 redis 分布式锁
- * 要求满足的功能：
- * 1. 自己创建的锁只有自己才能释放
- * 2. 锁有过期时间
- * 3. 锁支持自动续命
- * 4. 支持指定超时时间内获取锁功能
- */
+/** 实现一个 redis 分布式锁 要求满足的功能： 1. 自己创建的锁只有自己才能释放 2. 锁有过期时间 3. 锁支持自动续命 4. 支持指定超时时间内获取锁功能 */
 public class RedisLock implements Closeable {
   
   private static final String LOCK_PREFFIX = "lock:";
@@ -113,7 +106,6 @@ public class RedisLock implements Closeable {
       } catch (Exception e) {
         e.printStackTrace();
       }
-      
     }, "redis-lock-watchdog-" + randomize);
   }
   
@@ -150,9 +142,7 @@ public class RedisLock implements Closeable {
     return SetParams.setParams().ex(secondsToExpire).nx();
   }
   
-  /**
-   * 获取锁，无论结果如果都立即返回
-   */
+  /** 获取锁，无论结果如果都立即返回 */
   public boolean lock() {
     System.out.println(Thread.currentThread().getName() + " 开始获取锁 lock");
     // 无限尝试获取锁
@@ -166,9 +156,7 @@ public class RedisLock implements Closeable {
     return false;
   }
   
-  /**
-   * 阻塞的获取锁
-   */
+  /** 阻塞的获取锁 */
   public boolean lockBlock() {
     System.out.println(Thread.currentThread().getName() + " 开始获取锁 lockBlock");
     SetParams params = getSetParams();
@@ -209,7 +197,6 @@ public class RedisLock implements Closeable {
     }
     System.out.println(Thread.currentThread().getName() + " unlock: " + result);
     return result;
-    
   }
   
   @Override

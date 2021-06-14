@@ -46,7 +46,6 @@ public class JedisTest {
         }
       }, "线程testTryLock" + i).start();
     }
-    
   }
   
   private static void testTryLock(JedisPool pool, String orderNo, int timeout) {
@@ -67,7 +66,6 @@ public class JedisTest {
         }
       }, "线程testTryLock" + i).start();
     }
-    
   }
   
   private static void testlock(JedisPool pool, String orderNo) {
@@ -105,7 +103,6 @@ public class JedisTest {
         "jedisCluster.set(\"cluster\", \"kaiser\") = " + jedisCluster.set("cluster", "kaiser"));
       System.out.println("jedisCluster.get(\"cluster\") = " + jedisCluster.get("cluster"));
     }
-    
   }
   
   public static void testJedisSentinel() {
@@ -121,7 +118,6 @@ public class JedisTest {
         .println("jedis.set(\"sentinel\", \"kaiser\") = " + jedis.set("sentinel", "kaiser"));
       System.out.println("jedis.get(\"sentinel\") = " + jedis.get("sentinel"));
     }
-    
   }
   
   public static void testJedis() {

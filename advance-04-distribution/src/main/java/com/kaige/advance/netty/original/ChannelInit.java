@@ -6,8 +6,8 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * channel 初始化器，用于把接收到的客户端 channel 注册到 selector，并且为它添加处理器
- * <p>
- * 它是用作
+ *
+ * <p>它是用作
  */
 @ChannelHandler.Sharable
 abstract class ChannelInit extends ChannelInboundHandlerAdapter {
@@ -28,7 +28,6 @@ abstract class ChannelInit extends ChannelInboundHandlerAdapter {
       // 3. client::pipeline[ChannelInit,MyInHandler]
       ctx.pipeline().remove(this);
     }
-    
   }
   
   /**

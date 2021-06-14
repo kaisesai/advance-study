@@ -11,9 +11,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
-/**
- * 消息消费者
- */
+/** 消息消费者 */
 public class MsgConsumer {
   
   public static void main(String[] args) {
@@ -29,12 +27,13 @@ public class MsgConsumer {
     // 自动提交 offset 的间隔时间
     props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
     /*
-      当消费主题的是一个新的消费组，或者指定 offset 的消费方式，offset 不存在，那么应该如何消费？
-      latest（默认）：只消费自己启动之后发送到主题的消息
-      earliest：第一次从头开始消费，以后按照消费 offset 记录继续消费，这个需要区别于 consumer.seekToBeginning（每次都从头开始消费）
-     */
+     当消费主题的是一个新的消费组，或者指定 offset 的消费方式，offset 不存在，那么应该如何消费？
+     latest（默认）：只消费自己启动之后发送到主题的消息
+     earliest：第一次从头开始消费，以后按照消费 offset 记录继续消费，这个需要区别于 consumer.seekToBeginning（每次都从头开始消费）
+    */
     // props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-    // consumer 给 broker 发送心跳的间隔时间，broker 接收到心跳，如果此时有 rebalance 发生，会通过心跳响应将 rebalance 方案下发给 consumer，这个时间可以稍微短一点
+    // consumer 给 broker 发送心跳的间隔时间，broker 接收到心跳，如果此时有 rebalance 发生，会通过心跳响应将 rebalance 方案下发给
+    // consumer，这个时间可以稍微短一点
     props.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 1000);
     // 服务端 broker 多久感知不到一个 consumer 心跳就认为它故障了，会将其提出消费组，对应的 partition 也会被重新分配给其他 consumer。默认是 10 秒
     props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 10 * 1000);
@@ -54,33 +53,33 @@ public class MsgConsumer {
     
     // 指定消息分区
     // consumer.assign(Lists.newArrayList(new TopicPartition(MsgProducer.TOPIC_MYTOPIC, 0)));
-  
+
     /*
     // 消息回溯消费
     consumer.assign(Lists.newArrayList(new TopicPartition(MsgProducer.TOPIC_MYTOPIC, 0)));
     consumer.seekToBeginning(Lists.newArrayList(new TopicPartition(MsgProducer.TOPIC_MYTOPIC, 0)));
     */
-    
+
     /*
     // 指定 offset 消费
     consumer.assign(Lists.newArrayList(new TopicPartition(MsgProducer.TOPIC_MYTOPIC, 0)));
     consumer.seek(new TopicPartition(MsgProducer.TOPIC_MYTOPIC, 0), 100);
     */
-    
+
     /*
     // 从指定时间点开始消费
     // 获取 topic 的分区信息
     List<PartitionInfo> partitionInfos = consumer.partitionsFor(MsgProducer.TOPIC_MYTOPIC);
     // 从 1 小时以前开始消费
     long fetchDateTime = new Date().getTime() - 1000 * 60 * 60;
-    
+
     Map<TopicPartition, Long> map = partitionInfos.stream().collect(Collectors.toMap(
       partitionInfo -> new TopicPartition(partitionInfo.topic(), partitionInfo.partition()),
       partitionInfo -> fetchDateTime));
-    
+
     // 获取 1 小时以前的 topic 分区和时间信息
     Map<TopicPartition, OffsetAndTimestamp> partMap = consumer.offsetsForTimes(map);
-    
+
     // 过滤 TopicPartition
     List<TopicPartition> availableTopicPartitions = partMap.entrySet().stream().filter(entry -> {
       if (entry.getKey() != null && entry.getValue() != null) {
@@ -89,12 +88,12 @@ public class MsgConsumer {
       }
       return entry.getValue() != null;
     }).map(Map.Entry::getKey).collect(Collectors.toList());
-    
+
     if (availableTopicPartitions.size() == 0) {
       System.out.println("该时间以前没有可用的 TopicPartition");
       return;
     }
-    
+
     // 分配 TopicPartition
     consumer.assign(availableTopicPartitions);
     // 指定每个分区消费的 offset
@@ -105,8 +104,8 @@ public class MsgConsumer {
     */
     while (true) {
       /*
-        poll 拉取消息的长轮询
-       */
+       poll 拉取消息的长轮询
+      */
       ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
       for (ConsumerRecord<String, String> record : records) {
         System.out
@@ -123,7 +122,6 @@ public class MsgConsumer {
         }
       });
     }
-    
   }
   
 }

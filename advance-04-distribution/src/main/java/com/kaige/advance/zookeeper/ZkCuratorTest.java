@@ -20,7 +20,6 @@ public class ZkCuratorTest {
     Thread.sleep(100 * 1000);
     
     client.close();
-    
   }
   
   private static void getData(CuratorFramework client) throws Exception {
@@ -31,7 +30,6 @@ public class ZkCuratorTest {
   private static void distributionLock(CuratorFramework client) {
     final InterProcessMutex lock = new InterProcessMutex(client, "/kaisai/lock");
     Runnable runnable = () -> {
-      
       try (Locker locker = new Locker(lock)) {
         System.out.println(Thread.currentThread().getName() + " 获取锁");
         Thread.sleep(1000 * 5);

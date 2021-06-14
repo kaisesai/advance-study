@@ -18,15 +18,16 @@ subprojects {
 
     group 'com.kaige.advance'
     version '1.0-SNAPSHOT'
-    sourceCompatibility = '1.8'
+    // sourceCompatibility = '1.8'
+    // sourceCompatibility = '11'
 
     configurations {
         compileOnly {
             extendsFrom annotationProcessor
         }
-       // log4j2 需要过滤掉 org.slf4j:slf4j-log4j12 模块（它是 log4j 的适配器）
-       all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
-       all*.exclude group: 'ch.qos.logback'
+        // log4j2 需要过滤掉 org.slf4j:slf4j-log4j12 模块（它是 log4j 的适配器）
+        all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        all*.exclude group: 'ch.qos.logback'
 //        all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
 //        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 //        all*.exclude module: 'spring-boot-starter-logback'

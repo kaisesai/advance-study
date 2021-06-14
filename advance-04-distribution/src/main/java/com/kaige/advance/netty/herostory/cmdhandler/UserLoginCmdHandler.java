@@ -13,9 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Objects;
 import java.util.function.Function;
 
-/**
- * 用户登录命令处理器
- */
+/** 用户登录命令处理器 */
 @Slf4j
 public class UserLoginCmdHandler implements ICmdHandler<GameMsgProtocol.UserLoginCmd> {
   

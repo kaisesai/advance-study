@@ -18,9 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 定时查询 canal 数据
- */
+/** 定时查询 canal 数据 */
 // @Component
 @Slf4j
 public class CanalScheduling {
@@ -55,7 +53,6 @@ public class CanalScheduling {
       // 失败的话进行回滚
       canalBookConnector.rollback(batchId);
     }
-    
   }
   
   private void publishCanalEvent(CanalEntry.Entry entry) {
@@ -77,7 +74,6 @@ public class CanalScheduling {
     }
     CanalEntry.EventType eventType = change.getEventType();
     change.getRowDatasList().forEach(rowData -> {
-      
       List<CanalEntry.Column> columns = null;
       // 对于es来说 只要关注 delete 和 update 还有insert
       if (eventType == CanalEntry.EventType.DELETE) {
@@ -95,7 +91,6 @@ public class CanalScheduling {
       } catch (IOException e) {
         e.printStackTrace();
       }
-      
     });
   }
   
@@ -115,14 +110,13 @@ public class CanalScheduling {
     try {
       Object id = dataMap.get("id");
       if (eventType == CanalEntry.EventType.DELETE) {
-        log.info("删除索引Id={},type={},value={}", id, eventType.toString(), dataMap.toString());
+        log.info("删除索引Id={},type={},value={}", id, eventType, dataMap);
         // 删除 es 文档
         elasticsearchRestTemplate.delete(id.toString(), ReadBookPd.class);
       } else {
         // 这里又两种方式,一种是直接拿canal过来的数据，还有一种就是拿主键id去查询。
         // 如果是又业务关联的 这里就要写自己的业务代码
-        log.info("更新索引Id={},type={},value={}", dataMap.get("id"), eventType.toString(),
-                 dataMap.toString());
+        log.info("更新索引Id={},type={},value={}", dataMap.get("id"), eventType.toString(), dataMap);
         
         IndexQuery query = new IndexQueryBuilder().withId(id.toString()).withObject(dataMap)
           .build();
@@ -138,7 +132,6 @@ public class CanalScheduling {
     } catch (Exception e) {
       log.error("定时刷新 book 数据到 es 出现异常", e);
     }
-    
   }
   
 }

@@ -9,9 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * 分布式的读写锁
- */
+/** 分布式的读写锁 */
 public class ZkLock {
   
   public static final String ROOT_PATH = "/kaisai/lock";
@@ -37,11 +35,7 @@ public class ZkLock {
   }
   
   /**
-   * 获取锁
-   * 流程：
-   * 1. 创建锁信息
-   * 2. 尝试激活锁，即获取所有指定业务锁节点，获取最小的节点是否为自己，如果是，那就激活成功，否则就添加监听，并且阻塞等待
-   * 3. 在规定时间内返回锁
+   * 获取锁 流程： 1. 创建锁信息 2. 尝试激活锁，即获取所有指定业务锁节点，获取最小的节点是否为自己，如果是，那就激活成功，否则就添加监听，并且阻塞等待 3. 在规定时间内返回锁
    *
    * @param business 业务场景
    * @param lockId   锁 id
@@ -75,7 +69,6 @@ public class ZkLock {
     }
     System.out.println(Thread.currentThread().getName() + " 获取到 lock = " + lock);
     return lock;
-    
   }
   
   public void releaseLock(Lock lock) {
@@ -114,10 +107,10 @@ public class ZkLock {
     // 获取全部的锁业务节点，按照升序排序
     List<String> allLockPaths = zkClient.getChildren(lock.businessPath).stream().sorted()
       .map(p -> lock.getBusinessPath() + "/" + p).collect(Collectors.toList());
-  
+    
     // 获取第一个锁节点
     String firstLockPath = allLockPaths.get(0);
-  
+    
     // 第一个节点是自己，无论写锁或者读锁都表示激活成功
     if (lock.getPath().equals(firstLockPath)) {
       // 设置激活状态
@@ -135,7 +128,7 @@ public class ZkLock {
       }
       // 写锁，判断最小节点是不是自己，这一步操作已经在上面执行过了
       // 不管是读锁还是写锁，都获取失败，则监听它的前一个节点变更事件
-    
+      
       // 否则，获取它的上一个节点，监听变化
       String prewLockPath = allLockPaths.get(allLockPaths.indexOf(lock.getPath()) - 1);
       // 对上一个节点添加监听器，监听节点变化
@@ -144,7 +137,7 @@ public class ZkLock {
         public void handleDataChange(String dataPath, byte[] data) throws Exception {
           // do no thing
         }
-      
+        
         @Override
         public void handleDataDeleted(String dataPath) throws Exception {
           // 节点被删除，则尝试再次激活
@@ -167,8 +160,8 @@ public class ZkLock {
   }
   
   public enum LockType {
-    READ,// 读锁
-    WRITE// 写锁
+    READ, // 读锁
+    WRITE // 写锁
   }
   
   @Data
@@ -178,7 +171,7 @@ public class ZkLock {
     
     private String lockId;
     
-    private String path;// 节点路径
+    private String path; // 节点路径
     
     private LockType lockType;
     

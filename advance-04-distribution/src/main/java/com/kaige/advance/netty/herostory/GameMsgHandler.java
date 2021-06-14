@@ -8,9 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
 
-/**
- * 游戏消息处理器
- */
+/** 游戏消息处理器 */
 @Slf4j
 public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
   
@@ -37,7 +35,7 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     }
     // 移除全局信道
     Broadcaster.removeChannel(ctx.channel());
-  
+    
     // 移除用户信息
     Integer userId = UserManager.getUserIdFromCtx(ctx);
     if (Objects.isNull(userId)) {
@@ -63,7 +61,7 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     if (Objects.isNull(ctx) || Objects.isNull(msg)) {
       return;
     }
-    log.info("收到客户端的消息，msgClass = {}，msgBody = {}", msg.getClass().getSimpleName(), msg.toString());
+    log.info("收到客户端的消息，msgClass = {}，msgBody = {}", msg.getClass().getSimpleName(), msg);
     // 处理消息
     MainThreadProcessor.getInstance().process(ctx, msg);
   }

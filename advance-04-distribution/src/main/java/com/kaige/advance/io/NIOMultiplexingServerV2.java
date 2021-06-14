@@ -13,8 +13,8 @@ import java.util.Set;
 
 /**
  * 非阻塞 IO 多路复用器服务端程序
- * <p>
- * 版本：v2 多线程模式
+ *
+ * <p>版本：v2 多线程模式
  */
 public class NIOMultiplexingServerV2 {
   
@@ -22,8 +22,8 @@ public class NIOMultiplexingServerV2 {
   
   /**
    * 多路复用器
-   * <p>
-   * 在 Linux 中多路复用器的实现为：select、poll、epoll、kqueue
+   *
+   * <p>在 Linux 中多路复用器的实现为：select、poll、epoll、kqueue
    */
   private Selector selector;
   
@@ -37,39 +37,37 @@ public class NIOMultiplexingServerV2 {
   
   private void initServer() throws IOException {
     /*
-      创建服务端 socket
-      它约等于 listen 状态的文件描述符 fd4：java    13192 root    4u     IPv6 782666    0t0      TCP *:jamlink (LISTEN)
-     */
+     创建服务端 socket
+     它约等于 listen 状态的文件描述符 fd4：java    13192 root    4u     IPv6 782666    0t0      TCP *:jamlink (LISTEN)
+    */
     ssc = ServerSocketChannel.open();
     // 设置非阻塞选项
     ssc.configureBlocking(false);
     // 绑定端口
     ssc.bind(new InetSocketAddress(8091));
-    
+
     /*
-      创建多路复用器
-      epoll 模型下，对应着 epoll_create，它会返回一个文件描述符 5 -> fd5：epoll_create(256) = 5
-      
-      Java 会默认使用 epoll 模型，也添加程序启动参数来选择指定 select、poll 模型，通过 -D 参数指定
-      选择 epoll 模型：-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.EPollSelectorProvider
-      启动程序，并且追踪系统调用：strace -ff -o out java -Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider -cp /root/netty-all-4.1.48.Final.jar:.  NettyIO
-     */
+     创建多路复用器
+     epoll 模型下，对应着 epoll_create，它会返回一个文件描述符 5 -> fd5：epoll_create(256) = 5
+
+     Java 会默认使用 epoll 模型，也添加程序启动参数来选择指定 select、poll 模型，通过 -D 参数指定
+     选择 epoll 模型：-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.EPollSelectorProvider
+     启动程序，并且追踪系统调用：strace -ff -o out java -Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider -cp /root/netty-all-4.1.48.Final.jar:.  NettyIO
+    */
     selector = Selector.open();
-    
+
     /*
-      注册服务端 socket 到多路复用器上，注册接收客户端连接事件
-      select、poll 模型：在 jvm 里开辟一个数组，将 fd4 放进去
-      epoll：执行 epoll_ctl(5, EPOLL_CTL_ADD, 4, EPOLLIN，意思是将 fd4 放入到 fd5（epoll 实例，它在内核实现中有一棵红黑树）中，并且注册它的 read 事件
-      
-      它是懒加载的，只有在真正调用 selector.select() 方法时才会触发。
-     */
+     注册服务端 socket 到多路复用器上，注册接收客户端连接事件
+     select、poll 模型：在 jvm 里开辟一个数组，将 fd4 放进去
+     epoll：执行 epoll_ctl(5, EPOLL_CTL_ADD, 4, EPOLLIN，意思是将 fd4 放入到 fd5（epoll 实例，它在内核实现中有一棵红黑树）中，并且注册它的 read 事件
+
+     它是懒加载的，只有在真正调用 selector.select() 方法时才会触发。
+    */
     ssc.register(selector, SelectionKey.OP_ACCEPT);
     System.out.println("Multiplexing Server up port 8091!");
   }
   
-  /**
-   * 执行工作
-   */
+  /** 执行工作 */
   private void process() {
     
     // 使用多路复用器处理
@@ -77,44 +75,44 @@ public class NIOMultiplexingServerV2 {
       while (true) {
         // Set<SelectionKey> keys = selector.keys();
         // System.out.println("keys.size() = " + keys.size());
-        
+
         /*
-          selector.select() 调用多路复用器的方法。
-          1. elect、poll 模型：对应的是内核的系统调用 select(fd4) 和 poll(fd4)
-          2. epoll 模型：对应内核的系统调用 epoll_wait(5,
-          
-          这个方法可以带时间参数：时间为 0 表示永久阻塞；否则就是阻塞一定的时间。
-          这个阻塞可以用 selector.wakeup() 方法唤醒
-         */
+         selector.select() 调用多路复用器的方法。
+         1. elect、poll 模型：对应的是内核的系统调用 select(fd4) 和 poll(fd4)
+         2. epoll 模型：对应内核的系统调用 epoll_wait(5,
+
+         这个方法可以带时间参数：时间为 0 表示永久阻塞；否则就是阻塞一定的时间。
+         这个阻塞可以用 selector.wakeup() 方法唤醒
+        */
         while (selector.select(50) > 0) {
           /*
-            获取已经收到多路复用 key 事件
-            这是返回有状态的文件描述符集合
-           */
+           获取已经收到多路复用 key 事件
+           这是返回有状态的文件描述符集合
+          */
           Set<SelectionKey> selectionKeys = selector.selectedKeys();
           Iterator<SelectionKey> keyIterator = selectionKeys.iterator();
           /*
-            多路复用器只能返回有状态的文件描述符，程序还得一个一个的处理他们的 R/W，依旧是同步操作
-            NIO 需要拿着一堆文件描述符调用系统调用，浪费资源，而这里的多路复用器只需要调用一次 select 方法，就知道具体的可以 R/W 的文件描述符，这是非常高效的！
-           */
+           多路复用器只能返回有状态的文件描述符，程序还得一个一个的处理他们的 R/W，依旧是同步操作
+           NIO 需要拿着一堆文件描述符调用系统调用，浪费资源，而这里的多路复用器只需要调用一次 select 方法，就知道具体的可以 R/W 的文件描述符，这是非常高效的！
+          */
           while (keyIterator.hasNext()) {
             SelectionKey key = keyIterator.next();
             // 删除本次集合中 key（文件描述符），防止重复处理
             keyIterator.remove();
             if (key.isAcceptable()) {
               /*
-                接收客户端连接事件，这里是重点，如果要去接受一个新的连接，那么语义上，accept 接受连接并且返回一个新的文件描述符 fd，这个 fd 在select、poll、epoll 模型下的处理方式是不同的。
-                select、poll 模型：因为它们在内核中没有空间，所以就把新的 fd 保存到与前面那个服务端 listen fd4 所在的 jvm 的数组中。
-                epoll 模型：我们会把这个 fd 通过 epoll_ctl 注册到内核空间上去（epoll 的红黑树中）
-               */
+               接收客户端连接事件，这里是重点，如果要去接受一个新的连接，那么语义上，accept 接受连接并且返回一个新的文件描述符 fd，这个 fd 在select、poll、epoll 模型下的处理方式是不同的。
+               select、poll 模型：因为它们在内核中没有空间，所以就把新的 fd 保存到与前面那个服务端 listen fd4 所在的 jvm 的数组中。
+               epoll 模型：我们会把这个 fd 通过 epoll_ctl 注册到内核空间上去（epoll 的红黑树中）
+              */
               acceptHandler(key);
             } else if (key.isReadable()) {
               /*
-                只处理 read，并且注册 write 事件
-                现在是多线程版本，处理 read 事件时是异步的，当 read 事件对应的线程还没有处理完毕，没有取消注册读事件时，外层的循环会从多路复用器上返回还是会发送返回
-                即便抛出了线程去读取，但是这个时差里，这个key 还是会被重复触发。
-                所以需要在处理前先取消注册这个读事件，在处理完毕之后再注册
-               */
+               只处理 read，并且注册 write 事件
+               现在是多线程版本，处理 read 事件时是异步的，当 read 事件对应的线程还没有处理完毕，没有取消注册读事件时，外层的循环会从多路复用器上返回还是会发送返回
+               即便抛出了线程去读取，但是这个时差里，这个key 还是会被重复触发。
+               所以需要在处理前先取消注册这个读事件，在处理完毕之后再注册
+              */
               // key.cancel();
               // 取消注册 read 事件
               key.interestOps(key.interestOps() & ~SelectionKey.OP_READ);
@@ -122,21 +120,21 @@ public class NIOMultiplexingServerV2 {
               readHandler(key);
             } else if (key.isWritable()) {
               /*
-               写事件，只要是 send-queue 只要是空的，就一定会给你返回可以写的事件，就会回调我们的写处理方法
-               需要明白的是：什么时候写？不是依赖 send-queue 是不是有空间（多路复用器不能写参考的是 send-queue 有没有空间）
-               1. 先准备好要写什么了
-               2. 再关心 send-queue 有没有空间
-               3. 在处理读事件时，进行注册写事件，但是写依赖以上的关系，什么时候用什么时候再注册
-               4. 如果一开始就注册了写事件，那么就会进入死循环，一直被调用，需要在处理写事件时先取消 key 或者取消注册写事件
-                
-                TODO
-                注意：key 的 cancel() 与 key 的 interestOps() 方法的区别是在系统调用上：
-                cancel() 对应的系统调用是：epoll_ctl(5, EPOLL_CTL_DEL, 8, 0x7f11a841c5e4) = 0
-                interestOps() 对应的系统调用：
-                
-                
-                sc.close 都一样：epoll_ctl(5, EPOLL_CTL_DEL, 8, 0x7f11a841c5e4)
-               */
+              写事件，只要是 send-queue 只要是空的，就一定会给你返回可以写的事件，就会回调我们的写处理方法
+              需要明白的是：什么时候写？不是依赖 send-queue 是不是有空间（多路复用器不能写参考的是 send-queue 有没有空间）
+              1. 先准备好要写什么了
+              2. 再关心 send-queue 有没有空间
+              3. 在处理读事件时，进行注册写事件，但是写依赖以上的关系，什么时候用什么时候再注册
+              4. 如果一开始就注册了写事件，那么就会进入死循环，一直被调用，需要在处理写事件时先取消 key 或者取消注册写事件
+
+               TODO
+               注意：key 的 cancel() 与 key 的 interestOps() 方法的区别是在系统调用上：
+               cancel() 对应的系统调用是：epoll_ctl(5, EPOLL_CTL_DEL, 8, 0x7f11a841c5e4) = 0
+               interestOps() 对应的系统调用：
+
+
+               sc.close 都一样：epoll_ctl(5, EPOLL_CTL_DEL, 8, 0x7f11a841c5e4)
+              */
               // key.cancel();
               // 取消注册 write 事件
               key.interestOps(key.interestOps() & ~SelectionKey.OP_WRITE);
@@ -215,7 +213,6 @@ public class NIOMultiplexingServerV2 {
       //   e.printStackTrace();
       // }
     }).start();
-    
   }
   
   /**
@@ -260,7 +257,6 @@ public class NIOMultiplexingServerV2 {
         e.printStackTrace();
       }
     }).start();
-    
   }
   
   /**
@@ -274,9 +270,9 @@ public class NIOMultiplexingServerV2 {
     ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
     try {
       /*
-        接收客户端的连接，文件描述符 f9
-        accept(4, {sa_family=AF_INET6, sin6_port=htons(39750), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_flowinfo=htonl(0), sin6_scope_id=0}, [28]) = 9
-       */
+       接收客户端的连接，文件描述符 f9
+       accept(4, {sa_family=AF_INET6, sin6_port=htons(39750), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_flowinfo=htonl(0), sin6_scope_id=0}, [28]) = 9
+      */
       SocketChannel sc = ssc.accept();
       // 设置非阻塞选项
       sc.configureBlocking(false);
@@ -290,7 +286,6 @@ public class NIOMultiplexingServerV2 {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
   }
   
 }

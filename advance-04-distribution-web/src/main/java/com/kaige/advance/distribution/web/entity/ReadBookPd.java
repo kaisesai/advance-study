@@ -48,21 +48,15 @@ public class ReadBookPd implements Serializable {
   @Field(type = FieldType.Long)
   private Date updateTime;
   
-  /**
-   * 1正常，-1删除，0下架
-   */
+  /** 1正常，-1删除，0下架 */
   @Field(type = FieldType.Integer)
   private Integer status;
   
-  /**
-   * 评论数
-   */
+  /** 评论数 */
   @Field(type = FieldType.Integer)
   private Integer commentNum;
   
-  /**
-   * 价格，分
-   */
+  /** 价格，分 */
   @Field(type = FieldType.Integer)
   private Integer price;
   

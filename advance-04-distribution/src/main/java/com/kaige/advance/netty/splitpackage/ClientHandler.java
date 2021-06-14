@@ -21,12 +21,10 @@ public class ClientHandler extends SimpleChannelInboundHandler<MyMessageProtocol
       mp.setContent(bytes);
       ctx.writeAndFlush(mp);
     }
-    
   }
   
   @Override
   protected void channelRead0(ChannelHandlerContext ctx, MyMessageProtocol msg) throws Exception {
-  
   }
   
 }

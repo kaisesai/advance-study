@@ -16,9 +16,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
-/**
- * 基于 netty 的自定义 RPC 服务端程序
- */
+/** 基于 netty 的自定义 RPC 服务端程序 */
 public class RpcServerMain {
   
   public static void main(String[] args) {
@@ -40,7 +38,6 @@ public class RpcServerMain {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    
   }
   
   private static void startFromNetty() {
@@ -61,10 +58,10 @@ public class RpcServerMain {
             System.out.println(Thread.currentThread().getName()
                                  + " : server channel accept client channel... transport protocol = "
                                  + protocolType);
-            /*
-              1. 自定义的 rpc 需要关注的问题：粘包拆包、header + body
-              2. 小火车，传输协议用的就是 http
-             */
+                      /*
+                       1. 自定义的 rpc 需要关注的问题：粘包拆包、header + body
+                       2. 小火车，传输协议用的就是 http
+                      */
             if (protocolType == ProtocolType.RPC) {
               // 消息编码器
               ch.pipeline().addLast(new MyRpcEncoder());
@@ -78,7 +75,6 @@ public class RpcServerMain {
               ch.pipeline().addLast(new HttpObjectAggregator(512 * 1024));
               ch.pipeline().addLast(new ServerHttpHandler(false));
             }
-            
           }
         }).bind(9090).sync();
       

@@ -34,7 +34,6 @@ public class MyCondition {
         // 解锁
         lock.unlock();
       }
-      
     }, "t1").start();
     
     Thread.sleep(1000);
@@ -61,9 +60,7 @@ public class MyCondition {
         // 解锁
         lock.unlock();
       }
-      
     }, "t2").start();
-    
   }
   
 }

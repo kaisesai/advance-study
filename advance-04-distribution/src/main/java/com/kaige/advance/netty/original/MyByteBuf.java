@@ -45,7 +45,6 @@ public class MyByteBuf {
     // set 数据
     buffer.setByte(0, 9);
     printBuffer(buffer);
-    
   }
   
   private static void printBuffer(ByteBuf buffer) {

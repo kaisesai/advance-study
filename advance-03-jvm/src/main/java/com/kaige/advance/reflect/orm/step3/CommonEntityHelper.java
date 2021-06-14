@@ -30,12 +30,12 @@ public class CommonEntityHelper {
     // 使用反射来动态设置这些字段
     try {
       T t = clazz.newInstance();
-      
+
       /*
-        反射性能慢的点：
-          1. 每次都要调用 getDeclaredFields() 方法获取声明的字段
-          2. 每个字段都要调用 getAnnotation() 方法获取自定义注解
-       */
+       反射性能慢的点：
+         1. 每次都要调用 getDeclaredFields() 方法获取声明的字段
+         2. 每个字段都要调用 getAnnotation() 方法获取自定义注解
+      */
       
       // 获取声明的字段
       Field[] fields = clazz.getDeclaredFields();

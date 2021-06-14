@@ -11,9 +11,7 @@ import java.io.RandomAccessFile;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-/**
- * http 请求处理
- */
+/** http 请求处理 */
 public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
   
   private static final File INDEX;

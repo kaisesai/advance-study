@@ -14,15 +14,11 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * 实体类工厂
- */
+/** 实体类工厂 */
 @Slf4j
 public class EntityHelperFactory {
   
-  /**
-   * 实体类辅助器 map
-   */
+  /** 实体类辅助器 map */
   private static final Map<Class<?>, AbstractEntityHelper> CLASS_ABSTRACT_ENTITY_HELPER_MAP
     = new ConcurrentHashMap<>();
   
@@ -134,7 +130,6 @@ public class EntityHelperFactory {
           } else {
             // 接着写其他的类型即可
           }
-          
         }
         
         sb.append("return obj;\n");
@@ -162,7 +157,6 @@ public class EntityHelperFactory {
       }
     }
     return CLASS_ABSTRACT_ENTITY_HELPER_MAP.get(entityClazz);
-    
   }
   
 }

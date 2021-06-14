@@ -49,7 +49,6 @@ public class MyConsumer {
     } catch (MQClientException e) {
       log.error(e.getErrorMessage(), e);
     }
-    
   }
   
 }

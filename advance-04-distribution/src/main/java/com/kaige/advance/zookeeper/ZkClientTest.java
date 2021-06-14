@@ -5,9 +5,7 @@ import com.github.zkclient.ZkClient;
 
 import java.nio.charset.StandardCharsets;
 
-/**
- * 第三方客户端 ZkClient
- */
+/** 第三方客户端 ZkClient */
 public class ZkClientTest {
   
   public static void main(String[] args) throws InterruptedException {

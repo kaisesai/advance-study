@@ -54,7 +54,6 @@ public class MainControl implements InitializingBean {
     zkClient = new ZkClient(server, 5000, 10000);
     // 初始化订阅事件
     initSubscribeListener();
-    
   }
   
   // 初始化订阅事件
@@ -62,10 +61,10 @@ public class MainControl implements InitializingBean {
     // 先取消所有的订阅者
     zkClient.unsubscribeAll();
     // 获取所有子节点
-    zkClient.getChildren(rootPath).stream().map(p -> rootPath + "/" + p)// 得出子节点完整路径
+    zkClient.getChildren(rootPath).stream().map(p -> rootPath + "/" + p) // 得出子节点完整路径
       .forEach(p -> {
         // 订阅子节点数据变化事件
-        zkClient.subscribeDataChanges(p, new DataChanges());// 数据变更的监听
+        zkClient.subscribeDataChanges(p, new DataChanges()); // 数据变更的监听
       });
     //  监听子节点的变更事件，包括：增加，删除
     zkClient.subscribeChildChanges(rootPath,
@@ -80,9 +79,7 @@ public class MainControl implements InitializingBean {
     }
   }
   
-  /**
-   * 子节点数据变化监听器
-   */
+  /** 子节点数据变化监听器 */
   private class DataChanges implements IZkDataListener {
     
     @Override

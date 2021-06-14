@@ -12,9 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Scanner;
 
-/**
- * NIO 客户端
- */
+/** NIO 客户端 */
 @Slf4j
 public class NIOClient {
   
@@ -58,7 +56,6 @@ public class NIOClient {
           read(key);
         }
       }
-      
     }
   }
   
@@ -106,7 +103,6 @@ public class NIOClient {
     
     // 将通道管理器和该通道绑定，并为该通道注册 selectKey 的 OP_CONNECT 事件
     channel.register(selector, SelectionKey.OP_CONNECT);
-    
   }
   
 }

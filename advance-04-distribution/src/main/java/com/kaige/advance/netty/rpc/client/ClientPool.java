@@ -17,24 +17,18 @@ import lombok.Data;
 import java.net.InetSocketAddress;
 import java.util.Random;
 
-/**
- * 客户端连接池，与客户端的 Channel 通道
- */
+/** 客户端连接池，与客户端的 Channel 通道 */
 @Data
 public class ClientPool {
   
   private Random random = new Random();
   
-  /**
-   * 连接信息
-   */
+  /** 连接信息 */
   private MyClient[] clients;
   
   private Object[] locks;
   
-  /**
-   * 协议类型
-   */
+  /** 协议类型 */
   private ProtocolType protocolType;
   
   public ClientPool(int poolSize, ProtocolType protocolType) {

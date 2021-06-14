@@ -13,10 +13,10 @@ import java.util.List;
 
 /**
  * 消息解码器
- * <p>
- * 将接收到的 ByteBuf 转成 MyMsg 类型
- * <p>
- * ByteToMessageDecoder 类执行了 channelRead，并且它使用了 Cumulator 累加器累加 ByteBuf 中的数据。
+ *
+ * <p>将接收到的 ByteBuf 转成 MyMsg 类型
+ *
+ * <p>ByteToMessageDecoder 类执行了 channelRead，并且它使用了 Cumulator 累加器累加 ByteBuf 中的数据。
  */
 public class MyRpcDecoder extends ByteToMessageDecoder {
   
@@ -48,9 +48,8 @@ public class MyRpcDecoder extends ByteToMessageDecoder {
         in.readBytes(HEADER_SIZE);
         // 读取消息体
         System.out.println(
-          "header.getBodyLength() = " + header.getBodyLength() + " in: " + in.toString()
-            + " in.readerIndex()=" + in.readerIndex() + " in.readableBytes()=" + in
-            .readableBytes());
+          "header.getBodyLength() = " + header.getBodyLength() + " in: " + in + " in.readerIndex()="
+            + in.readerIndex() + " in.readableBytes()=" + in.readableBytes());
         byte[] data = new byte[(int) header.getBodyLength()];
         in.readBytes(data);
         // 反序列化消息体

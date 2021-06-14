@@ -7,14 +7,10 @@ import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
-/**
- * 包加载类工具
- */
+/** 包加载类工具 */
 public class PackageUtil {
   
-  /**
-   * 类默认构造器
-   */
+  /** 类默认构造器 */
   private PackageUtil() {
   }
   
@@ -26,7 +22,7 @@ public class PackageUtil {
    * @param superClazz  父类的类型
    * @return 子类集合
    */
-  static public Set<Class<?>> listSubClazz(String packageName, boolean recursive,
+  public static Set<Class<?>> listSubClazz(String packageName, boolean recursive,
                                            Class<?> superClazz) {
     if (superClazz == null) {
       return Collections.emptySet();
@@ -43,7 +39,7 @@ public class PackageUtil {
    * @param filter      过滤器
    * @return 符合条件的类集合
    */
-  static public Set<Class<?>> listClazz(String packageName, boolean recursive,
+  public static Set<Class<?>> listClazz(String packageName, boolean recursive,
                                         IClazzFilter filter) {
     
     if (packageName == null || packageName.isEmpty()) {
@@ -115,7 +111,7 @@ public class PackageUtil {
    * @param filter      类过滤器
    * @return 符合条件的类集合
    */
-  static private Set<Class<?>> listClazzFromDir(final File dirFile, final String packageName,
+  private static Set<Class<?>> listClazzFromDir(final File dirFile, final String packageName,
                                                 final boolean recursive, IClazzFilter filter) {
     
     if (!dirFile.exists() || !dirFile.isDirectory()) {
@@ -209,7 +205,7 @@ public class PackageUtil {
    * @param filter      类过滤器
    * @return 符合条件的类集合
    */
-  static private Set<Class<?>> listClazzFromJar(final File jarFilePath, final String packageName,
+  private static Set<Class<?>> listClazzFromJar(final File jarFilePath, final String packageName,
                                                 final boolean recursive, IClazzFilter filter) {
     
     if (jarFilePath == null || jarFilePath.isDirectory()) {
@@ -240,14 +236,14 @@ public class PackageUtil {
           // 则说明不是 JAVA 类文件, 直接跳过!
           continue;
         }
-  
+        
         //
         // 如果没有开启递归模式,
         // 那么就需要判断当前 .class 文件是否在指定目录下?
         //
         // 获取目录名称
         System.out.println("entryName = " + entryName);
-  
+        
         int index = entryName.lastIndexOf('/');
         if (index < 0) {
           continue;
@@ -256,7 +252,7 @@ public class PackageUtil {
         System.out.println("tmpStr = " + tmpStr);
         // 将目录中的 "/" 全部替换成 "."
         tmpStr = join(tmpStr.split("/"), ".");
-  
+        
         if (!recursive) {
           if (!packageName.equals(tmpStr)) {
             // 如果不是我们要找的包,
@@ -307,7 +303,7 @@ public class PackageUtil {
    * @param conn   连接符
    * @return 连接后的字符串
    */
-  static private String join(String[] strArr, String conn) {
+  private static String join(String[] strArr, String conn) {
     if (null == strArr || strArr.length <= 0) {
       return "";
     }
@@ -334,7 +330,7 @@ public class PackageUtil {
    * @param trimStr 需要被清除的字符串
    * @return 清除后的字符串
    */
-  static private String trimLeft(String src, String trimStr) {
+  private static String trimLeft(String src, String trimStr) {
     if (null == src || src.isEmpty()) {
       return "";
     }
@@ -354,9 +350,7 @@ public class PackageUtil {
     return src;
   }
   
-  /**
-   * 类名称过滤器
-   */
+  /** 类名称过滤器 */
   @FunctionalInterface
   public interface IClazzFilter {
     

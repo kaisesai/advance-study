@@ -12,13 +12,13 @@ import com.kaige.advance.netty.rpc.service.Car;
 public class RpcClientMain {
   
   public static void main(String[] args) {
-    
+
     /*
-      RPC：远程方法调用，有客户端和服务端，客户端调用服务端的方法可以获取数据
-      1. 需要双端输出数据，需要有连接信息，数据包的拆包
-      2. 客户端调用服务端接口，需要动态代理，利用网络通信框架连接服务端，执行目标代码，需要数据的序列化、协议封装
-      3. 客户端需要建立连接池，保存与服务器端的连接通道，避免每次连接重新建立
-     */
+     RPC：远程方法调用，有客户端和服务端，客户端调用服务端的方法可以获取数据
+     1. 需要双端输出数据，需要有连接信息，数据包的拆包
+     2. 客户端调用服务端接口，需要动态代理，利用网络通信框架连接服务端，执行目标代码，需要数据的序列化、协议封装
+     3. 客户端需要建立连接池，保存与服务器端的连接通道，避免每次连接重新建立
+    */
     // 服务端代码、测试、多线程、 动态代理
     ProtocolType protocolType = ProtocolType.HTTP;
     
@@ -32,7 +32,6 @@ public class RpcClientMain {
         System.out.println("result = " + result);
       }, "t" + i).start();
     }
-    
   }
   
 }

@@ -34,7 +34,7 @@ public class MyClassLoader extends ClassLoader {
     // 4. 系统类加载器：sun.misc.Launcher$AppClassLoader
     ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
     log.info("systemClassLoader = " + systemClassLoader);
-  
+    
     // Thread.currentThread().setContextClassLoader(extClassLoader);
     // mysql jdbc 驱动实现时通过 SPI，线程上的类加载器加载的
     log.info("Mysql Driver.class.getClassLoader() = " + Driver.class.getClassLoader());
@@ -55,7 +55,7 @@ public class MyClassLoader extends ClassLoader {
     // 解决的方法是通过 SPI 机制进行自动注册，它的内部是通过线程的类加载器（默认是 APP 加载器），这样的类加载就变成了：启动类加载器 -> APP 加载器加载了。
     MyDriver myDriver = new MyDriver();
     DriverManager.registerDriver(myDriver);
-  
+    
     // try {
     //   Class<?> userClass = myClassLoader.loadClass("com.kaige.advance.jvm.User");
     //   ClassLoader userClassClassLoader = userClass.getClassLoader();
@@ -78,7 +78,6 @@ public class MyClassLoader extends ClassLoader {
       System.out.println("e.getMessage() = " + e.getMessage());
       // e.printStackTrace();
     }
-    
   }
   
   @Override

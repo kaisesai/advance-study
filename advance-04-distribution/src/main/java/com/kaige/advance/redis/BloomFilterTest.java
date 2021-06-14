@@ -8,9 +8,7 @@ import org.redisson.api.RedissonClient;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-/**
- * 布隆过滤器的使用
- */
+/** 布隆过滤器的使用 */
 public class BloomFilterTest {
   
   public static void main(String[] args) {

@@ -18,11 +18,11 @@ public class CanalConfig {
     
     canalConnector.connect();
     // 指定filter，格式{database}.{table}
-    canalConnector.subscribe("eshop.read_book_pd");//指定我们要监听的表 秒杀的订单很大
+    canalConnector.subscribe("eshop.read_book_pd"); // 指定我们要监听的表 秒杀的订单很大
     // 如果你们要监听的表，这里最好建议用多线程，每一个canal服务只处理几张表就行,
-    //我给你们一个例子
-    //canalConnector.subscribe("test.read_book_pd");
-    //回滚寻找上次中断的为止
+    // 我给你们一个例子
+    // canalConnector.subscribe("test.read_book_pd");
+    // 回滚寻找上次中断的为止
     canalConnector.rollback();
     return canalConnector;
   }

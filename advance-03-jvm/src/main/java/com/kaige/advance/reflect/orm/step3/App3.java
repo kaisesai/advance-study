@@ -7,9 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * 使用 JDBC 读取数据库数据的程序
- */
+/** 使用 JDBC 读取数据库数据的程序 */
 public class App3 {
   
   public static void main(String[] args) throws Exception {

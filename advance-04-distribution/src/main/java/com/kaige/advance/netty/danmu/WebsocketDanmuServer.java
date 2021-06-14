@@ -14,9 +14,7 @@ import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 
-/**
- * 基于 websocket 协议实现的弹幕服务端系统
- */
+/** 基于 websocket 协议实现的弹幕服务端系统 */
 public class WebsocketDanmuServer {
   
   public static void main(String[] args) throws InterruptedException {
@@ -68,7 +66,6 @@ public class WebsocketDanmuServer {
       bossGroup.shutdownGracefully();
       workerGroup.shutdownGracefully();
     }
-    
   }
   
 }

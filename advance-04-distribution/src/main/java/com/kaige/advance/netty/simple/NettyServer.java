@@ -10,9 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * Netty 服务端
- */
+/** Netty 服务端 */
 @Slf4j
 public class NettyServer {
   
@@ -63,7 +61,6 @@ public class NettyServer {
       bossGroup.shutdownGracefully();
       workerGroup.shutdownGracefully();
     }
-    
   }
   
 }

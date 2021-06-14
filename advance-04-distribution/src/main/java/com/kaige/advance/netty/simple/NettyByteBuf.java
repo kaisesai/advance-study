@@ -6,21 +6,19 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;
 
-/**
- * Netty 的 ByteBuf 类测试
- */
+/** Netty 的 ByteBuf 类测试 */
 @Slf4j
 public class NettyByteBuf {
   
   public static void main(String[] args) {
-  
+
     /*
-      创建 byteBuf 对象，该对象内部包含一个字节数组 byte[10]
-      通过 readerIndex 和 writerIndex 和 capacity，将 buffer 分成三个区域
-      已经读取的区域：[0, readerIndex)
-      可读取的区域：[readerIndex, writerIndex)
-      可写入的区域：[writerIndex, capacity)
-     */
+     创建 byteBuf 对象，该对象内部包含一个字节数组 byte[10]
+     通过 readerIndex 和 writerIndex 和 capacity，将 buffer 分成三个区域
+     已经读取的区域：[0, readerIndex)
+     可读取的区域：[readerIndex, writerIndex)
+     可写入的区域：[writerIndex, capacity)
+    */
     ByteBuf byteBuf = Unpooled.buffer(10);
     log.info("初始化 byteBuf = " + byteBuf);
     
@@ -72,9 +70,7 @@ public class NettyByteBuf {
         .getCharSequence(0, 6, StandardCharsets.UTF_8));
       log.info("buf.getCharSequence(0,6,StandardCharsets.UTF_8) = " + buf
         .getCharSequence(6, 6, StandardCharsets.UTF_8));
-      
     }
-    
   }
   
 }

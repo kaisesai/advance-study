@@ -9,9 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
 
-/**
- * 使用 JDBC 读取数据库数据的程序
- */
+/** 使用 JDBC 读取数据库数据的程序 */
 @Slf4j
 public class App4 {
   

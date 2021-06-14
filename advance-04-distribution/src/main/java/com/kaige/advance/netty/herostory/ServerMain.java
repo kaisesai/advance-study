@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ServerMain {
   
   public static void main(String[] args) {
-  
+    
     // 初始化命令处理工厂
     // CmdHandlerFactory.init();
     // GameMsgRecognizer.init();
@@ -36,10 +36,10 @@ public class ServerMain {
     // 初始化生产者
     MyProducer.init();
     MyConsumer.init();
-  
+    
     NioEventLoopGroup boss = new NioEventLoopGroup(1);
     NioEventLoopGroup worker = new NioEventLoopGroup();
-  
+    
     ServerBootstrap bootstrap = new ServerBootstrap();
     bootstrap.group(boss, worker).channel(NioServerSocketChannel.class)
       // 初始化服务器连接队列的大小，服务器处理客户端连接请求是顺序处理的，所以同一时间只能处理一个客户端连接。
@@ -83,7 +83,6 @@ public class ServerMain {
       boss.shutdownGracefully();
       worker.shutdownGracefully();
     }
-    
   }
   
 }

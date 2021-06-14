@@ -62,7 +62,6 @@ public class UserEntityService {
     } catch (Exception e) {
       log.error(e.getMessage(), e);
     }
-    
   }
   
 }

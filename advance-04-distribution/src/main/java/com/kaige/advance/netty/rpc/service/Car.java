@@ -1,8 +1,6 @@
 package com.kaige.advance.netty.rpc.service;
 
-/**
- * Car 接口
- */
+/** Car 接口 */
 public interface Car {
   
   /**

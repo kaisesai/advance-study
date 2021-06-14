@@ -14,9 +14,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
-/**
- * 配置中心处理类
- */
+/** 配置中心处理类 */
 @Slf4j
 public class MyConfig
   implements Watcher, AsyncCallback.DataCallback, AsyncCallback.StatCallback, AutoCloseable {
@@ -31,9 +29,7 @@ public class MyConfig
     init();
   }
   
-  /**
-   * 初始化配置信息
-   */
+  /** 初始化配置信息 */
   private void init() {
     try {
       String connectStr = ZookeeperHolder.CONNECT_STR + "/MyConfig";
@@ -52,9 +48,7 @@ public class MyConfig
     }
   }
   
-  /**
-   * @return 获取配置数据
-   */
+  /** @return 获取配置数据 */
   public void loadConfig() {
     zooKeeper.getData("/", this, this, "abc");
     try {

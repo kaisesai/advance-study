@@ -15,14 +15,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
-/**
- * 获取排名异步操作
- */
+/** 获取排名异步操作 */
 public class GetRankAsyncOperation implements IAsyncOperation {
   
-  /**
-   * 回调函数
-   */
+  /** 回调函数 */
   private final Function<List<RankItem>, Void> callback;
   
   private List<RankItem> rankItems;
@@ -75,7 +71,6 @@ public class GetRankAsyncOperation implements IAsyncOperation {
   public void doFinish() {
     // 使用主线程处理器
     MainThreadProcessor.getInstance().process(() -> callback.apply(rankItems));
-    
   }
   
 }

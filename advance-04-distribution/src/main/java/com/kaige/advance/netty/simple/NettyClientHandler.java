@@ -8,9 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;
 
-/**
- * 客户端处理器
- */
+/** 客户端处理器 */
 @Slf4j
 public class NettyClientHandler extends ChannelInboundHandlerAdapter {
   

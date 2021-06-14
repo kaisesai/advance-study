@@ -10,10 +10,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 多路复用器线程
- * <p>
- * 它只要负责执行 IO 操作，比如处理客户端连接、客户端读写事件
- * <p>
- * 有自己的 selector 多路复用器
+ *
+ * <p>它只要负责执行 IO 操作，比如处理客户端连接、客户端读写事件
+ *
+ * <p>有自己的 selector 多路复用器
  */
 public class SelectorThread extends Thread {
   
@@ -22,19 +22,13 @@ public class SelectorThread extends Thread {
   private static final ThreadLocal<LinkedBlockingQueue<Channel>> threadLocal = ThreadLocal
     .withInitial(LinkedBlockingQueue::new);
   
-  /**
-   * 任务队列，用于不同线程之间的通信
-   */
+  /** 任务队列，用于不同线程之间的通信 */
   private final LinkedBlockingQueue<Channel> taskQueue = threadLocal.get();
   
-  /**
-   * 每个线程都有自己的多路复用器
-   */
+  /** 每个线程都有自己的多路复用器 */
   private Selector selector;
   
-  /**
-   * 每个IO 线程有自己的所属组，用来分配 IO 线程
-   */
+  /** 每个IO 线程有自己的所属组，用来分配 IO 线程 */
   private SelectorThreadGroup workerGroup;
   
   public SelectorThread() {
@@ -49,7 +43,6 @@ public class SelectorThread extends Thread {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
   }
   
   public void setWorkerGroup(SelectorThreadGroup workerGroup) {
@@ -109,7 +102,6 @@ public class SelectorThread extends Thread {
         e.printStackTrace();
       }
     }
-    
   }
   
   /**
@@ -158,7 +150,6 @@ public class SelectorThread extends Thread {
         e.printStackTrace();
       }
     }
-    
   }
   
   /**
@@ -174,7 +165,7 @@ public class SelectorThread extends Thread {
       SocketChannel client = server.accept();
       // 设置非阻塞选项
       client.configureBlocking(false);
-  
+
       /*
         通过一定的算法，将新接收的 client 分配到一个 IO 线程的 selector 上
         此时需要引入关联的 IO 线程组，通过它来分配注册
@@ -185,7 +176,6 @@ public class SelectorThread extends Thread {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
   }
   
   public void putTask(Channel channel) {
@@ -196,9 +186,7 @@ public class SelectorThread extends Thread {
     }
   }
   
-  /**
-   * 唤醒 selector，即中断它的阻塞状态
-   */
+  /** 唤醒 selector，即中断它的阻塞状态 */
   public void wakeupSelector() {
     this.selector.wakeup();
   }

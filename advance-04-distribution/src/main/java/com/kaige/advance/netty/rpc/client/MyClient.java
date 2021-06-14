@@ -7,8 +7,8 @@ import java.io.Closeable;
 
 /**
  * 客户端连接
- * <p>
- * 持有客户端连接和事件循环组
+ *
+ * <p>持有客户端连接和事件循环组
  */
 public class MyClient implements Closeable {
   

@@ -3,9 +3,7 @@ package com.kaige.advance.netty.rpc.transport;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * RPC 的请求调用与结果映射
- */
+/** RPC 的请求调用与结果映射 */
 public class RpcResult {
   
   private static final ConcurrentHashMap<String, CompletableFuture<Object>> MAP

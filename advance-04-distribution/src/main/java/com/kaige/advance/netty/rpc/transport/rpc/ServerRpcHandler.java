@@ -9,8 +9,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
  * 服务端消息接收处理器
- * <p>
- * 处理客户端的消息
+ *
+ * <p>处理客户端的消息
  */
 public class ServerRpcHandler extends SimpleChannelInboundHandler<MyMsg> {
   
@@ -22,14 +22,14 @@ public class ServerRpcHandler extends SimpleChannelInboundHandler<MyMsg> {
     // 需要关注 rpc 消息通信
     // IO 线程的名称
     String ioThreadName = Thread.currentThread().getName();
-    
+
     /*
-      业务的处理可以有三种方式
-      1. 在当前 IO 线程上处理
-      2. 在自定义的线程池上处理
-      3. 将业务逻辑处理作为一个任务放入在 IO 线程的任务队列中取处理
-      4. 将业务逻辑处理作为一个任务放入其他的 IO 线程（充分现有利用资源）的任务队列中取处理
-     */
+     业务的处理可以有三种方式
+     1. 在当前 IO 线程上处理
+     2. 在自定义的线程池上处理
+     3. 将业务逻辑处理作为一个任务放入在 IO 线程的任务队列中取处理
+     4. 将业务逻辑处理作为一个任务放入其他的 IO 线程（充分现有利用资源）的任务队列中取处理
+    */
     
     // 利用当前执行器处理，先处理 IO，在处理业务
     /*ctx.executor().execute(() -> {
@@ -42,7 +42,6 @@ public class ServerRpcHandler extends SimpleChannelInboundHandler<MyMsg> {
     
     // 利用其它线程组的线程执行
     ctx.executor().parent().next().execute(() -> execBusiness(myMsg, ioThreadName, ctx));
-    
   }
   
   /**

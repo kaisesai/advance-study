@@ -5,9 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 聊天室客户端处理器
- */
+/** 聊天室客户端处理器 */
 @Slf4j
 public class ChatClientHandler extends SimpleChannelInboundHandler<String> {
   

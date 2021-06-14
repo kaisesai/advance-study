@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 阶段类
- * <p>
- * 该类类似于循环栅栏，可以执行多次
+ *
+ * <p>该类类似于循环栅栏，可以执行多次
  *
  * @author liukai 2021年06月07日22:03:10
  */
@@ -30,7 +30,6 @@ public class MyPhaser extends Phaser {
     }
     new Thread(new Person(phaser, "新娘")).start();
     new Thread(new Person(phaser, "新郎")).start();
-    
   }
   
   private static void randomMilliSleep() {

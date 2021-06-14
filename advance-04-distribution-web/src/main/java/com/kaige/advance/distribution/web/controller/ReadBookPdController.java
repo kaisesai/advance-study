@@ -28,9 +28,7 @@ import javax.annotation.Resource;
 @RequestMapping("/readBookPd")
 public class ReadBookPdController {
   
-  /**
-   * 服务对象
-   */
+  /** 服务对象 */
   @Resource
   private ReadBookPdService readBookPdService;
   
@@ -68,7 +66,6 @@ public class ReadBookPdController {
     } catch (Exception e) {
       log.error("zero_error error", e);
     }
-    
   }
   
 }

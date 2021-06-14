@@ -12,9 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
 
-/**
- * 用户攻击命令处理器
- */
+/** 用户攻击命令处理器 */
 @Slf4j
 public class UserAttkCmdHandler implements ICmdHandler<GameMsgProtocol.UserAttkCmd> {
   

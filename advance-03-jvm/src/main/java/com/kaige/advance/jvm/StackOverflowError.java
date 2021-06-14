@@ -1,8 +1,6 @@
 package com.kaige.advance.jvm;
 
-/**
- * JVM 设置：-Xss128（默认 1k）
- */
+/** JVM 设置：-Xss128（默认 1k） */
 public class StackOverflowError {
   
   static int count;

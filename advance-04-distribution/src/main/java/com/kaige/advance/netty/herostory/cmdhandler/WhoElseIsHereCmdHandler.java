@@ -10,9 +10,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import java.util.Collection;
 import java.util.Objects;
 
-/**
- * 还有谁命令处理器
- */
+/** 还有谁命令处理器 */
 public class WhoElseIsHereCmdHandler implements ICmdHandler<GameMsgProtocol.WhoElseIsHereCmd> {
   
   @Override
@@ -24,13 +22,13 @@ public class WhoElseIsHereCmdHandler implements ICmdHandler<GameMsgProtocol.WhoE
     if (CollectionUtils.isEmpty(users)) {
       return;
     }
-  
+    
     users.forEach(user -> {
       if (Objects.nonNull(user)) {
         builder.addUserInfo(buildUserInfo(user));
       }
     });
-  
+    
     // 写回消息
     GameMsgProtocol.WhoElseIsHereResult newResult = builder.build();
     ctx.writeAndFlush(newResult);

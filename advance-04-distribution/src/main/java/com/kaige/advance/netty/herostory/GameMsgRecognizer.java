@@ -20,14 +20,10 @@ import java.util.Objects;
 @Slf4j
 public class GameMsgRecognizer {
   
-  /**
-   * 消息编号 --> 消息对象字典
-   */
+  /** 消息编号 --> 消息对象字典 */
   private static final Map<Integer, GeneratedMessageV3> MSGCODE_AND_MSGOBJ_MAP = new HashMap<>();
   
-  /**
-   * 消息对象 --> 消息编号字典
-   */
+  /** 消息对象 --> 消息编号字典 */
   private static final Map<Class<?>, Integer> MSGCLASS_AND_MSGCODE_MAP = new HashMap<>();
   
   static {
@@ -37,9 +33,7 @@ public class GameMsgRecognizer {
   private GameMsgRecognizer() {
   }
   
-  /**
-   * 初始化消息识别器
-   */
+  /** 初始化消息识别器 */
   public static void init() {
     log.info("初始化消息识别器");
     // 通过反射来获取类型信息
@@ -84,12 +78,10 @@ public class GameMsgRecognizer {
           break;
         }
       }
-      
     }
     
     log.info("消息编号与实例 map ：{}", MSGCODE_AND_MSGOBJ_MAP);
     log.info("消息类型与消息编号 map ：{}", MSGCLASS_AND_MSGCODE_MAP);
-    
   }
   
   public static void main(String[] args) {

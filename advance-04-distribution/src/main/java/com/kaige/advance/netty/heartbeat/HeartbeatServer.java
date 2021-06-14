@@ -24,16 +24,15 @@ public class HeartbeatServer {
         ch.pipeline().addLast(new StringDecoder());
         ch.pipeline().addLast(new StringEncoder());
         // 添加心跳处理器
-        // IdleStateHandler 第一个参数表示，读超时，当在指定时间间隔内没有从 Channel 读取到数据时，会触发一个 READER_IDLE 的 idleStateEvent 事件
+        // IdleStateHandler 第一个参数表示，读超时，当在指定时间间隔内没有从 Channel 读取到数据时，会触发一个 READER_IDLE 的
+        // idleStateEvent 事件
         ch.pipeline().addLast(new IdleStateHandler(3, 0, 0, TimeUnit.SECONDS));
         ch.pipeline().addLast(new HeartbeatServerHandler());
       }
     });
   }
   
-  /**
-   * 消息处理器，重写触发事件接口
-   */
+  /** 消息处理器，重写触发事件接口 */
   static class HeartbeatServerHandler extends SimpleChannelInboundHandler<String> {
     
     private final Map<ChannelId, Integer> readIdleTimes = new ConcurrentHashMap<>();
@@ -47,7 +46,6 @@ public class HeartbeatServer {
       } else {
         System.out.println("其他消息处理");
       }
-      
     }
     
     @Override

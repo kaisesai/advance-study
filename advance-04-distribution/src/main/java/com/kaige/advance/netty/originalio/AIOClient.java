@@ -10,9 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
-/**
- * AIO 客户端
- */
+/** AIO 客户端 */
 @Slf4j
 public class AIOClient {
   

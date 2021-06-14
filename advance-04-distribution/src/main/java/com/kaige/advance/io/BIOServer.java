@@ -11,9 +11,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * 阻塞 IO 服务端程序
- */
+/** 阻塞 IO 服务端程序 */
 public class BIOServer {
   
   public static final ThreadPoolExecutor EXECUTOR = new ThreadPoolExecutor(100, 100, 60,
@@ -114,7 +112,6 @@ public class BIOServer {
             socket.close();
             return;
           }
-          
         }
       } catch (IOException e) {
         e.printStackTrace();
@@ -126,9 +123,7 @@ public class BIOServer {
             e.printStackTrace();
           }
         }
-        
       }
-      
     });
   }
   

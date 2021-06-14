@@ -65,12 +65,9 @@ public class MyNetty {
     // 关闭事件循环组
     eventLoopGroup.shutdownGracefully();
     System.out.println("nett client closed...");
-    
   }
   
-  /**
-   * netty 服务端程序
-   */
+  /** netty 服务端程序 */
   public static void nettyServer() throws InterruptedException {
     
     System.out.println("netty server starting...");
@@ -100,12 +97,9 @@ public class MyNetty {
     future.channel().closeFuture().sync();
     
     System.out.println("netty server close...");
-    
   }
   
-  /**
-   * 服务端模式
-   */
+  /** 服务端模式 */
   public static void serverMode() throws InterruptedException {
     // 事件循环组
     NioEventLoopGroup eventExecutors = new NioEventLoopGroup(1);
@@ -162,12 +156,9 @@ public class MyNetty {
     
     eventExecutors.shutdownGracefully();
     System.out.println("client closed...");
-    
   }
   
-  /**
-   * 循环事件执行器
-   */
+  /** 循环事件执行器 */
   public static void loopExecutor() {
     // 事件循环组，内部会根据参数来固定数量的创建线程组
     NioEventLoopGroup executors = new NioEventLoopGroup(2);
@@ -194,7 +185,6 @@ public class MyNetty {
         }
       }
     });
-    
   }
   
 }

@@ -5,9 +5,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-/**
- * 接收客户端连接
- */
+/** 接收客户端连接 */
 class MyAcceptHandler extends ChannelInboundHandlerAdapter {
   
   private final NioEventLoopGroup eventLoopGroup;

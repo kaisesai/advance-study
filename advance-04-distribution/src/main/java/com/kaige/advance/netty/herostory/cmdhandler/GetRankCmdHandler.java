@@ -4,9 +4,7 @@ import com.kaige.advance.netty.herostory.msg.GameMsgProtocol;
 import com.kaige.advance.netty.herostory.rank.RankService;
 import io.netty.channel.ChannelHandlerContext;
 
-/**
- * 获取排行榜命令处理器
- */
+/** 获取排行榜命令处理器 */
 public class GetRankCmdHandler implements ICmdHandler<GameMsgProtocol.GetRankCmd> {
   
   @Override
@@ -18,7 +16,6 @@ public class GetRankCmdHandler implements ICmdHandler<GameMsgProtocol.GetRankCmd
       ctx.writeAndFlush(builder.build());
       return null;
     });
-    
   }
   
   /**

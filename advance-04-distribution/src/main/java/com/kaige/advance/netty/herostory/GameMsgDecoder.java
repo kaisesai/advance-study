@@ -11,10 +11,10 @@ import java.util.Objects;
 
 /**
  * 自定义消息解码器
- * <p>
- * 消息的格式为：2 byte 的消息长度 --> 2 byte 消息编码 --> 消息 body
- * <p>
- * 按照这样的消息格式进行解析
+ *
+ * <p>消息的格式为：2 byte 的消息长度 --> 2 byte 消息编码 --> 消息 body
+ *
+ * <p>按照这样的消息格式进行解析
  */
 @Slf4j
 public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
