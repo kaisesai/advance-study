@@ -25,6 +25,11 @@ subprojects {
         compileOnly {
             extendsFrom annotationProcessor
         }
+
+        testCompileOnly {
+            extendsFrom annotationProcessor
+        }
+
         // log4j2 需要过滤掉 org.slf4j:slf4j-log4j12 模块（它是 log4j 的适配器）
         all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
         all*.exclude group: 'ch.qos.logback'
