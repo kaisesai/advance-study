@@ -29,4 +29,13 @@ dependencies {
     implementation 'org.apache.commons:commons-collections4:4.4'
     implementation 'com.google.guava:guava:30.1-jre'
 
+
+    implementation 'com.kaige.advance:myAgent:1.1-SNAPSHOT'
+
+    // 本地库模块依赖项
+    // implementation project(':myAgent')
+
+    // 本地二进制文件依赖项
+    // implementation fileTree(dir: 'libs', include: ['*.jar'])
+
 }
