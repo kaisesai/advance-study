@@ -32,6 +32,8 @@ subprojects {
 
         // log4j2 需要过滤掉 org.slf4j:slf4j-log4j12 模块（它是 log4j 的适配器）
         all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        // 过滤 log4j 2 的另一个适配器
+        all*.exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
         all*.exclude group: 'ch.qos.logback'
 //        all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
 //        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
@@ -53,6 +55,9 @@ subprojects {
         // jackson
         // implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
 
+        // 单元测试
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     }
 
     // test {

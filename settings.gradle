@@ -4,4 +4,5 @@ include 'advance-03-jvm'
 include 'advance-04-distribution'
 include 'advance-04-distribution-web'
 include 'myAgent'
+include 'advance-05-springcloud-eurekaserver'
 

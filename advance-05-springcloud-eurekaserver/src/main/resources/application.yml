@@ -1,0 +1,104 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+    # 指示复制要复制到 eureka 服务器的实例更改的频率（以秒为单位）。
+    instance-info-replication-interval-seconds: 5
+    # 指示从 eureka 服务器获取注册表信息的频率（以秒为单位）。
+    registry-fetch-interval-seconds: 5
+    # 指示最初将实例信息复制到 eureka 服务器的时间（以秒为单位）。
+    initial-instance-info-replication-interval-seconds: 10
+    # 由于我们不希望 Eureka 服务器向自身注册，因此我们将属性eureka.client.registerWithEureka设置为false。这里属性eureka.instance.hostname=localhost尤其重要，因为我们在本地机器上运行它。
+    # 否则，我们最终可能会在 Eureka 服务器中创建一个不可用的副本——弄乱客户端的心跳计数。
+    # 指示此实例是否应向 eureka 服务器注册其信息以供其他人发现。 在某些情况下，您不希望您的实例被发现，而您只想发现其他实例。
+    register-with-eureka: false
+    # 示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。
+    fetch-registry: false
+
+  server:
+    # 在谈自保之前，我们先了解一下 Eureka 服务器是如何维护客户端实例注册中心的。
+    # 在启动过程中，客户端触发与 Eureka 服务器的REST 调用以自注册到服务器的实例注册表。当使用后正常关闭时，客户端会触发另一个 REST 调用，以便服务器可以清除与调用者相关的所有数据。
+    # 为了处理不正常的客户端关闭，服务器期望以特定时间间隔来自客户端的心跳。这称为更新。如果服务器在指定的持续时间内停止接收心跳，那么它将开始驱逐陈旧的实例。
+    # 当心跳低于预期阈值时停止驱逐实例的机制称为自我保护。这可能发生在网络分区不佳的情况下，其中实例仍在运行，但暂时无法访问或在客户端突然关闭的情况下。
+    # 当服务器激活自我保护模式时，它会保持实例驱逐，直到更新率回到预期阈值以上。
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 这个属性告诉 Eureka 服务器以这个频率运行一个作业来驱逐过期的客户端——默认值为60 秒
+    eviction-interval-timer-in-ms: 5000
+    # 自我保护的阈值
+    renewal-percent-threshold: 0.85
+    # 服务器期望以使用此属性配置的间隔的客户端心跳 - 默认值为30
+    expected-client-renewal-interval-seconds: 30
+    # 这个属性告诉 Eureka 服务器以这个频率运行一个作业来计算这一分钟所有注册客户端的预期心跳——默认值为15 分钟
+    renewal-threshold-update-interval-ms: 5000
+    # 集群里eureka节点的变化信息更新的时间间隔，单位为毫秒，默认为10 * 60 * 1000
+    peer-eureka-nodes-update-interval-ms: 60000
+  instance:
+    # 指示 eureka 客户端需要多长时间（以秒为单位）向 eureka 服务器发送心跳以表明它仍然活着。
+    # 如果在leaseExpirationDurationInSeconds 中指定的时间段内未收到心跳，eureka 服务器将从其视图中删除该实例，从而禁止流向该实例的流量。
+    # 请注意，如果实例实现 HealthCheckCallback 然后决定使其自身不可用，则该实例仍然无法获取流量。
+    lease-renewal-interval-in-seconds: 5
+    # 指示 eureka 服务器自收到最后一次心跳后等待的时间（以秒为单位），然后才能从其视图中删除此实例，并通过禁止流向此实例的流量。
+    # 将此值设置得太长可能意味着即使实例不活动，流量也可以路由到实例。 将此值设置得太小可能意味着，由于临时网络故障，实例可能会退出流量。
+    # 此值至少要设置为高于leaseRenewalIntervalInSeconds 中指定的值。
+    lease-expiration-duration-in-seconds: 15
+    hostname: localhost
+
+server:
+  port: 8080
+spring:
+  application:
+    name: eureka-server
+
+---
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/,http://peer3:8083/eureka/
+    register-with-eureka: true
+    # 示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。
+    fetch-registry: true
+
+spring:
+  config:
+    activate:
+      on-profile: peer1
+server:
+  port: 8081
+
+---
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/,http://peer3:8083/eureka/
+    register-with-eureka: true
+    # 示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。
+    fetch-registry: true
+spring:
+  config:
+    activate:
+      on-profile: peer2
+server:
+  port: 8082
+
+---
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/,http://peer3:8083/eureka/
+    register-with-eureka: true
+    # 示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。
+    fetch-registry: true
+spring:
+  config:
+    activate:
+      on-profile: peer3
+server:
+  port: 8083

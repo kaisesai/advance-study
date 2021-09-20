@@ -1,0 +1,53 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    // id 'com.google.cloud.tools.jib' version '3.1.4'
+    // id 'com.palantir.docker' version '0.28.0'
+    // id 'com.palantir.docker-run' version '0.28.0'
+    id 'java'
+}
+
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '8'
+// sourceCompatibility = '11'
+
+
+ext {
+    set('springCloudVersion', "2020.0.3")
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    // Eureka 服务器所依赖的 JAXB 模块已在 JDK 11 中删除。如果您打算在运行 Eureka 服务器时使用 JDK 11，则必须在 POM 或 Gradle 文件中包含这些依赖项。
+    implementation 'org.glassfish.jaxb:jaxb-runtime'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+// task unpack(type: Copy) {
+//     dependsOn bootJar
+//     from(zipTree(tasks.bootJar.outputs.files.singleFile))
+//     into("build/dependency")
+// }
+
+// docker {
+//     name 'localhost//eurekaserver'
+//     // name "${project.group}/${bootJar.archiveBaseName}"
+//     copySpec.from(tasks.unpack.outputs).into("dependency")
+//     buildArgs(['DEPENDENCY': "dependency"])
+//     // tag 'eurekaserver/eurekaserver'
+//     // tag 'eurekaserver', 'eurekaserver/eurekaserver:version'
+//     dockerfile file('Dockerfile')
+//     pull false
+//     noCache false
+// }
