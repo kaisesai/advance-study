@@ -1,0 +1,52 @@
+# 服务端口
+server:
+  port: 8080
+
+spring:
+  # 数据源
+  datasource:
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      idle-timeout: 60000
+      connection-timeout: 30000
+      pool-name: hikai-pool
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/distribution-transaction
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+# mybatis SQL 日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: my-group1
+    send-message-timeout: 30000
+
+# properties used in the application
+my:
+  rocketmq:
+    topicUser: user-topic
+    topic: mytopic
+    orderTopic: myOrderTopic
+    msgExtTopic: myMsgExtTopic
+    transTopic: myTransTopic
+    bytesRequestTopic: bytesRequestTopic:tagA
+    stringRequestTopic: stringRequestTopic:tagA
+    objectRequestTopic: objectRequestTopic:tagA
+    genericRequestTopic: genericRequestTopic:tagA
+    extNameServer: 127.0.0.1:9876
+
+
+#  # default producer tls config
+#  rocketmq.producer.tls-enable=false
+#  # self ext producer tls config
+#  demo.rocketmq.ext.useTLS=false

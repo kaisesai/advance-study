@@ -16,7 +16,6 @@ public interface UserEntityDao {
   /**
    * 通过ID查询单条数据
    *
-   * @param 主键
    * @return 实例对象
    */
   UserEntity queryByUserName(@Param("name") String userName);

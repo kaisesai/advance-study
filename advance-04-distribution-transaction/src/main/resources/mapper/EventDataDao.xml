@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaige.distribution.transaction.dao.EventDataDao">
+
+    <resultMap type="com.kaige.distribution.transaction.entity.EventData" id="EventDataMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into event_data(type, state, content, create_date, update_date)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.type}, #{entity.state}, #{entity.content}, #{entity.createDate}, #{entity.updateDate})
+        </foreach>
+    </insert>
+
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into event_data(type, state, content, create_date, update_date)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.type}, #{entity.state}, #{entity.content}, #{entity.createDate}, #{entity.updateDate})
+        </foreach>
+        on duplicate key update
+        type = values(type) , state = values(state) , content = values(content) , create_date = values(create_date) , update_date =
+        values(update_date)
+    </insert>
+
+</mapper>
+

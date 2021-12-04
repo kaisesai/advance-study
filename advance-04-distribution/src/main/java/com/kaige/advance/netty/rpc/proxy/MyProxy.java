@@ -12,7 +12,6 @@ public class MyProxy {
    *
    * <p>代理对象主要负责建立所代理的服务信息
    *
-   * @param carClass
    * @param protocolType
    * @return
    */

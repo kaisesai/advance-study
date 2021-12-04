@@ -12,9 +12,9 @@ eureka:
     # 由于我们不希望 Eureka 服务器向自身注册，因此我们将属性eureka.client.registerWithEureka设置为false。这里属性eureka.instance.hostname=localhost尤其重要，因为我们在本地机器上运行它。
     # 否则，我们最终可能会在 Eureka 服务器中创建一个不可用的副本——弄乱客户端的心跳计数。
     # 指示此实例是否应向 eureka 服务器注册其信息以供其他人发现。 在某些情况下，您不希望您的实例被发现，而您只想发现其他实例。
-    register-with-eureka: false
+    register-with-eureka: true
     # 示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。
-    fetch-registry: false
+    fetch-registry: true
 
   server:
     # 在谈自保之前，我们先了解一下 Eureka 服务器是如何维护客户端实例注册中心的。
