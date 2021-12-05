@@ -9,27 +9,28 @@
         <result property="content" column="content" jdbcType="VARCHAR"/>
         <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
         <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+        <result property="errorMsg" column="error_msg" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!-- 批量插入 -->
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into event_data(type, state, content, create_date, update_date)
+        insert into event_data(id, type, state, content, create_date, update_date, error_msg)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.type}, #{entity.state}, #{entity.content}, #{entity.createDate}, #{entity.updateDate})
+            (#{entity.id}, #{entity.type}, #{entity.state}, #{entity.content}, #{entity.createDate}, #{entity.updateDate}, #{entity.errorMsg})
         </foreach>
     </insert>
 
     <!-- 批量插入或按主键更新 -->
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into event_data(type, state, content, create_date, update_date)
+        insert into event_data(id, type, state, content, create_date, update_date, error_msg)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.type}, #{entity.state}, #{entity.content}, #{entity.createDate}, #{entity.updateDate})
+            (#{entity.id}, #{entity.type}, #{entity.state}, #{entity.content}, #{entity.createDate}, #{entity.updateDate}, #{entity.errorMsg})
         </foreach>
         on duplicate key update
-        type = values(type) , state = values(state) , content = values(content) , create_date = values(create_date) , update_date =
-        values(update_date)
+        id = values(id), type = values(type) , state = values(state) , content = values(content) , create_date = values(create_date) , update_date =
+        values(update_date), error_msg = values(error_msg)
     </insert>
 
 </mapper>

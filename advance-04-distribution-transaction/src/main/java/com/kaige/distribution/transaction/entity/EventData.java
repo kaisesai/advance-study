@@ -37,6 +37,9 @@ public class EventData extends Model<EventData> {
   // 更新时间
   private Date updateDate;
 
+  // 错误消息
+  private String errorMsg;
+
   /**
    * 获取主键值
    *

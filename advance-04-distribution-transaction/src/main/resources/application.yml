@@ -30,6 +30,11 @@ rocketmq:
   producer:
     group: my-group1
     send-message-timeout: 30000
+# 下面的配置主要是主动pull模式，参见：https://github.com/apache/rocketmq-spring/wiki/%E6%8E%A5%E6%94%B6%E6%B6%88%E6%81%AF
+#  consumer:
+#    group: my-consumer-group
+#    topic: myOrderTopic
+#    listeners:
 
 # properties used in the application
 my:

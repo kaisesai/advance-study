@@ -12,11 +12,11 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum EventStateEnum implements CommonEnumInterface<Integer> {
-  NONE(0, "无"),
-  CREATE(1, "新建"),
-  PROCESSING(2, "处理中"),
-  SUCCESS(3, "成功"),
-  FAIL(4, "失败");
+  NONE(null, "无"),
+  CREATE(0, "新建"),
+  // PROCESSING(1, "处理中"),
+  SUCCESS(1, "处理成功"),
+  FAIL(2, "处理失败");
 
   /** 简码 */
   private Integer code;

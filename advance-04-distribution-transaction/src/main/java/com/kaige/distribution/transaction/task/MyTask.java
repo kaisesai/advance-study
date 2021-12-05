@@ -1,6 +1,7 @@
 package com.kaige.distribution.transaction.task;
 
 import com.kaige.distribution.transaction.constant.EventStateEnum;
+import com.kaige.distribution.transaction.constant.EventTypeEnum;
 import com.kaige.distribution.transaction.entity.EventData;
 import com.kaige.distribution.transaction.service.EventDataService;
 import lombok.extern.slf4j.Slf4j;
@@ -35,11 +36,12 @@ public class MyTask {
   @Scheduled(fixedDelay = 5000)
   public void doSendOrderMsg() {
 
-    // 查询状态为 1 的事件表数据
+    // 查询状态为 1、业务类型为 100 的事件表数据
     List<EventData> eventDataList =
         eventDataService
             .lambdaQuery()
             .eq(EventData::getState, EventStateEnum.CREATE.getCode())
+            .eq(EventData::getType, EventTypeEnum.ORDER_CREATE.getCode())
             .list();
     if (CollectionUtils.isEmpty(eventDataList)) {
       log.info("目前没有新建状态的事件数据");
@@ -49,18 +51,22 @@ public class MyTask {
     List<String> eventDataIds =
         eventDataList.stream().map(EventData::getId).collect(Collectors.toList());
 
-    // 更新事件表状态为处理中 2
+    // 更新事件表状态为 2 处理成功
     boolean result =
         eventDataService
             .lambdaUpdate()
-            .set(EventData::getState, EventStateEnum.PROCESSING.getCode())
+            .set(EventData::getState, EventStateEnum.SUCCESS.getCode())
             .in(EventData::getId, eventDataIds)
             .update();
     log.info("更新事件表数据，eventDataIds: {}, 结果：{}", eventDataIds, result);
 
     // 发送mq消息
     List<Message<String>> messages = buildBatchMessageOrderly(eventDataList);
-    SendResult sendResult = rocketMQTemplate.syncSend(myOrderTopic, messages);
+
+    // 构建目的地：myOrderTopic:ORDER_CREATE
+    String destination = myOrderTopic + ":" + EventTypeEnum.ORDER_CREATE;
+
+    SendResult sendResult = rocketMQTemplate.syncSend(destination, messages);
     log.info("发送事件消息成功！结果:{}", sendResult);
   }
 
@@ -77,7 +83,8 @@ public class MyTask {
                 eventData ->
                     MessageBuilder.withPayload(eventData.getContent())
                         .setHeader(RocketMQHeaders.KEYS, "KEY_" + eventData.getId())
-                        .setHeader(RocketMQHeaders.TAGS, eventData.getType())
+                        // 这里设置 tag 属性不起作用，需要在 destination 上添加，格式为: `topicName:tags`
+                        // .setHeader(RocketMQHeaders.TAGS, eventData.getType())
                         .build())
             .collect(Collectors.toList());
     log.info("构建的消息为: {}", msgs);
