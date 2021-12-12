@@ -10,6 +10,10 @@ allprojects {
         mavenLocal()
         mavenCentral()
     }
+
+    ext {
+        set('springCloudVersion', "2020.0.4")
+    }
 }
 
 subprojects {
@@ -35,6 +39,7 @@ subprojects {
         // 过滤 log4j 2 的另一个适配器
         all*.exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
         all*.exclude group: 'ch.qos.logback'
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 //        all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
 //        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 //        all*.exclude module: 'spring-boot-starter-logback'

@@ -4,10 +4,6 @@ plugins {
     id 'java'
 }
 
-ext {
-    set('springCloudVersion', "2020.0.4")
-}
-
 repositories {
     mavenCentral()
 }

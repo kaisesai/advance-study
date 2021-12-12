@@ -1,0 +1,25 @@
+plugins {
+    // springboot 的 gradle 插件才可以有 bootJar 打包的 task
+    id 'org.springframework.boot' version '2.0.9.RELEASE'
+}
+
+group 'com.kaige.advance'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // LCN 注意，一定得是 jdk8 才可以，jdk11 会报出 hibernate 类错误
+    // LCN 事务协调服务
+    implementation 'com.codingapi.txlcn:txlcn-tm:5.0.2.RELEASE'
+    // mysql 驱动包
+    // 注意 LCN-TM jar 包中含有的 spring 框架是 5.0.9 版本，eureka 的版本不能太高了，里边的 spring 框架版本比较高
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.0.4.RELEASE'
+    // lcn-tm 5.0.2 版本中的 gson 包与 springcloud 2.0.4 版本不一致，需要升级到 2.8.6 才可以运行
+    compile 'com.google.code.gson:gson:2.8.6'
+}

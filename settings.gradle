@@ -6,5 +6,7 @@ include 'advance-04-distribution-web'
 include 'myAgent'
 include 'advance-05-springcloud-eurekaserver'
 include 'advance-05-springcloud-gateway'
-include 'advance-04-distribution-transaction'
+include 'advance-04-distribution-transaction-order'
+include 'advance-04-distribution-transaction-pay'
+include 'advance-04-distribution-transaction-lcn-tm'
 

@@ -1,0 +1,45 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        # 后路由谓词工厂，所述After路线谓词工厂有一个参数，一个datetime（其是Java ZonedDateTime）。此谓词匹配在指定日期时间之后发生的请求。
+        #        - id: after_route
+        #          uri: https://baidu.com
+        #          predicates:
+        #            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+        # 前路由谓词工厂，所述Before路线谓词工厂有一个参数，一个datetime（其是Java ZonedDateTime）。此谓词匹配发生在指定 之前的请求datetime。以下示例配置了一个 before 路由谓词：
+        #        - id: before_route
+        #          uri: https://example.org
+        #          predicates:
+        #            - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+        # 路由谓词工厂之间，该Between路线谓词工厂有两个参数，datetime1并且datetime2 这是JavaZonedDateTime对象。此谓词匹配发生在 datetime1之后和datetime2之前的请求。
+        # 该datetime2参数必须是后datetime1。以下示例配置了一个 between 路由谓词：
+        #        - id: between_route
+        #          uri: https://www.hao123.com
+        #          predicates:
+        #            - Between=2018-01-20T17:42:47.789-07:00[America/Denver], 2022-01-21T17:42:47.789-07:00[America/Denver]
+
+        # Cookie 路由谓词工厂,所述Cookie路线谓词工厂采用两个参数，该cookiename和regexp（其是Java正则表达式）。
+        # 此谓词匹配具有给定名称且其值与正则表达式匹配的 cookie。以下示例配置 cookie 路由谓词工厂：
+        - id: cookie_route
+          uri: https://www.bilibili.com/
+          predicates:
+            - Cookie=chocolate, ch.p
+
+        # 标头路由谓词工厂，所述Header路线谓词工厂采用两个参数，报头name和一个regexp（其是Java正则表达式）。
+        # 此谓词与具有给定名称的标头匹配，其值与正则表达式匹配。以下示例配置标头路由谓词：
+        - id: header_route
+          uri: https://www.jd.com/
+          predicates:
+            - Header=X-Request-Id, \d+
+
+        # 主机路由谓词工厂，该Host路线谓词工厂需要一个参数：主机名的列表patterns。该模式是一个 Ant 风格的模式，以.作为分隔符。
+        # 此谓词匹配Host与模式匹配的标头。以下示例配置主机路由谓词：
+        - id: host_route
+          uri: https://www.taobao.com/
+          predicates:
+            - Host=**.myhost.org,**.anotherhost.org
+
+logging:
+  level:
+    com.kaige: DEBUG
