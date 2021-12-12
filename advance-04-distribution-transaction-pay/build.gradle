@@ -1,5 +1,6 @@
 plugins {
     id 'org.springframework.boot' version '2.5.6'
+    // id 'org.springframework.boot' version '2.0.9.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -7,6 +8,9 @@ plugins {
 repositories {
     mavenCentral()
 }
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 configurations {
     compileOnly {
@@ -28,8 +32,13 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.17'
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // lcn-tc 事务参与者
+    // https://mvnrepository.com/artifact/com.codingapi.txlcn/txlcn-tc
+    implementation 'com.codingapi.txlcn:txlcn-tc:5.0.2.RELEASE'
+    implementation 'com.codingapi.txlcn:txlcn-txmsg-netty:5.0.2.RELEASE'
+
+    // developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
 

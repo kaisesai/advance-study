@@ -34,7 +34,7 @@ public class MyOrderTask {
 
   /** 发送订单消息 */
   @Transactional(rollbackFor = Exception.class)
-  @Scheduled(fixedDelay = 5000)
+  @Scheduled(fixedDelay = 500000)
   public void doSendOrderMsg() {
 
     // 查询状态为 1、业务类型为 100 的事件表数据

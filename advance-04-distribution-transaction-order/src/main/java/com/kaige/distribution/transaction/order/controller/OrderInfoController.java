@@ -90,6 +90,18 @@ public class OrderInfoController extends ApiController {
    */
   @PostMapping(value = "createOrderForMQ")
   public R createOrderForMQ(@RequestBody OrderInfo orderInfo) {
-    return success(this.orderInfoService.createOrder(orderInfo));
+    return success(this.orderInfoService.createOrderForMQ(orderInfo));
+  }
+
+  /**
+   * 创建订单（LCN 模式）
+   *
+   * @date 2021年12月13日
+   * @param orderInfo 实体对象
+   * @return 新增结果
+   */
+  @PostMapping(value = "createOrderForLCN")
+  public R createOrderForLCN(@RequestBody OrderInfo orderInfo) {
+    return success(this.orderInfoService.createOrderForLCN(orderInfo));
   }
 }

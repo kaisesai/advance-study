@@ -11,5 +11,7 @@ import com.kaige.distribution.transaction.order.entity.OrderInfo;
  */
 public interface OrderInfoService extends IService<OrderInfo> {
 
-  boolean createOrder(OrderInfo orderInfo);
+  boolean createOrderForMQ(OrderInfo orderInfo);
+
+  boolean createOrderForLCN(OrderInfo orderInfo);
 }

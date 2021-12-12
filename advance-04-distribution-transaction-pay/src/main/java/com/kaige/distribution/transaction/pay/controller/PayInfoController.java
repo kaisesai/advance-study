@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.codingapi.txlcn.tc.annotation.DTXPropagation;
+import com.codingapi.txlcn.tc.annotation.TxcTransaction;
 import com.kaige.distribution.transaction.pay.entity.PayInfo;
 import com.kaige.distribution.transaction.pay.service.PayInfoService;
 import org.springframework.web.bind.annotation.*;
@@ -53,6 +55,7 @@ public class PayInfoController extends ApiController {
    * @param payInfo 实体对象
    * @return 新增结果
    */
+  @TxcTransaction(propagation = DTXPropagation.SUPPORTS)
   @PostMapping(value = "/insert")
   public R insert(@RequestBody PayInfo payInfo) {
     return success(this.payInfoService.save(payInfo));
