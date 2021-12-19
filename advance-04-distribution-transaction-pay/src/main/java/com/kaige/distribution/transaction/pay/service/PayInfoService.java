@@ -9,4 +9,7 @@ import com.kaige.distribution.transaction.pay.entity.PayInfo;
  * @author kaige
  * @since 2021-12-12 16:53:18
  */
-public interface PayInfoService extends IService<PayInfo> {}
+public interface PayInfoService extends IService<PayInfo> {
+
+  // boolean savePayInfo(PayInfo payInfo);
+}

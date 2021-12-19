@@ -8,6 +8,7 @@ import com.codingapi.txlcn.tc.annotation.DTXPropagation;
 import com.codingapi.txlcn.tc.annotation.TxcTransaction;
 import com.kaige.distribution.transaction.pay.entity.PayInfo;
 import com.kaige.distribution.transaction.pay.service.PayInfoService;
+import com.kaige.distribution.transaction.pay.service.RedisService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -25,6 +26,8 @@ import java.util.List;
 public class PayInfoController extends ApiController {
   /** 服务对象 */
   @Resource private PayInfoService payInfoService;
+
+  @Resource private RedisService redisService;
 
   /**
    * 分页查询所有数据
@@ -59,6 +62,17 @@ public class PayInfoController extends ApiController {
   @PostMapping(value = "/insert")
   public R insert(@RequestBody PayInfo payInfo) {
     return success(this.payInfoService.save(payInfo));
+  }
+
+  /**
+   * 新增数据
+   *
+   * @param payInfo 实体对象
+   * @return 新增结果
+   */
+  @PostMapping(value = "/insertToRedis")
+  public R insertToRedis(@RequestBody PayInfo payInfo) {
+    return success(this.redisService.savePay(payInfo));
   }
 
   /**

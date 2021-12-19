@@ -14,9 +14,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableTransactionManagerServer
 @EnableEurekaClient
 @SpringBootApplication
-public class LCNApplication {
+public class LcnTmServerApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(LCNApplication.class, args);
+    SpringApplication.run(LcnTmServerApplication.class, args);
   }
 }

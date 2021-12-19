@@ -1,6 +1,5 @@
 plugins {
     id 'org.springframework.boot' version '2.5.6'
-    // id 'org.springframework.boot' version '2.0.9.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -36,6 +35,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.codingapi.txlcn/txlcn-tc
     implementation 'com.codingapi.txlcn:txlcn-tc:5.0.2.RELEASE'
     implementation 'com.codingapi.txlcn:txlcn-txmsg-netty:5.0.2.RELEASE'
+
+    // redis 服务
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     // developmentOnly 'org.springframework.boot:spring-boot-devtools'
     // testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -76,9 +76,12 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoDao, OrderInfo>
     // 调用支付服务
     ResponseEntity<R> rResponseEntity =
         restTemplate.postForEntity("http://MYPAY/payInfo/insert", payInfo, R.class);
-    R body = rResponseEntity.getBody();
-    log.info("调用支付服务成功，返回值:{}", body);
-    // 保存订单服务
+    log.info("调用支付服务成功，返回值:{}", rResponseEntity.getBody());
+
+    // 支付服务的 TCC 模式
+    rResponseEntity =
+        restTemplate.postForEntity("http://MYPAY/payInfo/insertToRedis", payInfo, R.class);
+    log.info("调用支付服务缓存成功，返回值:{}", rResponseEntity.getBody());
 
     // 模拟异常
     int i = 1 / 0;
