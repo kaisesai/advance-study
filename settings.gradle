@@ -9,4 +9,5 @@ include 'advance-05-springcloud-gateway'
 include 'advance-04-distribution-transaction-order'
 include 'advance-04-distribution-transaction-pay'
 include 'advance-04-distribution-transaction-lcn-tm'
+include 'advance-04-distribution-transaction-seata-tc'
 
