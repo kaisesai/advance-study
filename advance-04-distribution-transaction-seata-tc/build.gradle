@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.seata:seata-server:1.4.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
