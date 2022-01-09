@@ -12,6 +12,7 @@ import com.kaige.distribution.transaction.order.entity.EventData;
 import com.kaige.distribution.transaction.order.entity.OrderInfo;
 import com.kaige.distribution.transaction.order.service.EventDataService;
 import com.kaige.distribution.transaction.order.service.OrderInfoService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -60,6 +61,37 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoDao, OrderInfo>
   @Override
   public boolean createOrderForLCN(OrderInfo orderInfo) {
 
+    log.info("订单数据：{}", orderInfo);
+    // 保存订单
+    boolean result = super.save(orderInfo);
+    if (!result) {
+      throw new IllegalStateException("创建订单异常");
+    }
+
+    JSONObject payInfo = new JSONObject();
+    payInfo.put("amount", orderInfo.getAmount());
+    payInfo.put("orderId", orderInfo.getId());
+    payInfo.put("state", 1);
+
+    log.info("调用支付服务，请求参数:{}", payInfo);
+    // 调用支付服务
+    ResponseEntity<R> rResponseEntity =
+        restTemplate.postForEntity("http://MYPAY/payInfo/insert", payInfo, R.class);
+    log.info("调用支付服务成功，返回值:{}", rResponseEntity.getBody());
+
+    // 支付服务的 TCC 模式
+    rResponseEntity =
+        restTemplate.postForEntity("http://MYPAY/payInfo/insertToRedis", payInfo, R.class);
+    log.info("调用支付服务缓存成功，返回值:{}", rResponseEntity.getBody());
+
+    // 模拟异常
+    int i = 1 / 0;
+    return true;
+  }
+
+  @GlobalTransactional(rollbackFor = Exception.class)
+  @Override
+  public boolean createOrderForSeata(OrderInfo orderInfo) {
     log.info("订单数据：{}", orderInfo);
     // 保存订单
     boolean result = super.save(orderInfo);

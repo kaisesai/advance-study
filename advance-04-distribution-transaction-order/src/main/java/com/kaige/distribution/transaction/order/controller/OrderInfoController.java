@@ -104,4 +104,16 @@ public class OrderInfoController extends ApiController {
   public R createOrderForLCN(@RequestBody OrderInfo orderInfo) {
     return success(this.orderInfoService.createOrderForLCN(orderInfo));
   }
+
+  /**
+   * 创建订单（Seata 的 AT 模式）
+   *
+   * @date 2022年01月09日
+   * @param orderInfo 实体对象
+   * @return 新增结果
+   */
+  @PostMapping(value = "createOrderForSeata")
+  public R createOrderForSeata(@RequestBody OrderInfo orderInfo) {
+    return success(this.orderInfoService.createOrderForSeata(orderInfo));
+  }
 }

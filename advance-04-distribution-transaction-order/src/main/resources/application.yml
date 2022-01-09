@@ -2,6 +2,19 @@
 server:
   port: 8080
 
+seata:
+  tx-service-group: my_test_tx_group
+  service:
+    vgroup-mapping:
+      my_test_tx_group: seata-server # 此处配置对应Server端配置registry.eureka.application的值
+  registry:
+    type: eureka
+    eureka:
+      service-url: http://localhost:9000/eureka
+      weight: 1
+  config:
+    type: file
+
 
 eureka:
   client:

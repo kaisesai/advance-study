@@ -14,4 +14,6 @@ public interface OrderInfoService extends IService<OrderInfo> {
   boolean createOrderForMQ(OrderInfo orderInfo);
 
   boolean createOrderForLCN(OrderInfo orderInfo);
+
+  boolean createOrderForSeata(OrderInfo orderInfo);
 }

@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+// lcn 分布式事务注解
 @EnableDistributedTransaction
 @EnableEurekaClient
 @EnableScheduling

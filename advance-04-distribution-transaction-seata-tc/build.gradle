@@ -8,6 +8,9 @@ repositories {
 
 dependencies {
     implementation 'io.seata:seata-server:1.4.2'
+
+    // mysql 驱动包
+    implementation 'mysql:mysql-connector-java:8.0.17'
 }
 
 test {

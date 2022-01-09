@@ -28,7 +28,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Configuration
-// public class RocketMqConfig implements CommandLineRunner {
 public class RocketMqConfig {
 
   @Resource private RocketMQTemplate rocketMQTemplate;

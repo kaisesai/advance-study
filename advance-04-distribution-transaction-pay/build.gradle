@@ -30,15 +30,20 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
     // lcn-tc 事务参与者
-    // https://mvnrepository.com/artifact/com.codingapi.txlcn/txlcn-tc
     implementation 'com.codingapi.txlcn:txlcn-tc:5.0.2.RELEASE'
     implementation 'com.codingapi.txlcn:txlcn-txmsg-netty:5.0.2.RELEASE'
 
     // redis 服务
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
-    // developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    // testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.seata:seata-spring-boot-starter:1.4.2'
+    // 如果使用了 springcloud 中的 resttemplate，需要使用 seata cloud，内部封装了 resttemplate 拦截器，用来拦截请求并设值 xid 分布式事务id
+    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-seata:2021.1') {
+        exclude group: 'io.seata', module: 'seata-spring-boot-starter'
+    }
+    // seata 需要
+    implementation 'com.netflix.archaius:archaius-core:0.7.7'
+    implementation 'com.sun.jersey.contribs:jersey-apache-client4:1.19.4'
 
 }
 
