@@ -41,7 +41,7 @@ dependencies {
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-seata:2021.1') {
         exclude group: 'io.seata', module: 'seata-spring-boot-starter'
     }
-    // seata 需要
+    // seata 需要用到的 jar 包
     implementation 'com.netflix.archaius:archaius-core:0.7.7'
     implementation 'com.sun.jersey.contribs:jersey-apache-client4:1.19.4'
 
