@@ -96,4 +96,15 @@ public class PayInfoController extends ApiController {
   public R delete(@RequestParam("idList") List<Long> idList) {
     return success(this.payInfoService.removeByIds(idList));
   }
+
+  /**
+   * 新增数据
+   *
+   * @param payInfo 实体对象
+   * @return 新增结果
+   */
+  @PostMapping(value = "/createPayInfoForDistributedLock")
+  public R createPayInfoForDistributedLock(@RequestBody PayInfo payInfo) {
+    return success(this.payInfoService.createPayInfo(payInfo.getOrderId(), payInfo));
+  }
 }

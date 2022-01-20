@@ -1,6 +1,7 @@
 plugins {
     // springboot 的 gradle 插件才可以有 bootJar 打包的 task
-    id 'org.springframework.boot' version '2.0.9.RELEASE'
+    // id 'org.springframework.boot' version '2.0.9.RELEASE'
+    id 'org.springframework.boot' version '2.5.6'
 }
 
 group 'com.kaige.advance'

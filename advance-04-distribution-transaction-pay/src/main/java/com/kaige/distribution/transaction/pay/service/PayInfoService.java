@@ -12,4 +12,6 @@ import com.kaige.distribution.transaction.pay.entity.PayInfo;
 public interface PayInfoService extends IService<PayInfo> {
 
   // boolean savePayInfo(PayInfo payInfo);
+
+  PayInfo createPayInfo(Long orderId, PayInfo PayInfo);
 }

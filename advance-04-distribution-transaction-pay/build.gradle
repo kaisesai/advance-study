@@ -23,7 +23,6 @@ dependencies {
     implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.1'
     // aop
     implementation 'org.springframework.boot:spring-boot-starter-aop'
-    // testImplementation 'io.projectreactor:reactor-test'
     implementation 'org.apache.rocketmq:rocketmq-spring-boot-starter:2.2.1'
     // mysql 驱动包
     implementation 'mysql:mysql-connector-java:8.0.17'
@@ -35,6 +34,10 @@ dependencies {
 
     // redis 服务
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // spring integration
+    implementation 'org.springframework.boot:spring-boot-starter-integration'
+    implementation 'org.springframework.integration:spring-integration-redis'
 
     implementation 'io.seata:seata-spring-boot-starter:1.4.2'
     // 如果使用了 springcloud 中的 resttemplate，需要使用 seata cloud，内部封装了 resttemplate 拦截器，用来拦截请求并设值 xid 分布式事务id
